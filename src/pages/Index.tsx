@@ -10,6 +10,7 @@ import {
   Plane, Ship, Truck, Zap, Shield, Globe, Clock, 
   Award, Users, ArrowRight, CheckCircle 
 } from "lucide-react";
+import heroImage from "@/assets/hero-cargo.jpg";
 
 const Index = () => {
   return (
@@ -19,7 +20,11 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative pt-20 overflow-hidden">
         <div className="absolute inset-0 bg-primary" />
-        <div className="absolute inset-0 bg-hero-pattern" />
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+        <div className="absolute inset-0 bg-primary/80" />
         
         {/* Animated background elements */}
         <div className="absolute top-40 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" />
