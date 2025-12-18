@@ -27,6 +27,12 @@ const regions = [
     icon: <Plane className="w-6 h-6" />,
   },
   {
+    name: "Pakistan",
+    countries: ["Karachi", "Lahore", "Islamabad", "Peshawar", "Faisalabad", "Multan", "Rawalpindi", "Quetta", "Sialkot", "Gujranwala"],
+    delivery: "3-7 Days",
+    icon: <Plane className="w-6 h-6" />,
+  },
+  {
     name: "Asia Pacific",
     countries: ["China", "Singapore", "Malaysia", "Thailand", "Indonesia", "Philippines", "Vietnam", "Japan", "South Korea"],
     delivery: "5-10 Days",
