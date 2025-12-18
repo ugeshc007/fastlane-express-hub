@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   MapPin, Phone, Mail, Clock, Send, MessageCircle
 } from "lucide-react";
@@ -14,6 +15,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,10 +26,9 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: t("contact.successTitle"),
+      description: t("contact.successDesc"),
     });
     setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
@@ -46,10 +47,10 @@ const Contact = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Contact <span className="text-accent">Us</span>
+              {t("contact.title").split(" ")[0]} <span className="text-accent">{t("contact.title").split(" ").slice(1).join(" ")}</span>
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl">
-              Have questions? We're here to help. Reach out to our team and we'll respond within 24 hours.
+              {t("contact.subtitle")}
             </p>
           </div>
         </div>
@@ -63,10 +64,10 @@ const Contact = () => {
             <div className="space-y-8">
               <div>
                 <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
-                  Get in Touch
+                  {t("contact.getInTouch")}
                 </h2>
                 <p className="text-muted-foreground">
-                  Our friendly team is always ready to assist you with your shipping needs.
+                  {t("contact.getInTouchDesc")}
                 </p>
               </div>
               
@@ -76,10 +77,10 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Our Office</h3>
+                    <h3 className="font-semibold text-foreground mb-1">{t("contact.office")}</h3>
                     <p className="text-muted-foreground text-sm">
-                      Business Bay, Dubai<br />
-                      United Arab Emirates
+                      {isRTL ? "بزنس باي، دبي" : "Business Bay, Dubai"}<br />
+                      {isRTL ? "الإمارات العربية المتحدة" : "United Arab Emirates"}
                     </p>
                   </div>
                 </div>
@@ -89,7 +90,7 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                    <h3 className="font-semibold text-foreground mb-1">{t("contact.phone")}</h3>
                     <a href="tel:+971XXXXXXX" className="text-muted-foreground text-sm hover:text-accent transition-colors">
                       +971 XX XXX XXXX
                     </a>
@@ -101,7 +102,7 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                    <h3 className="font-semibold text-foreground mb-1">{t("contact.email")}</h3>
                     <a href="mailto:info@ultrafastcargo.com" className="text-muted-foreground text-sm hover:text-accent transition-colors">
                       info@ultrafastcargo.com
                     </a>
@@ -113,10 +114,10 @@ const Contact = () => {
                     <Clock className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Working Hours</h3>
+                    <h3 className="font-semibold text-foreground mb-1">{t("contact.hours")}</h3>
                     <p className="text-muted-foreground text-sm">
-                      Sunday - Thursday: 9AM - 6PM<br />
-                      Friday - Saturday: Closed
+                      {t("contact.hoursValue")}<br />
+                      {t("contact.hoursClosed")}
                     </p>
                   </div>
                 </div>
@@ -126,14 +127,14 @@ const Contact = () => {
               <div className="bg-[#25D366]/10 rounded-2xl p-6 border border-[#25D366]/20">
                 <div className="flex items-center gap-3 mb-3">
                   <MessageCircle className="w-6 h-6 text-[#25D366]" />
-                  <h3 className="font-semibold text-foreground">Chat on WhatsApp</h3>
+                  <h3 className="font-semibold text-foreground">{t("contact.whatsapp")}</h3>
                 </div>
                 <p className="text-muted-foreground text-sm mb-4">
-                  Get instant support via WhatsApp. We're available 24/7 for urgent inquiries.
+                  {t("contact.whatsappDesc")}
                 </p>
                 <Button variant="whatsapp" className="w-full" asChild>
                   <a href="https://wa.me/+971XXXXXXX" target="_blank" rel="noopener noreferrer">
-                    Start Chat
+                    {t("contact.startChat")}
                   </a>
                 </Button>
               </div>
@@ -143,23 +144,23 @@ const Contact = () => {
             <div className="lg:col-span-2">
               <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
                 <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
-                  Send Us a Message
+                  {t("contact.sendMessage")}
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
+                      <Label htmlFor="name">{t("quote.name")}</Label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="John Doe"
+                        placeholder={isRTL ? "محمد أحمد" : "John Doe"}
                         value={formData.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
+                      <Label htmlFor="email">{t("quote.email")}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -173,7 +174,7 @@ const Contact = () => {
                   </div>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number</Label>
+                      <Label htmlFor="phone">{t("quote.phone")}</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -184,11 +185,11 @@ const Contact = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="subject">Subject</Label>
+                      <Label htmlFor="subject">{t("contact.subject")}</Label>
                       <Input
                         id="subject"
                         name="subject"
-                        placeholder="How can we help?"
+                        placeholder={t("contact.subjectPlaceholder")}
                         value={formData.subject}
                         onChange={handleChange}
                         required
@@ -196,11 +197,11 @@ const Contact = () => {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message">{t("contact.message")}</Label>
                     <Textarea
                       id="message"
                       name="message"
-                      placeholder="Tell us about your shipping needs..."
+                      placeholder={t("contact.messagePlaceholder")}
                       rows={6}
                       value={formData.message}
                       onChange={handleChange}
@@ -208,8 +209,8 @@ const Contact = () => {
                     />
                   </div>
                   <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto">
-                    <Send className="w-5 h-5 mr-2" />
-                    Send Message
+                    <Send className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                    {t("contact.send")}
                   </Button>
                 </form>
               </div>

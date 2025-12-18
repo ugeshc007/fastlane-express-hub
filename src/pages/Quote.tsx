@@ -13,6 +13,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { 
   Send, Package, MapPin, Weight, Ruler, CheckCircle
 } from "lucide-react";
@@ -20,6 +21,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const Quote = () => {
   const { toast } = useToast();
+  const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,8 +41,8 @@ const Quote = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Quote Request Submitted!",
-      description: "Our team will contact you within 2 hours with a detailed quote.",
+      title: t("quote.successTitle"),
+      description: t("quote.successDesc"),
     });
     setFormData({
       name: "",
@@ -73,10 +75,10 @@ const Quote = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Get a <span className="text-accent">Free Quote</span>
+              {t("quote.title").split(" ").slice(0, -1).join(" ")} <span className="text-accent">{t("quote.title").split(" ").slice(-1)}</span>
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl">
-              Fill out the form below and receive a detailed shipping quote within 2 hours. No hidden fees, transparent pricing.
+              {t("quote.subtitle")}
             </p>
           </div>
         </div>
@@ -92,32 +94,32 @@ const Quote = () => {
                 <div>
                   <h2 className="font-heading font-bold text-xl text-foreground mb-6 flex items-center gap-3">
                     <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-accent-foreground text-sm font-bold">1</div>
-                    Contact Information
+                    {t("quote.contactInfo")}
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label htmlFor="name">Full Name *</Label>
+                      <Label htmlFor="name">{t("quote.name")} *</Label>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="John Doe"
+                        placeholder={isRTL ? "محمد أحمد" : "John Doe"}
                         value={formData.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="company">Company Name</Label>
+                      <Label htmlFor="company">{t("quote.company")}</Label>
                       <Input
                         id="company"
                         name="company"
-                        placeholder="Your Company"
+                        placeholder={isRTL ? "اسم شركتك" : "Your Company"}
                         value={formData.company}
                         onChange={handleChange}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">Email Address *</Label>
+                      <Label htmlFor="email">{t("quote.email")} *</Label>
                       <Input
                         id="email"
                         name="email"
@@ -129,7 +131,7 @@ const Quote = () => {
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Label htmlFor="phone">{t("quote.phone")} *</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -147,42 +149,42 @@ const Quote = () => {
                 <div>
                   <h2 className="font-heading font-bold text-xl text-foreground mb-6 flex items-center gap-3">
                     <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-accent-foreground text-sm font-bold">2</div>
-                    Shipment Details
+                    {t("quote.shipmentDetails")}
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label>Service Type *</Label>
+                      <Label>{t("quote.serviceType")} *</Label>
                       <Select 
                         value={formData.serviceType} 
                         onValueChange={(value) => setFormData({...formData, serviceType: value})}
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select service" />
+                          <SelectValue placeholder={t("quote.selectService")} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="air">Air Cargo</SelectItem>
-                          <SelectItem value="sea">Sea Cargo</SelectItem>
-                          <SelectItem value="land">Land Transport</SelectItem>
-                          <SelectItem value="express">Express Delivery</SelectItem>
+                          <SelectItem value="air">{t("services.air")}</SelectItem>
+                          <SelectItem value="sea">{t("services.sea")}</SelectItem>
+                          <SelectItem value="land">{t("services.land")}</SelectItem>
+                          <SelectItem value="express">{t("services.express")}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label>Cargo Type *</Label>
+                      <Label>{t("quote.cargoType")} *</Label>
                       <Select 
                         value={formData.cargoType} 
                         onValueChange={(value) => setFormData({...formData, cargoType: value})}
                       >
                         <SelectTrigger>
-                          <SelectValue placeholder="Select cargo type" />
+                          <SelectValue placeholder={t("quote.selectCargo")} />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="general">General Cargo</SelectItem>
-                          <SelectItem value="fragile">Fragile Items</SelectItem>
-                          <SelectItem value="perishable">Perishable Goods</SelectItem>
-                          <SelectItem value="hazardous">Hazardous Materials</SelectItem>
-                          <SelectItem value="vehicles">Vehicles</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
+                          <SelectItem value="general">{t("quote.generalCargo")}</SelectItem>
+                          <SelectItem value="fragile">{t("quote.fragile")}</SelectItem>
+                          <SelectItem value="perishable">{t("quote.perishable")}</SelectItem>
+                          <SelectItem value="hazardous">{t("quote.hazardous")}</SelectItem>
+                          <SelectItem value="vehicles">{t("quote.vehicles")}</SelectItem>
+                          <SelectItem value="other">{t("quote.other")}</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
@@ -193,32 +195,32 @@ const Quote = () => {
                 <div>
                   <h2 className="font-heading font-bold text-xl text-foreground mb-6 flex items-center gap-3">
                     <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-accent-foreground text-sm font-bold">3</div>
-                    Origin & Destination
+                    {t("quote.originDest")}
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-4">
                       <div className="flex items-center gap-2 text-foreground font-medium">
                         <MapPin className="w-4 h-4 text-accent" />
-                        Origin
+                        {t("quote.originLabel")}
                       </div>
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label htmlFor="originCountry">Country *</Label>
+                          <Label htmlFor="originCountry">{t("quote.country")} *</Label>
                           <Input
                             id="originCountry"
                             name="originCountry"
-                            placeholder="e.g., UAE"
+                            placeholder={isRTL ? "مثال: الإمارات" : "e.g., UAE"}
                             value={formData.originCountry}
                             onChange={handleChange}
                             required
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="originCity">City *</Label>
+                          <Label htmlFor="originCity">{t("quote.city")} *</Label>
                           <Input
                             id="originCity"
                             name="originCity"
-                            placeholder="e.g., Dubai"
+                            placeholder={isRTL ? "مثال: دبي" : "e.g., Dubai"}
                             value={formData.originCity}
                             onChange={handleChange}
                             required
@@ -229,26 +231,26 @@ const Quote = () => {
                     <div className="space-y-4">
                       <div className="flex items-center gap-2 text-foreground font-medium">
                         <MapPin className="w-4 h-4 text-accent" />
-                        Destination
+                        {t("quote.destLabel")}
                       </div>
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label htmlFor="destinationCountry">Country *</Label>
+                          <Label htmlFor="destinationCountry">{t("quote.country")} *</Label>
                           <Input
                             id="destinationCountry"
                             name="destinationCountry"
-                            placeholder="e.g., India"
+                            placeholder={isRTL ? "مثال: الهند" : "e.g., India"}
                             value={formData.destinationCountry}
                             onChange={handleChange}
                             required
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="destinationCity">City *</Label>
+                          <Label htmlFor="destinationCity">{t("quote.city")} *</Label>
                           <Input
                             id="destinationCity"
                             name="destinationCity"
-                            placeholder="e.g., Mumbai"
+                            placeholder={isRTL ? "مثال: مومباي" : "e.g., Mumbai"}
                             value={formData.destinationCity}
                             onChange={handleChange}
                             required
@@ -263,19 +265,19 @@ const Quote = () => {
                 <div>
                   <h2 className="font-heading font-bold text-xl text-foreground mb-6 flex items-center gap-3">
                     <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-accent-foreground text-sm font-bold">4</div>
-                    Cargo Specifications
+                    {t("quote.cargoSpecs")}
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="weight" className="flex items-center gap-2">
                         <Weight className="w-4 h-4 text-muted-foreground" />
-                        Approximate Weight (kg) *
+                        {t("quote.weight")} *
                       </Label>
                       <Input
                         id="weight"
                         name="weight"
                         type="text"
-                        placeholder="e.g., 50 kg"
+                        placeholder={isRTL ? "مثال: 50 كجم" : "e.g., 50 kg"}
                         value={formData.weight}
                         onChange={handleChange}
                         required
@@ -284,23 +286,23 @@ const Quote = () => {
                     <div className="space-y-2">
                       <Label htmlFor="dimensions" className="flex items-center gap-2">
                         <Ruler className="w-4 h-4 text-muted-foreground" />
-                        Dimensions (L x W x H cm)
+                        {t("quote.dimensions")}
                       </Label>
                       <Input
                         id="dimensions"
                         name="dimensions"
-                        placeholder="e.g., 100 x 50 x 50"
+                        placeholder={isRTL ? "مثال: 100 × 50 × 50" : "e.g., 100 x 50 x 50"}
                         value={formData.dimensions}
                         onChange={handleChange}
                       />
                     </div>
                   </div>
                   <div className="mt-6 space-y-2">
-                    <Label htmlFor="description">Additional Details</Label>
+                    <Label htmlFor="description">{t("quote.additionalDetails")}</Label>
                     <Textarea
                       id="description"
                       name="description"
-                      placeholder="Tell us more about your shipment requirements, special handling instructions, or any questions..."
+                      placeholder={t("quote.additionalPlaceholder")}
                       rows={4}
                       value={formData.description}
                       onChange={handleChange}
@@ -309,22 +311,22 @@ const Quote = () => {
                 </div>
 
                 <Button type="submit" variant="accent" size="xl" className="w-full">
-                  <Send className="w-5 h-5 mr-2" />
-                  Request Free Quote
+                  <Send className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                  {t("quote.submit")}
                 </Button>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-accent" />
-                    Response within 2 hours
+                    {t("quote.response2hrs")}
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-accent" />
-                    No hidden fees
+                    {t("quote.noHiddenFees")}
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-accent" />
-                    100% Free
+                    {t("quote.free100")}
                   </div>
                 </div>
               </form>
