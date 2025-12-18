@@ -2,29 +2,32 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Package, Phone } from "lucide-react";
-
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { 
-    name: "Services", 
-    href: "/services",
-    subLinks: [
-      { name: "Air Cargo", href: "/services/air-cargo" },
-      { name: "Sea Cargo", href: "/services/sea-cargo" },
-      { name: "Land Transport", href: "/services/land-transport" },
-      { name: "Express Delivery", href: "/services/express-delivery" },
-    ]
-  },
-  { name: "Coverage", href: "/coverage" },
-  { name: "Track Shipment", href: "/track" },
-  { name: "Contact", href: "/contact" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const location = useLocation();
+  const { t, isRTL } = useLanguage();
+
+  const navLinks = [
+    { name: t("nav.home"), href: "/" },
+    { name: t("nav.about"), href: "/about" },
+    { 
+      name: t("nav.services"), 
+      href: "/services",
+      subLinks: [
+        { name: t("services.air"), href: "/services/air-cargo" },
+        { name: t("services.sea"), href: "/services/sea-cargo" },
+        { name: t("services.land"), href: "/services/land-transport" },
+        { name: t("services.express"), href: "/services/express-delivery" },
+      ]
+    },
+    { name: t("nav.coverage"), href: "/coverage" },
+    { name: t("nav.track"), href: "/track" },
+    { name: t("nav.contact"), href: "/contact" },
+  ];
 
   const isActive = (href: string) => location.pathname === href;
 
@@ -46,7 +49,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <div key={link.name} className="relative group">
+              <div key={link.href} className="relative group">
                 {link.subLinks ? (
                   <div 
                     className="relative"
@@ -64,11 +67,11 @@ const Navbar = () => {
                       {link.name}
                     </Link>
                     {servicesOpen && (
-                      <div className="absolute top-full left-0 pt-2 animate-fade-in">
+                      <div className={`absolute top-full ${isRTL ? 'right-0' : 'left-0'} pt-2 animate-fade-in`}>
                         <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
                           {link.subLinks.map((subLink) => (
                             <Link
-                              key={subLink.name}
+                              key={subLink.href}
                               to={subLink.href}
                               className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                             >
@@ -97,14 +100,15 @@ const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
+            <LanguageSwitcher />
             <Button variant="outline" size="sm" asChild>
               <a href="tel:+971XXXXXXX" className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                Call Us
+                {isRTL ? "اتصل بنا" : "Call Us"}
               </a>
             </Button>
             <Button variant="navPrimary" size="sm" asChild>
-              <Link to="/quote">Get Quote</Link>
+              <Link to="/quote">{t("nav.quote")}</Link>
             </Button>
           </div>
 
@@ -122,7 +126,7 @@ const Navbar = () => {
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-2">
               {navLinks.map((link) => (
-                <div key={link.name}>
+                <div key={link.href}>
                   <Link
                     to={link.href}
                     className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
@@ -135,10 +139,10 @@ const Navbar = () => {
                     {link.name}
                   </Link>
                   {link.subLinks && (
-                    <div className="ml-4 mt-1 space-y-1">
+                    <div className={`${isRTL ? 'mr-4' : 'ml-4'} mt-1 space-y-1`}>
                       {link.subLinks.map((subLink) => (
                         <Link
-                          key={subLink.name}
+                          key={subLink.href}
                           to={subLink.href}
                           className="block px-4 py-2 text-sm text-muted-foreground hover:text-foreground rounded-lg transition-colors"
                           onClick={() => setIsOpen(false)}
@@ -151,14 +155,15 @@ const Navbar = () => {
                 </div>
               ))}
               <div className="flex flex-col gap-2 mt-4 px-4">
+                <LanguageSwitcher />
                 <Button variant="outline" asChild>
                   <a href="tel:+971XXXXXXX" className="flex items-center justify-center gap-2">
                     <Phone className="w-4 h-4" />
-                    Call Us
+                    {isRTL ? "اتصل بنا" : "Call Us"}
                   </a>
                 </Button>
                 <Button variant="navPrimary" asChild>
-                  <Link to="/quote" onClick={() => setIsOpen(false)}>Get Quote</Link>
+                  <Link to="/quote" onClick={() => setIsOpen(false)}>{t("nav.quote")}</Link>
                 </Button>
               </div>
             </div>
