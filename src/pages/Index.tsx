@@ -204,7 +204,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow">
               <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Globe className="w-8 h-8 text-accent" />
@@ -223,6 +223,17 @@ const Index = () => {
               <h3 className="font-heading font-semibold text-xl mb-4">India</h3>
               <p className="text-muted-foreground text-sm mb-4">
                 Extensive network covering all major cities including Mumbai, Delhi, Chennai, Bangalore, and more.
+              </p>
+              <p className="text-accent font-semibold">3-7 Days Delivery</p>
+            </div>
+            
+            <div className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Truck className="w-8 h-8 text-accent" />
+              </div>
+              <h3 className="font-heading font-semibold text-xl mb-4">Pakistan</h3>
+              <p className="text-muted-foreground text-sm mb-4">
+                Comprehensive service to Karachi, Lahore, Islamabad, Peshawar, Faisalabad, and all major cities.
               </p>
               <p className="text-accent font-semibold">3-7 Days Delivery</p>
             </div>
