@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Package, Phone } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-
+import logo from "@/assets/UltrafastCargoY Logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -36,14 +36,12 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Package className="w-6 h-6 text-accent-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-xl text-foreground leading-tight">Ultra Fast</span>
-              <span className="text-xs text-accent font-semibold tracking-wider uppercase">Cargo</span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src={logo} 
+              alt="Ultra Fast Cargo - International Shipping from UAE" 
+              className="h-14 w-auto group-hover:scale-105 transition-transform"
+            />
           </Link>
 
           {/* Desktop Navigation */}
