@@ -13,7 +13,6 @@ const Navbar = () => {
 
   const navLinks = [
     { name: t("nav.home"), href: "/" },
-    { name: t("nav.about"), href: "/about" },
     { 
       name: t("nav.services"), 
       href: "/services",
@@ -27,6 +26,7 @@ const Navbar = () => {
     { name: t("nav.coverage"), href: "/coverage" },
     { name: t("nav.track"), href: "/track" },
     { name: t("nav.contact"), href: "/contact" },
+    { name: t("nav.about"), href: "/about" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
