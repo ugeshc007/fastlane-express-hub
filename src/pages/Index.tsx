@@ -16,7 +16,7 @@ import SEOHead, {
 } from "@/components/SEOHead";
 import { 
   Plane, Ship, Truck, Zap, Shield, Globe, Clock, 
-  Award, Users, ArrowRight, CheckCircle 
+  Award, Users, ArrowRight, CheckCircle, FileText, Package, MapPin, Headphones
 } from "lucide-react";
 import heroImage from "@/assets/hero-cargo.jpg";
 import logo from "@/assets/UltrafastCargoY Logo.png";
@@ -196,7 +196,136 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section - Trust signals for E-E-A-T */}
+      {/* How It Works - Process Section */}
+      <section className="py-20 lg:py-28 bg-primary relative overflow-hidden" aria-labelledby="process-heading">
+        <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
+        <div className="relative container mx-auto px-4">
+          <header className="text-center mb-16">
+            <h2 id="process-heading" className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              {isRTL ? "كيف يعمل" : "How It Works"}
+            </h2>
+            <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
+              {isRTL ? "أربع خطوات بسيطة لتوصيل شحنتك" : "Four simple steps to get your shipment delivered"}
+            </p>
+          </header>
+          
+          <div className="grid md:grid-cols-4 gap-8 relative">
+            {/* Connecting Line */}
+            <div className="hidden md:block absolute top-16 left-[12%] right-[12%] h-1 bg-accent/30" aria-hidden="true">
+              <div className="absolute inset-0 bg-gradient-to-r from-accent via-accent to-accent/30 animate-pulse" />
+            </div>
+            
+            {[
+              { 
+                step: "01", 
+                icon: <FileText className="w-8 h-8" />, 
+                title: isRTL ? "طلب عرض سعر" : "Get a Quote", 
+                desc: isRTL ? "أخبرنا عن شحنتك واحصل على عرض سعر مجاني" : "Tell us about your shipment and get a free quote" 
+              },
+              { 
+                step: "02", 
+                icon: <Package className="w-8 h-8" />, 
+                title: isRTL ? "تجهيز الشحنة" : "Pack & Pickup", 
+                desc: isRTL ? "نقوم بجمع طردك من موقعك" : "We collect your package from your location" 
+              },
+              { 
+                step: "03", 
+                icon: <Truck className="w-8 h-8" />, 
+                title: isRTL ? "الشحن" : "Ship", 
+                desc: isRTL ? "تتبع شحنتك في الوقت الفعلي" : "Track your shipment in real-time" 
+              },
+              { 
+                step: "04", 
+                icon: <MapPin className="w-8 h-8" />, 
+                title: isRTL ? "التوصيل" : "Deliver", 
+                desc: isRTL ? "تسليم آمن إلى الوجهة" : "Safe delivery to destination" 
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative text-center group">
+                <div className="relative z-10 w-24 h-24 bg-card rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold text-sm">
+                    {item.step}
+                  </div>
+                  <div className="text-accent">{item.icon}</div>
+                </div>
+                <h3 className="font-heading font-bold text-xl text-primary-foreground mb-2">{item.title}</h3>
+                <p className="text-primary-foreground/70 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Features Grid - Icons & Vectors */}
+      <section className="py-20 lg:py-28 bg-background" aria-labelledby="features-heading">
+        <div className="container mx-auto px-4">
+          <header className="text-center mb-16">
+            <h2 id="features-heading" className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {isRTL ? "لماذا تختارنا" : "Why Ship With Us"}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {isRTL ? "نقدم خدمات شحن متكاملة بأعلى معايير الجودة" : "Complete shipping solutions with the highest quality standards"}
+            </p>
+          </header>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { 
+                icon: <MapPin className="w-7 h-7" />, 
+                title: isRTL ? "توصيل من الباب إلى الباب" : "Door-to-Door Delivery", 
+                desc: isRTL ? "خدمة استلام وتوصيل مباشرة" : "Direct pickup and delivery service" 
+              },
+              { 
+                icon: <Globe className="w-7 h-7" />, 
+                title: isRTL ? "تتبع فوري" : "Real-Time Tracking", 
+                desc: isRTL ? "تتبع شحنتك في أي وقت" : "Track your shipment anytime" 
+              },
+              { 
+                icon: <Headphones className="w-7 h-7" />, 
+                title: isRTL ? "دعم على مدار الساعة" : "24/7 Support", 
+                desc: isRTL ? "فريق دعم متاح دائماً" : "Support team always available" 
+              },
+              { 
+                icon: <Shield className="w-7 h-7" />, 
+                title: isRTL ? "تأمين كامل" : "Fully Insured", 
+                desc: isRTL ? "حماية شاملة لشحناتك" : "Complete protection for your cargo" 
+              },
+              { 
+                icon: <Clock className="w-7 h-7" />, 
+                title: isRTL ? "توصيل سريع" : "Fast Delivery", 
+                desc: isRTL ? "أوقات توصيل تنافسية" : "Competitive delivery times" 
+              },
+              { 
+                icon: <Award className="w-7 h-7" />, 
+                title: isRTL ? "خبرة 15+ سنة" : "15+ Years Experience", 
+                desc: isRTL ? "خبرة واسعة في الشحن الدولي" : "Extensive international shipping expertise" 
+              },
+              { 
+                icon: <FileText className="w-7 h-7" />, 
+                title: isRTL ? "تخليص جمركي" : "Customs Clearance", 
+                desc: isRTL ? "مساعدة في إجراءات الجمارك" : "Assistance with customs procedures" 
+              },
+              { 
+                icon: <Zap className="w-7 h-7" />, 
+                title: isRTL ? "شحن سريع" : "Express Shipping", 
+                desc: isRTL ? "خيارات شحن سريعة وعاجلة" : "Fast and urgent shipping options" 
+              },
+            ].map((feature, index) => (
+              <div 
+                key={index} 
+                className="bg-card rounded-xl p-6 border border-border hover:border-accent hover:shadow-lg transition-all group"
+              >
+                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                  {feature.icon}
+                </div>
+                <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{feature.title}</h3>
+                <p className="text-muted-foreground text-sm">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 lg:py-28 bg-secondary relative overflow-hidden" aria-labelledby="why-choose-heading">
         <div className="container mx-auto px-4">
           {/* Trust Badge */}
