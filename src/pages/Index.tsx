@@ -86,7 +86,7 @@ const Index = () => {
           role="img"
           aria-label="Ultra Fast Cargo shipping and logistics operations"
         />
-        <div className="absolute inset-0 bg-primary/80" />
+        <div className="absolute inset-0 bg-primary/60" />
         
         {/* Animated background elements */}
         <div className="absolute top-40 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-float" aria-hidden="true" />
