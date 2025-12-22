@@ -6,34 +6,35 @@
 
 @layer base {
   :root {
-    /* Ultra Fast Cargo Design System */
-    /* Primary - Deep Navy Blue */
+    /* Ultra Fast Cargo Brand Colors */
+    /* Navy Blue: #1e3a5f | Orange: #f97316 */
+    
     --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --foreground: 213 41% 24%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 213 41% 24%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 213 41% 24%;
 
-    /* Navy Blue Primary */
-    --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
+    /* Navy Blue Primary - #1e3a5f */
+    --primary: 213 52% 24%;
+    --primary-foreground: 0 0% 100%;
 
     /* Light gray secondary */
     --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary-foreground: 213 52% 24%;
 
     --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 213 20% 50%;
 
-    /* Orange Accent - Speed & Energy */
+    /* Orange Accent - #f97316 */
     --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
@@ -41,10 +42,10 @@
 
     --radius: 0.75rem;
 
-    /* Custom Colors */
-    --navy: 222 47% 11%;
-    --navy-light: 222 35% 20%;
-    --navy-dark: 222 55% 6%;
+    /* Brand Colors */
+    --navy: 213 52% 24%;
+    --navy-light: 213 45% 35%;
+    --navy-dark: 213 58% 18%;
     --orange: 25 95% 53%;
     --orange-light: 25 100% 60%;
     --orange-dark: 25 90% 45%;
@@ -52,15 +53,15 @@
     --warning: 38 92% 50%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(222 47% 11%) 0%, hsl(222 35% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(213 52% 24%) 0%, hsl(213 45% 35%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(25 100% 60%) 100%);
     --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(222 47% 11% / 0.1), 0 2px 4px -2px hsl(222 47% 11% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(222 47% 11% / 0.1), 0 4px 6px -4px hsl(222 47% 11% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(222 47% 11% / 0.1), 0 8px 10px -6px hsl(222 47% 11% / 0.1);
+    --shadow-sm: 0 1px 2px 0 hsl(213 52% 24% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(213 52% 24% / 0.1), 0 2px 4px -2px hsl(213 52% 24% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(213 52% 24% / 0.1), 0 4px 6px -4px hsl(213 52% 24% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(213 52% 24% / 0.1), 0 8px 10px -6px hsl(213 52% 24% / 0.1);
     --shadow-glow: 0 0 40px hsl(25 95% 53% / 0.3);
 
     /* Sidebar */
@@ -75,32 +76,32 @@
   }
 
   .dark {
-    --background: 222 47% 6%;
+    --background: 213 52% 10%;
     --foreground: 210 40% 98%;
 
-    --card: 222 47% 11%;
+    --card: 213 52% 15%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 47% 11%;
+    --popover: 213 52% 15%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 35% 20%;
+    --secondary: 213 45% 25%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 222 35% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 213 45% 25%;
+    --muted-foreground: 213 20% 65%;
 
     --accent: 25 95% 53%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 222 35% 20%;
-    --input: 222 35% 20%;
+    --border: 213 45% 25%;
+    --input: 213 45% 25%;
     --ring: 25 95% 53%;
 
     --sidebar-background: 240 5.9% 10%;
@@ -152,7 +153,7 @@
     background-image: 
       radial-gradient(circle at 20% 50%, hsl(25 95% 53% / 0.1) 0%, transparent 50%),
       radial-gradient(circle at 80% 20%, hsl(25 95% 53% / 0.05) 0%, transparent 40%),
-      radial-gradient(circle at 40% 80%, hsl(222 47% 11% / 0.05) 0%, transparent 40%);
+      radial-gradient(circle at 40% 80%, hsl(213 52% 24% / 0.05) 0%, transparent 40%);
   }
 
   .animate-float {
