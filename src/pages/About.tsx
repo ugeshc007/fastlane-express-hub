@@ -45,7 +45,7 @@ const About = () => {
             alt="Cargo truck and container ship at port - Ultra Fast Cargo logistics" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-primary/85" />
+          <div className="absolute inset-0 bg-primary/60" />
         </div>
         <div className="absolute inset-0 bg-hero-pattern opacity-50" aria-hidden="true" />
         <div className="relative container mx-auto px-4">
