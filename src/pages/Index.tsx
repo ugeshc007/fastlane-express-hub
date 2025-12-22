@@ -19,6 +19,7 @@ import {
   Award, Users, ArrowRight, CheckCircle 
 } from "lucide-react";
 import heroImage from "@/assets/hero-cargo.jpg";
+import logo from "@/assets/UltrafastCargoY Logo.png";
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -327,24 +328,38 @@ const Index = () => {
         <div className="absolute top-10 right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl" aria-hidden="true" />
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-accent/5 rounded-full blur-3xl" aria-hidden="true" />
         
-        <div className="relative container mx-auto px-4 text-center">
-          <h2 id="cta-heading" className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-            {t("cta.title")} <span className="text-accent">{t("cta.titleHighlight")}</span>
-          </h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-10">
-            {t("cta.subtitle")}
-          </p>
-          <nav className={`flex flex-col sm:flex-row gap-4 justify-center ${isRTL ? 'sm:flex-row-reverse' : ''}`} aria-label="Get started">
-            <Button variant="hero" size="xl" asChild>
-              <Link to="/quote" className="flex items-center gap-2">
-                {t("cta.getQuote")}
-                <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} aria-hidden="true" />
-              </Link>
-            </Button>
-            <Button variant="heroOutline" size="xl" asChild>
-              <a href="tel:+971XXXXXXX" aria-label="Call Ultra Fast Cargo">{t("cta.callNow")}</a>
-            </Button>
-          </nav>
+        <div className="relative container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Logo on the left */}
+            <div className="hidden lg:flex justify-center items-center">
+              <img 
+                src={logo} 
+                alt="Ultra Fast Cargo Logo" 
+                className="w-80 h-auto brightness-0 invert opacity-90"
+              />
+            </div>
+            
+            {/* CTA Content on the right */}
+            <div className="text-center lg:text-left">
+              <h2 id="cta-heading" className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+                {t("cta.title")} <span className="text-accent">{t("cta.titleHighlight")}</span>
+              </h2>
+              <p className="text-primary-foreground/80 text-lg max-w-2xl mb-10">
+                {t("cta.subtitle")}
+              </p>
+              <nav className={`flex flex-col sm:flex-row gap-4 justify-center lg:justify-start ${isRTL ? 'sm:flex-row-reverse' : ''}`} aria-label="Get started">
+                <Button variant="hero" size="xl" asChild>
+                  <Link to="/quote" className="flex items-center gap-2">
+                    {t("cta.getQuote")}
+                    <ArrowRight className={`w-5 h-5 ${isRTL ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  </Link>
+                </Button>
+                <Button variant="heroOutline" size="xl" asChild>
+                  <a href="tel:+971XXXXXXX" aria-label="Call Ultra Fast Cargo">{t("cta.callNow")}</a>
+                </Button>
+              </nav>
+            </div>
+          </div>
         </div>
       </section>
 
