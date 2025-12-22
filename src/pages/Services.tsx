@@ -10,8 +10,9 @@ import SEOHead, {
   generateFAQSchema,
 } from "@/components/SEOHead";
 import { 
-  Plane, Ship, Truck, Zap, ArrowRight, CheckCircle
+  Plane, Ship, Truck, Zap, ArrowRight, CheckCircle, Package, Clock, Shield
 } from "lucide-react";
+import globalLogisticsImage from "@/assets/global-logistics-network.jpg";
 
 const services = [
   {
@@ -120,19 +121,92 @@ const Services = () => {
       />
       <Navbar />
       
-      <header className="relative pt-32 pb-20 bg-primary overflow-hidden" role="banner">
-        <div className="absolute inset-0 bg-hero-pattern" aria-hidden="true" />
+      {/* Hero Section with Global Logistics Image */}
+      <header className="relative pt-32 pb-20 overflow-hidden" role="banner">
+        <div className="absolute inset-0">
+          <img 
+            src={globalLogisticsImage} 
+            alt="Global logistics network with airplane, ships and trucks" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
+        <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               Our <span className="text-accent">Shipping Services</span>
             </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl">
+            <p className="text-primary-foreground/90 text-lg md:text-xl mb-4">
               Comprehensive cargo and logistics solutions tailored to your needs.
+            </p>
+            <p className="text-accent font-semibold text-xl">
+              Connecting Businesses Across 150+ Countries
             </p>
           </div>
         </div>
       </header>
+
+      {/* Services Overview with Image */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Image Side */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={globalLogisticsImage} 
+                alt="Global logistics network connecting continents" 
+                className="w-full h-80 lg:h-[400px] object-cover"
+              />
+            </div>
+            
+            {/* Content Side */}
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Your Complete <span className="text-accent">Logistics Partner</span>
+              </h2>
+              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+                We specialize in end-to-end cargo solutions, from pickup to delivery. Whether you need fast air freight, cost-effective sea cargo, reliable land transport, or urgent express delivery — we have you covered.
+              </p>
+              
+              {/* Service Quick Icons */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {services.map((service) => (
+                  <Link 
+                    key={service.id} 
+                    to={service.link}
+                    className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border hover:border-accent hover:shadow-md transition-all group"
+                  >
+                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                      {service.icon}
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground">{service.title}</p>
+                      <p className="text-xs text-muted-foreground">{service.deliveryTime}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+
+              {/* Key Benefits */}
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Clock className="w-4 h-4 text-accent" />
+                  <span>24/7 Support</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Shield className="w-4 h-4 text-accent" />
+                  <span>Fully Insured</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <Package className="w-4 h-4 text-accent" />
+                  <span>Real-time Tracking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <main className="py-20 bg-background">
         <div className="container mx-auto px-4">
