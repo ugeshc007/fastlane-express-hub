@@ -3,19 +3,56 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead, { 
+  generateOrganizationSchema, 
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+} from "@/components/SEOHead";
 import { 
   Target, Eye, Users, Award, Globe, CheckCircle, ArrowRight
 } from "lucide-react";
 
 const About = () => {
+  const structuredData = [
+    generateOrganizationSchema(),
+    generateWebPageSchema({
+      name: "About Ultra Fast Cargo - Leading UAE Logistics Company",
+      description: "Learn about Ultra Fast Cargo, Dubai's trusted cargo company since 2009. 15+ years experience, 50K+ annual shipments, serving 150+ countries.",
+      url: "/about",
+    }),
+    generateBreadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "About Us", url: "/about" },
+    ]),
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="About Us - UAE's Trusted Cargo & Logistics Company Since 2009"
+        description="Ultra Fast Cargo: Dubai-based logistics company with 15+ years experience. 50K+ annual shipments to 150+ countries. Trusted by 5000+ businesses for air, sea & land freight."
+        keywords="about Ultra Fast Cargo, cargo company Dubai, logistics UAE history, freight forwarding company, shipping company about us"
+        structuredData={structuredData}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-hero-pattern" />
+      <header className="relative pt-32 pb-20 bg-primary overflow-hidden" role="banner">
+        <div className="absolute inset-0 bg-hero-pattern" aria-hidden="true" />
         <div className="relative container mx-auto px-4">
+          <nav className="text-sm text-primary-foreground/60 mb-4" aria-label="Breadcrumb">
+            <ol className="flex items-center gap-2 justify-center" itemScope itemType="https://schema.org/BreadcrumbList">
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                <Link to="/" itemProp="item" className="hover:text-accent"><span itemProp="name">Home</span></Link>
+                <meta itemProp="position" content="1" />
+              </li>
+              <li aria-hidden="true">/</li>
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                <span itemProp="name" className="text-accent">About Us</span>
+                <meta itemProp="position" content="2" />
+              </li>
+            </ol>
+          </nav>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               About <span className="text-accent">Ultra Fast Cargo</span>
@@ -25,7 +62,7 @@ const About = () => {
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Story Section */}
       <section className="py-20 bg-background">
