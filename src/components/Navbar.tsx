@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img 
@@ -56,7 +56,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={link.href}
-                      className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                      className={`px-5 py-2.5 rounded-lg text-base font-semibold transition-colors ${
                         isActive(link.href) 
                           ? "text-accent bg-accent/10" 
                           : "text-muted-foreground hover:text-foreground hover:bg-muted"
@@ -83,7 +83,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={link.href}
-                    className={`px-4 py-2 rounded-lg font-medium transition-colors ${
+                    className={`px-5 py-2.5 rounded-lg text-base font-semibold transition-colors ${
                       isActive(link.href) 
                         ? "text-accent bg-accent/10" 
                         : "text-muted-foreground hover:text-foreground hover:bg-muted"
