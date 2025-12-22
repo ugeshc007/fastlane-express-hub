@@ -11,6 +11,8 @@ import Contact from "./pages/Contact";
 import Track from "./pages/Track";
 import Quote from "./pages/Quote";
 import Coverage from "./pages/Coverage";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +33,8 @@ const App = () => (
             <Route path="/track" element={<Track />} />
             <Route path="/quote" element={<Quote />} />
             <Route path="/coverage" element={<Coverage />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
