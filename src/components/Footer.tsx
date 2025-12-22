@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Package, MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
+import logo from "@/assets/UltrafastCargoY Logo.png";
 const Footer = () => {
   const { t, isRTL } = useLanguage();
 
@@ -27,14 +27,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                <Package className="w-6 h-6 text-accent-foreground" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-xl leading-tight">Ultra Fast</span>
-                <span className="text-xs text-accent font-semibold tracking-wider uppercase">Cargo</span>
-              </div>
+            <Link to="/" className="flex items-center">
+              <img 
+                src={logo} 
+                alt="Ultra Fast Cargo - International Shipping from UAE" 
+                className="h-14 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               {isRTL 
