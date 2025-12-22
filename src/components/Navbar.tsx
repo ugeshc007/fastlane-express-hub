@@ -40,7 +40,7 @@ const Navbar = () => {
             <img 
               src={logo} 
               alt="Ultra Fast Cargo - International Shipping from UAE" 
-              className="h-14 w-auto group-hover:scale-105 transition-transform"
+              className="h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform"
             />
           </Link>
 
