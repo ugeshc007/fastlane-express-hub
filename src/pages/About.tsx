@@ -11,6 +11,7 @@ import SEOHead, {
 import { 
   Target, Eye, Users, Award, Globe, CheckCircle, ArrowRight
 } from "lucide-react";
+import cargoImage from "@/assets/cargo-truck-ship.jpg";
 
 const About = () => {
   const structuredData = [
@@ -36,9 +37,17 @@ const About = () => {
       />
       <Navbar />
       
-      {/* Hero Section */}
-      <header className="relative pt-32 pb-20 bg-primary overflow-hidden" role="banner">
-        <div className="absolute inset-0 bg-hero-pattern" aria-hidden="true" />
+      {/* Hero Section with Cargo Image */}
+      <header className="relative pt-32 pb-20 overflow-hidden" role="banner">
+        <div className="absolute inset-0">
+          <img 
+            src={cargoImage} 
+            alt="Cargo truck and container ship at port - Ultra Fast Cargo logistics" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/85" />
+        </div>
+        <div className="absolute inset-0 bg-hero-pattern opacity-50" aria-hidden="true" />
         <div className="relative container mx-auto px-4">
           <nav className="text-sm text-primary-foreground/60 mb-4" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 justify-center" itemScope itemType="https://schema.org/BreadcrumbList">
@@ -57,8 +66,11 @@ const About = () => {
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
               About <span className="text-accent">Ultra Fast Cargo</span>
             </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl">
+            <p className="text-primary-foreground/80 text-lg md:text-xl mb-4">
               Your trusted partner in global logistics since 2009. We deliver excellence across UAE, GCC, India, and worldwide.
+            </p>
+            <p className="text-accent font-semibold text-xl md:text-2xl">
+              Trusted by Businesses Worldwide for Fast, Secure Delivery.
             </p>
           </div>
         </div>

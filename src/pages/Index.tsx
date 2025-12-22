@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import heroImage from "@/assets/hero-cargo.jpg";
 import logo from "@/assets/UltrafastCargoY Logo.png";
+import cargoTruckShip from "@/assets/cargo-truck-ship.jpg";
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -196,10 +197,36 @@ const Index = () => {
       </section>
 
       {/* Why Choose Us Section - Trust signals for E-E-A-T */}
-      <section className="py-20 lg:py-28 bg-secondary" aria-labelledby="why-choose-heading">
+      <section className="py-20 lg:py-28 bg-secondary relative overflow-hidden" aria-labelledby="why-choose-heading">
         <div className="container mx-auto px-4">
+          {/* Trust Badge */}
+          <div className="text-center mb-12">
+            <p className="inline-block bg-accent/10 text-accent px-6 py-2 rounded-full font-semibold text-lg">
+              Trusted by Businesses Worldwide for Fast, Secure Delivery
+            </p>
+          </div>
+          
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <article>
+            {/* Image Side */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl order-2 lg:order-1">
+              <img 
+                src={cargoTruckShip} 
+                alt="Cargo truck and container ship at port - Professional logistics services" 
+                className="w-full h-80 lg:h-96 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-primary-foreground font-heading font-bold text-2xl">
+                  15+ Years of Excellence
+                </p>
+                <p className="text-primary-foreground/80">
+                  Serving 150+ countries worldwide
+                </p>
+              </div>
+            </div>
+            
+            {/* Content Side */}
+            <article className="order-1 lg:order-2">
               <h2 id="why-choose-heading" className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
                 {t("why.title")} <span className="text-accent">{t("why.titleHighlight")}</span>
               </h2>
@@ -226,29 +253,30 @@ const Index = () => {
                 <Link to="/about">{t("why.learnMore")}</Link>
               </Button>
             </article>
-            
-            <div className="grid grid-cols-2 gap-6" role="list" aria-label="Key features">
-              <FeatureCard
-                icon={<Clock className="w-6 h-6" aria-hidden="true" />}
-                title={t("why.fastDelivery")}
-                description={t("why.fastDeliveryDesc")}
-              />
-              <FeatureCard
-                icon={<Shield className="w-6 h-6" aria-hidden="true" />}
-                title={t("why.secureHandling")}
-                description={t("why.secureHandlingDesc")}
-              />
-              <FeatureCard
-                icon={<Globe className="w-6 h-6" aria-hidden="true" />}
-                title={t("why.globalCoverage")}
-                description={t("why.globalCoverageDesc")}
-              />
-              <FeatureCard
-                icon={<Award className="w-6 h-6" aria-hidden="true" />}
-                title={t("why.qualityService")}
-                description={t("why.qualityServiceDesc")}
-              />
-            </div>
+          </div>
+          
+          {/* Feature Cards */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16" role="list" aria-label="Key features">
+            <FeatureCard
+              icon={<Clock className="w-6 h-6" aria-hidden="true" />}
+              title={t("why.fastDelivery")}
+              description={t("why.fastDeliveryDesc")}
+            />
+            <FeatureCard
+              icon={<Shield className="w-6 h-6" aria-hidden="true" />}
+              title={t("why.secureHandling")}
+              description={t("why.secureHandlingDesc")}
+            />
+            <FeatureCard
+              icon={<Globe className="w-6 h-6" aria-hidden="true" />}
+              title={t("why.globalCoverage")}
+              description={t("why.globalCoverageDesc")}
+            />
+            <FeatureCard
+              icon={<Award className="w-6 h-6" aria-hidden="true" />}
+              title={t("why.qualityService")}
+              description={t("why.qualityServiceDesc")}
+            />
           </div>
         </div>
       </section>
