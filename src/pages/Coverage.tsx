@@ -3,6 +3,11 @@ import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead, { 
+  generateBreadcrumbSchema,
+  generateWebPageSchema,
+  generateFAQSchema,
+} from "@/components/SEOHead";
 import { 
   Globe, MapPin, Plane, Ship, Truck, ArrowRight, CheckCircle
 } from "lucide-react";
@@ -12,77 +17,129 @@ const regions = [
     name: "UAE",
     countries: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Fujairah", "Ras Al Khaimah", "Umm Al Quwain"],
     delivery: "Same Day - 24 Hours",
-    icon: <Truck className="w-6 h-6" />,
+    icon: <Truck className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "GCC Countries",
     countries: ["Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Oman"],
     delivery: "1-3 Days",
-    icon: <Truck className="w-6 h-6" />,
+    icon: <Truck className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "India",
     countries: ["Mumbai", "Delhi", "Chennai", "Bangalore", "Hyderabad", "Kolkata", "All Major Cities"],
     delivery: "3-7 Days",
-    icon: <Plane className="w-6 h-6" />,
+    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "Pakistan",
     countries: ["Karachi", "Lahore", "Islamabad", "Peshawar", "Faisalabad", "Multan", "Rawalpindi", "Quetta", "Sialkot", "Gujranwala"],
     delivery: "3-7 Days",
-    icon: <Plane className="w-6 h-6" />,
+    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "Asia Pacific",
     countries: ["China", "Singapore", "Malaysia", "Thailand", "Indonesia", "Philippines", "Vietnam", "Japan", "South Korea"],
     delivery: "5-10 Days",
-    icon: <Plane className="w-6 h-6" />,
+    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "Europe",
     countries: ["UK", "Germany", "France", "Italy", "Netherlands", "Spain", "Belgium", "All EU Countries"],
     delivery: "5-10 Days",
-    icon: <Plane className="w-6 h-6" />,
+    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "Americas",
     countries: ["USA", "Canada", "Brazil", "Mexico", "Argentina", "Colombia", "Chile"],
     delivery: "7-14 Days",
-    icon: <Plane className="w-6 h-6" />,
+    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "Africa",
     countries: ["South Africa", "Kenya", "Nigeria", "Egypt", "Morocco", "Tanzania", "Ethiopia"],
     delivery: "7-14 Days",
-    icon: <Ship className="w-6 h-6" />,
+    icon: <Ship className="w-6 h-6" aria-hidden="true" />,
   },
   {
     name: "Oceania",
     countries: ["Australia", "New Zealand", "Fiji", "Papua New Guinea"],
     delivery: "10-14 Days",
-    icon: <Ship className="w-6 h-6" />,
+    icon: <Ship className="w-6 h-6" aria-hidden="true" />,
   },
 ];
 
+// FAQs for AEO - Coverage specific
+const coverageFAQs = [
+  {
+    question: "Which countries does Ultra Fast Cargo ship to from UAE?",
+    answer: "Ultra Fast Cargo ships to 150+ countries worldwide including all GCC countries (Saudi Arabia, Qatar, Kuwait, Bahrain, Oman), India, Pakistan, Europe, USA, UK, Australia, and more."
+  },
+  {
+    question: "How long does shipping from Dubai to Saudi Arabia take?",
+    answer: "Shipping from Dubai to Saudi Arabia typically takes 1-3 business days via our land transport or express delivery services."
+  },
+  {
+    question: "Can I ship cargo from Dubai to Pakistan?",
+    answer: "Yes, we offer regular cargo services from Dubai to all major cities in Pakistan including Karachi, Lahore, Islamabad, Peshawar, and more. Delivery takes 3-7 business days."
+  },
+  {
+    question: "What are the shipping times to India from UAE?",
+    answer: "Air cargo from UAE to India takes 3-7 business days. We deliver to all major Indian cities including Mumbai, Delhi, Chennai, Bangalore, Hyderabad, and Kolkata."
+  }
+];
+
 const Coverage = () => {
+  const structuredData = [
+    generateWebPageSchema({
+      name: "Shipping Coverage - UAE to 150+ Countries Worldwide",
+      description: "Ultra Fast Cargo shipping coverage from Dubai to GCC, India, Pakistan, Europe, USA, and 150+ countries. Check delivery times and destinations.",
+      url: "/coverage",
+    }),
+    generateBreadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Coverage", url: "/coverage" },
+    ]),
+    generateFAQSchema(coverageFAQs),
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Global Shipping Coverage - UAE to 150+ Countries"
+        description="Ship from Dubai to GCC, India, Pakistan, Europe, USA & 150+ countries. Check delivery times: UAE same-day, GCC 1-3 days, India/Pakistan 3-7 days. Free quotes available."
+        keywords="shipping from Dubai, cargo to India, freight to Pakistan, UAE to GCC shipping, international cargo coverage, worldwide freight delivery"
+        structuredData={structuredData}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 bg-primary overflow-hidden">
-        <div className="absolute inset-0 bg-hero-pattern" />
+      <header className="relative pt-32 pb-20 bg-primary overflow-hidden" role="banner">
+        <div className="absolute inset-0 bg-hero-pattern" aria-hidden="true" />
         <div className="relative container mx-auto px-4">
+          <nav className="text-sm text-primary-foreground/60 mb-4" aria-label="Breadcrumb">
+            <ol className="flex items-center gap-2 justify-center" itemScope itemType="https://schema.org/BreadcrumbList">
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                <Link to="/" itemProp="item" className="hover:text-accent"><span itemProp="name">Home</span></Link>
+                <meta itemProp="position" content="1" />
+              </li>
+              <li aria-hidden="true">/</li>
+              <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
+                <span itemProp="name" className="text-accent">Coverage</span>
+                <meta itemProp="position" content="2" />
+              </li>
+            </ol>
+          </nav>
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
-              Our Global <span className="text-accent">Coverage</span>
+              Our Global <span className="text-accent">Shipping Coverage</span>
             </h1>
             <p className="text-primary-foreground/80 text-lg md:text-xl">
               From Dubai to every corner of the world. We serve 150+ countries across all continents with reliable shipping solutions.
             </p>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* Stats */}
       <section className="py-12 bg-secondary">
@@ -214,6 +271,23 @@ const Coverage = () => {
             <Button variant="heroOutline" size="xl" asChild>
               <a href="tel:+971XXXXXXX">Call Now</a>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section for AEO */}
+      <section className="py-16 bg-secondary" aria-labelledby="coverage-faq-heading">
+        <div className="container mx-auto px-4">
+          <h2 id="coverage-faq-heading" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
+            Shipping Coverage FAQ
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {coverageFAQs.map((faq, index) => (
+              <article key={index} className="bg-card rounded-xl p-6 border border-border">
+                <h3 className="font-heading font-semibold text-foreground mb-2">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
