@@ -12,7 +12,7 @@ import SEOHead, {
 import { 
   Plane, Ship, Truck, Zap, ArrowRight, CheckCircle, Package, Clock, Shield
 } from "lucide-react";
-import globalLogisticsImage from "@/assets/global-logistics-network.jpg";
+import servicesHeroImage from "@/assets/services-hero.jpg";
 
 const services = [
   {
@@ -125,7 +125,7 @@ const Services = () => {
       <header className="relative pt-32 pb-20 overflow-hidden" role="banner">
         <div className="absolute inset-0">
           <img 
-            src={globalLogisticsImage} 
+            src={servicesHeroImage} 
             alt="Global logistics network with airplane, ships and trucks" 
             className="w-full h-full object-cover"
           />
@@ -154,7 +154,7 @@ const Services = () => {
             {/* Image Side */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src={globalLogisticsImage} 
+                src={servicesHeroImage} 
                 alt="Global logistics network connecting continents" 
                 className="w-full h-80 lg:h-[400px] object-cover"
               />
