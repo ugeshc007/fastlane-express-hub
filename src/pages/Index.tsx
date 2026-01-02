@@ -21,6 +21,10 @@ import {
 import heroImage from "@/assets/hero-cargo.jpg";
 import logo from "@/assets/UltrafastCargoY Logo.png";
 import cargoTruckShip from "@/assets/cargo-truck-ship.jpg";
+import airCargoImage from "@/assets/air-cargo-service.jpg";
+import seaCargoImage from "@/assets/sea-cargo-service.jpg";
+import landTransportImage from "@/assets/land-transport-service.jpg";
+import expressDeliveryImage from "@/assets/express-delivery-service.jpg";
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -161,22 +165,22 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Shipping services">
             <ServiceCard
-              icon={<Plane className="w-7 h-7" aria-hidden="true" />}
+              image={airCargoImage}
               title={t("services.air")}
               description={t("services.airDesc")}
             />
             <ServiceCard
-              icon={<Ship className="w-7 h-7" aria-hidden="true" />}
+              image={seaCargoImage}
               title={t("services.sea")}
               description={t("services.seaDesc")}
             />
             <ServiceCard
-              icon={<Truck className="w-7 h-7" aria-hidden="true" />}
+              image={landTransportImage}
               title={t("services.land")}
               description={t("services.landDesc")}
             />
             <ServiceCard
-              icon={<Zap className="w-7 h-7" aria-hidden="true" />}
+              image={expressDeliveryImage}
               title={t("services.express")}
               description={t("services.expressDesc")}
             />
