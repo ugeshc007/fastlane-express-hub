@@ -136,9 +136,6 @@ const Index = () => {
               </aside>
             </article>
             
-            <aside className="animate-slide-in-right" style={{ animationDelay: "0.2s" }} aria-label="Track your shipment">
-              <TrackingBox />
-            </aside>
           </div>
         </div>
         
