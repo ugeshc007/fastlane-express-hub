@@ -202,9 +202,10 @@ interface CountryComboboxProps {
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  hasError?: boolean;
 }
 
-export function CountryCombobox({ value, onChange, placeholder = "Select Country" }: CountryComboboxProps) {
+export function CountryCombobox({ value, onChange, placeholder = "Select Country", hasError = false }: CountryComboboxProps) {
   const [open, setOpen] = React.useState(false);
 
   const selectedCountry = ALL_COUNTRIES.find(c => c.name.toLowerCase() === value?.toLowerCase());
@@ -216,7 +217,7 @@ export function CountryCombobox({ value, onChange, placeholder = "Select Country
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-full justify-between font-normal"
+          className={cn("w-full justify-between font-normal", hasError && "border-destructive")}
         >
           {selectedCountry ? (
             <span className="flex items-center gap-2">

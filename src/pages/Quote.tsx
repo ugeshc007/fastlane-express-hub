@@ -15,10 +15,18 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
-  Send, Package, MapPin, Weight, Ruler, CheckCircle
+  Send, Package, MapPin, Weight, Ruler, CheckCircle, AlertCircle
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { CountryCombobox } from "@/components/CountryCombobox";
+
+interface FormErrors {
+  name?: string;
+  phone?: string;
+  serviceType?: string;
+  cargoType?: string;
+  destinationCountry?: string;
+}
 
 const Quote = () => {
   const { toast } = useToast();
@@ -38,9 +46,56 @@ const Quote = () => {
     cargoType: "",
     description: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = isRTL ? "الاسم مطلوب" : "Name is required";
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = isRTL ? "رقم الهاتف مطلوب" : "Phone number is required";
+    }
+    
+    if (!formData.serviceType) {
+      newErrors.serviceType = isRTL ? "نوع الخدمة مطلوب" : "Service type is required";
+    }
+    
+    if (!formData.cargoType) {
+      newErrors.cargoType = isRTL ? "نوع الشحنة مطلوب" : "Cargo type is required";
+    }
+    
+    if (!formData.destinationCountry) {
+      newErrors.destinationCountry = isRTL ? "دولة الوجهة مطلوبة" : "Destination country is required";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Mark all required fields as touched
+    setTouched({
+      name: true,
+      phone: true,
+      serviceType: true,
+      cargoType: true,
+      destinationCountry: true,
+    });
+    
+    if (!validateForm()) {
+      toast({
+        title: isRTL ? "خطأ في النموذج" : "Form Error",
+        description: isRTL ? "يرجى ملء جميع الحقول المطلوبة" : "Please fill in all required fields",
+        variant: "destructive",
+      });
+      return;
+    }
     
     // Build WhatsApp message with all form data
     const serviceLabels: Record<string, string> = {
@@ -98,7 +153,28 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors({ ...errors, [name]: undefined });
+    }
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched({ ...touched, [field]: true });
+    validateForm();
+  };
+
+  const ErrorMessage = ({ field }: { field: keyof FormErrors }) => {
+    if (!errors[field] || !touched[field]) return null;
+    return (
+      <p className="text-sm text-destructive flex items-center gap-1 mt-1">
+        <AlertCircle className="w-3 h-3" />
+        {errors[field]}
+      </p>
+    );
   };
 
   return (
@@ -141,8 +217,10 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                         placeholder={isRTL ? "محمد أحمد" : "John Doe"}
                         value={formData.name}
                         onChange={handleChange}
-                        required
+                        onBlur={() => handleBlur("name")}
+                        className={errors.name && touched.name ? "border-destructive" : ""}
                       />
+                      <ErrorMessage field="name" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="company">{t("quote.company")}</Label>
@@ -174,8 +252,10 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                         placeholder="+971 XX XXX XXXX"
                         value={formData.phone}
                         onChange={handleChange}
-                        required
+                        onBlur={() => handleBlur("phone")}
+                        className={errors.phone && touched.phone ? "border-destructive" : ""}
                       />
+                      <ErrorMessage field="phone" />
                     </div>
                   </div>
                 </div>
@@ -188,12 +268,18 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label>{t("quote.serviceType")}</Label>
+                      <Label>{t("quote.serviceType")} *</Label>
                       <Select 
                         value={formData.serviceType} 
-                        onValueChange={(value) => setFormData({...formData, serviceType: value})}
+                        onValueChange={(value) => {
+                          setFormData({...formData, serviceType: value});
+                          setTouched({ ...touched, serviceType: true });
+                          if (errors.serviceType) {
+                            setErrors({ ...errors, serviceType: undefined });
+                          }
+                        }}
                       >
-                        <SelectTrigger>
+                        <SelectTrigger className={errors.serviceType && touched.serviceType ? "border-destructive" : ""}>
                           <SelectValue placeholder={t("quote.selectService")} />
                         </SelectTrigger>
                         <SelectContent>
@@ -203,14 +289,21 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                           <SelectItem value="express">{t("services.express")}</SelectItem>
                         </SelectContent>
                       </Select>
+                      <ErrorMessage field="serviceType" />
                     </div>
                     <div className="space-y-2">
-                      <Label>{t("quote.cargoType")}</Label>
+                      <Label>{t("quote.cargoType")} *</Label>
                       <Select 
                         value={formData.cargoType} 
-                        onValueChange={(value) => setFormData({...formData, cargoType: value})}
+                        onValueChange={(value) => {
+                          setFormData({...formData, cargoType: value});
+                          setTouched({ ...touched, cargoType: true });
+                          if (errors.cargoType) {
+                            setErrors({ ...errors, cargoType: undefined });
+                          }
+                        }}
                       >
-                        <SelectTrigger>
+                        <SelectTrigger className={errors.cargoType && touched.cargoType ? "border-destructive" : ""}>
                           <SelectValue placeholder={t("quote.selectCargo")} />
                         </SelectTrigger>
                         <SelectContent>
@@ -222,6 +315,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                           <SelectItem value="other">{t("quote.other")}</SelectItem>
                         </SelectContent>
                       </Select>
+                      <ErrorMessage field="cargoType" />
                     </div>
                   </div>
                 </div>
@@ -269,9 +363,17 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                           <Label>{t("quote.country")} *</Label>
                           <CountryCombobox
                             value={formData.destinationCountry}
-                            onChange={(value) => setFormData({...formData, destinationCountry: value})}
+                            onChange={(value) => {
+                              setFormData({...formData, destinationCountry: value});
+                              setTouched({ ...touched, destinationCountry: true });
+                              if (errors.destinationCountry) {
+                                setErrors({ ...errors, destinationCountry: undefined });
+                              }
+                            }}
                             placeholder={isRTL ? "اختر الدولة" : "Select Country"}
+                            hasError={!!errors.destinationCountry && !!touched.destinationCountry}
                           />
+                          <ErrorMessage field="destinationCountry" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="destinationCity">{t("quote.city")}</Label>
