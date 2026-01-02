@@ -548,12 +548,12 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Shipping destinations">
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
               <div className="flex items-center justify-center gap-2 mb-6 flex-wrap" aria-hidden="true">
-                <img src="https://flagcdn.com/w40/ae.png" srcSet="https://flagcdn.com/w80/ae.png 2x" width="32" height="24" alt="UAE flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/sa.png" srcSet="https://flagcdn.com/w80/sa.png 2x" width="32" height="24" alt="Saudi Arabia flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/qa.png" srcSet="https://flagcdn.com/w80/qa.png 2x" width="32" height="24" alt="Qatar flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/kw.png" srcSet="https://flagcdn.com/w80/kw.png 2x" width="32" height="24" alt="Kuwait flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/bh.png" srcSet="https://flagcdn.com/w80/bh.png 2x" width="32" height="24" alt="Bahrain flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/om.png" srcSet="https://flagcdn.com/w80/om.png 2x" width="32" height="24" alt="Oman flag" className="rounded-sm" />
+                <img src="https://flagcdn.com/w40/ae.png" srcSet="https://flagcdn.com/w80/ae.png 2x" width="32" height="24" alt="UAE flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/sa.png" srcSet="https://flagcdn.com/w80/sa.png 2x" width="32" height="24" alt="Saudi Arabia flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/qa.png" srcSet="https://flagcdn.com/w80/qa.png 2x" width="32" height="24" alt="Qatar flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/kw.png" srcSet="https://flagcdn.com/w80/kw.png 2x" width="32" height="24" alt="Kuwait flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/bh.png" srcSet="https://flagcdn.com/w80/bh.png 2x" width="32" height="24" alt="Bahrain flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/om.png" srcSet="https://flagcdn.com/w80/om.png 2x" width="32" height="24" alt="Oman flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.uaeGcc")}</h3>
               <p className="text-muted-foreground text-sm">
@@ -563,7 +563,7 @@ const Index = () => {
             
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
               <div className="flex items-center justify-center gap-2 mb-6 flex-wrap" aria-hidden="true">
-                <img src="https://flagcdn.com/w40/in.png" srcSet="https://flagcdn.com/w80/in.png 2x" width="32" height="24" alt="India flag" className="rounded-sm" />
+                <img src="https://flagcdn.com/w40/in.png" srcSet="https://flagcdn.com/w80/in.png 2x" width="32" height="24" alt="India flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.india")}</h3>
               <p className="text-muted-foreground text-sm">
@@ -573,7 +573,7 @@ const Index = () => {
             
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
               <div className="flex items-center justify-center gap-2 mb-6 flex-wrap" aria-hidden="true">
-                <img src="https://flagcdn.com/w40/pk.png" srcSet="https://flagcdn.com/w80/pk.png 2x" width="32" height="24" alt="Pakistan flag" className="rounded-sm" />
+                <img src="https://flagcdn.com/w40/pk.png" srcSet="https://flagcdn.com/w80/pk.png 2x" width="32" height="24" alt="Pakistan flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.pakistan")}</h3>
               <p className="text-muted-foreground text-sm">
@@ -583,12 +583,12 @@ const Index = () => {
             
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
               <div className="flex items-center justify-center gap-2 mb-6 flex-wrap" aria-hidden="true">
-                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="32" height="24" alt="UK flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/us.png" srcSet="https://flagcdn.com/w80/us.png 2x" width="32" height="24" alt="USA flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/au.png" srcSet="https://flagcdn.com/w80/au.png 2x" width="32" height="24" alt="Australia flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/de.png" srcSet="https://flagcdn.com/w80/de.png 2x" width="32" height="24" alt="Germany flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="32" height="24" alt="France flag" className="rounded-sm" />
-                <img src="https://flagcdn.com/w40/cn.png" srcSet="https://flagcdn.com/w80/cn.png 2x" width="32" height="24" alt="China flag" className="rounded-sm" />
+                <img src="https://flagcdn.com/w40/gb.png" srcSet="https://flagcdn.com/w80/gb.png 2x" width="32" height="24" alt="UK flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/us.png" srcSet="https://flagcdn.com/w80/us.png 2x" width="32" height="24" alt="USA flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/au.png" srcSet="https://flagcdn.com/w80/au.png 2x" width="32" height="24" alt="Australia flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/de.png" srcSet="https://flagcdn.com/w80/de.png 2x" width="32" height="24" alt="Germany flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/fr.png" srcSet="https://flagcdn.com/w80/fr.png 2x" width="32" height="24" alt="France flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
+                <img src="https://flagcdn.com/w40/cn.png" srcSet="https://flagcdn.com/w80/cn.png 2x" width="32" height="24" alt="China flag" className="rounded-sm transition-transform duration-200 hover:scale-125" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.worldwide")}</h3>
               <p className="text-muted-foreground text-sm">
