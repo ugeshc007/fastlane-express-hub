@@ -40,24 +40,59 @@ const Quote = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Build WhatsApp message with all form data
+    const serviceLabels: Record<string, string> = {
+      air: t("services.air"),
+      sea: t("services.sea"),
+      land: t("services.land"),
+      express: t("services.express"),
+    };
+    
+    const cargoLabels: Record<string, string> = {
+      general: t("quote.generalCargo"),
+      fragile: t("quote.fragile"),
+      perishable: t("quote.perishable"),
+      hazardous: t("quote.hazardous"),
+      vehicles: t("quote.vehicles"),
+      other: t("quote.other"),
+    };
+    
+    const message = `
+📦 *New Quote Request*
+
+👤 *Contact Information*
+• Name: ${formData.name}
+• Email: ${formData.email}
+• Phone: ${formData.phone}
+${formData.company ? `• Company: ${formData.company}` : ''}
+
+🚚 *Shipment Details*
+• Service Type: ${serviceLabels[formData.serviceType] || formData.serviceType}
+• Cargo Type: ${cargoLabels[formData.cargoType] || formData.cargoType}
+
+📍 *Origin*
+• ${formData.originCity}, ${formData.originCountry}
+
+📍 *Destination*
+• ${formData.destinationCity}, ${formData.destinationCountry}
+
+⚖️ *Cargo Specifications*
+• Weight: ${formData.weight}
+${formData.dimensions ? `• Dimensions: ${formData.dimensions}` : ''}
+${formData.description ? `\n📝 *Additional Details*\n${formData.description}` : ''}
+    `.trim();
+    
+    // WhatsApp number (same as WhatsAppButton)
+    const phoneNumber = "971501234567";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+    
     toast({
       title: t("quote.successTitle"),
-      description: t("quote.successDesc"),
-    });
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      serviceType: "",
-      originCountry: "",
-      originCity: "",
-      destinationCountry: "",
-      destinationCity: "",
-      weight: "",
-      dimensions: "",
-      cargoType: "",
-      description: "",
+      description: isRTL ? "سيتم فتح واتساب مع تفاصيل طلبك" : "WhatsApp will open with your quote details",
     });
   };
 
