@@ -33,6 +33,9 @@ import yearsExperienceImage from "@/assets/years-experience.jpg";
 import customsClearanceImage from "@/assets/customs-clearance.jpg";
 import expressShippingImage from "@/assets/express-shipping.jpg";
 import globalNetworkImage from "@/assets/global-network.jpg";
+import fastExpressDeliveryImage from "@/assets/fast-express-delivery.jpg";
+import secureHandlingImage from "@/assets/secure-handling.jpg";
+import qualityServiceImage from "@/assets/quality-service.jpg";
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -403,22 +406,22 @@ const Index = () => {
           {/* Feature Cards */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16" role="list" aria-label="Key features">
             <FeatureCard
-              icon={<Clock className="w-6 h-6" aria-hidden="true" />}
+              image={fastExpressDeliveryImage}
               title={t("why.fastDelivery")}
               description={t("why.fastDeliveryDesc")}
             />
             <FeatureCard
-              icon={<Shield className="w-6 h-6" aria-hidden="true" />}
+              image={secureHandlingImage}
               title={t("why.secureHandling")}
               description={t("why.secureHandlingDesc")}
             />
             <FeatureCard
-              icon={<Globe className="w-6 h-6" aria-hidden="true" />}
+              image={globalNetworkImage}
               title={t("why.globalCoverage")}
               description={t("why.globalCoverageDesc")}
             />
             <FeatureCard
-              icon={<Award className="w-6 h-6" aria-hidden="true" />}
+              image={qualityServiceImage}
               title={t("why.qualityService")}
               description={t("why.qualityServiceDesc")}
             />
