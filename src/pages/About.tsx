@@ -12,6 +12,12 @@ import {
   Target, Eye, Users, Award, Globe, CheckCircle, ArrowRight
 } from "lucide-react";
 import cargoImage from "@/assets/cargo-truck-ship.jpg";
+import aboutMission from "@/assets/about-mission.jpg";
+import aboutVision from "@/assets/about-vision.jpg";
+import valueReliability from "@/assets/value-reliability.jpg";
+import valueGlobal from "@/assets/value-global.jpg";
+import valueCustomer from "@/assets/value-customer.jpg";
+import valueExcellence from "@/assets/value-excellence.jpg";
 
 const About = () => {
   const structuredData = [
@@ -120,23 +126,27 @@ const About = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-card rounded-2xl p-8 border border-border">
-              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-accent" />
+            <div className="bg-card rounded-2xl overflow-hidden border border-border">
+              <div className="h-40 overflow-hidden">
+                <img src={aboutMission} alt="Our Mission" className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-heading font-bold text-2xl text-foreground mb-4">Our Mission</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To provide world-class cargo and logistics solutions that exceed customer expectations. We strive to deliver speed, reliability, and value in every shipment, helping businesses grow and individuals connect with loved ones around the world.
-              </p>
+              <div className="p-8">
+                <h3 className="font-heading font-bold text-2xl text-foreground mb-4">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To provide world-class cargo and logistics solutions that exceed customer expectations. We strive to deliver speed, reliability, and value in every shipment, helping businesses grow and individuals connect with loved ones around the world.
+                </p>
+              </div>
             </div>
-            <div className="bg-card rounded-2xl p-8 border border-border">
-              <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                <Eye className="w-7 h-7 text-accent" />
+            <div className="bg-card rounded-2xl overflow-hidden border border-border">
+              <div className="h-40 overflow-hidden">
+                <img src={aboutVision} alt="Our Vision" className="w-full h-full object-cover" />
               </div>
-              <h3 className="font-heading font-bold text-2xl text-foreground mb-4">Our Vision</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                To be the most trusted and preferred cargo company in the Middle East, known for innovation, reliability, and customer-centric services. We aim to set new standards in the logistics industry through technology and sustainable practices.
-              </p>
+              <div className="p-8">
+                <h3 className="font-heading font-bold text-2xl text-foreground mb-4">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To be the most trusted and preferred cargo company in the Middle East, known for innovation, reliability, and customer-centric services. We aim to set new standards in the logistics industry through technology and sustainable practices.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -156,17 +166,23 @@ const About = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: <CheckCircle className="w-6 h-6" />, title: "Reliability", desc: "We deliver on our promises, every single time" },
-              { icon: <Globe className="w-6 h-6" />, title: "Global Reach", desc: "Connecting businesses across 150+ countries" },
-              { icon: <Users className="w-6 h-6" />, title: "Customer First", desc: "Your satisfaction is our top priority" },
-              { icon: <Award className="w-6 h-6" />, title: "Excellence", desc: "Committed to the highest quality standards" },
+              { image: valueReliability, title: "Reliability", desc: "We deliver on our promises, every single time" },
+              { image: valueGlobal, title: "Global Reach", desc: "Connecting businesses across 150+ countries" },
+              { image: valueCustomer, title: "Customer First", desc: "Your satisfaction is our top priority" },
+              { image: valueExcellence, title: "Excellence", desc: "Committed to the highest quality standards" },
             ].map((value, index) => (
-              <div key={index} className="bg-card rounded-2xl p-6 border border-border text-center hover:shadow-lg transition-shadow">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4 text-accent-foreground">
-                  {value.icon}
+              <div key={index} className="bg-card rounded-2xl overflow-hidden border border-border text-center hover:shadow-lg transition-shadow group">
+                <div className="h-32 overflow-hidden">
+                  <img 
+                    src={value.image} 
+                    alt={value.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{value.title}</h3>
-                <p className="text-muted-foreground text-sm">{value.desc}</p>
+                <div className="p-5">
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{value.title}</h3>
+                  <p className="text-muted-foreground text-sm">{value.desc}</p>
+                </div>
               </div>
             ))}
           </div>
