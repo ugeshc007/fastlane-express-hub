@@ -494,6 +494,47 @@ const Index = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-20 lg:py-28 bg-secondary" aria-labelledby="faq-heading">
+        <div className="container mx-auto px-4">
+          <header className="text-center mb-16">
+            <h2 id="faq-heading" className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {isRTL ? "الأسئلة الشائعة" : "Frequently Asked Questions"}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {isRTL ? "إجابات على الأسئلة الأكثر شيوعاً حول خدمات الشحن لدينا" : "Answers to the most common questions about our shipping services"}
+            </p>
+          </header>
+          
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-4">
+              {homeFAQs.map((faq, index) => (
+                <details 
+                  key={index} 
+                  className="group bg-card rounded-xl border border-border overflow-hidden"
+                >
+                  <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-accent/5 transition-colors">
+                    <h3 className="font-heading font-semibold text-foreground text-left pr-4">
+                      {faq.question}
+                    </h3>
+                    <span className="shrink-0 w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center text-accent group-open:rotate-180 transition-transform">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </summary>
+                  <div className="px-6 pb-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 lg:py-28 bg-primary relative overflow-hidden" aria-labelledby="cta-heading">
         <div className="absolute inset-0 bg-hero-pattern opacity-50" aria-hidden="true" />
