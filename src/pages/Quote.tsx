@@ -84,7 +84,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
     `.trim();
     
     // WhatsApp number (same as WhatsAppButton)
-    const phoneNumber = "971501234567";
+    const phoneNumber = "971568962512";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp in new tab
