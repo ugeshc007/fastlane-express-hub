@@ -68,6 +68,12 @@ const testimonials = [
   }
 ];
 
+// Process images
+import processQuote from "@/assets/process-quote.jpg";
+import processPickup from "@/assets/process-pickup.jpg";
+import processShip from "@/assets/process-ship.jpg";
+import processDeliver from "@/assets/process-deliver.jpg";
+
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
   {
@@ -261,35 +267,39 @@ const Index = () => {
             {[
               { 
                 step: "01", 
-                icon: <FileText className="w-8 h-8" />, 
+                image: processQuote, 
                 title: isRTL ? "طلب عرض سعر" : "Get a Quote", 
                 desc: isRTL ? "أخبرنا عن شحنتك واحصل على عرض سعر مجاني" : "Tell us about your shipment and get a free quote" 
               },
               { 
                 step: "02", 
-                icon: <Package className="w-8 h-8" />, 
+                image: processPickup, 
                 title: isRTL ? "تجهيز الشحنة" : "Pack & Pickup", 
                 desc: isRTL ? "نقوم بجمع طردك من موقعك" : "We collect your package from your location" 
               },
               { 
                 step: "03", 
-                icon: <Truck className="w-8 h-8" />, 
+                image: processShip, 
                 title: isRTL ? "الشحن" : "Ship", 
                 desc: isRTL ? "تتبع شحنتك في الوقت الفعلي" : "Track your shipment in real-time" 
               },
               { 
                 step: "04", 
-                icon: <MapPin className="w-8 h-8" />, 
+                image: processDeliver, 
                 title: isRTL ? "التوصيل" : "Deliver", 
                 desc: isRTL ? "تسليم آمن إلى الوجهة" : "Safe delivery to destination" 
               },
             ].map((item, index) => (
               <div key={index} className="relative text-center group">
-                <div className="relative z-10 w-24 h-24 bg-card rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
-                  <div className="absolute -top-3 -right-3 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-bold text-sm">
+                <div className="relative z-10 w-28 h-28 rounded-2xl overflow-hidden mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-shadow">
+                  <img 
+                    src={item.image} 
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute -top-0 -right-0 w-8 h-8 bg-accent rounded-bl-xl flex items-center justify-center text-accent-foreground font-bold text-sm">
                     {item.step}
                   </div>
-                  <div className="text-accent">{item.icon}</div>
                 </div>
                 <h3 className="font-heading font-bold text-xl text-primary-foreground mb-2">{item.title}</h3>
                 <p className="text-primary-foreground/70 text-sm">{item.desc}</p>
