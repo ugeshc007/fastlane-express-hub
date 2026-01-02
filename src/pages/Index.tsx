@@ -25,6 +25,13 @@ import airCargoImage from "@/assets/air-cargo-service.jpg";
 import seaCargoImage from "@/assets/sea-cargo-service.jpg";
 import landTransportImage from "@/assets/land-transport-service.jpg";
 import expressDeliveryImage from "@/assets/express-delivery-service.jpg";
+import doorToDoorImage from "@/assets/door-to-door-delivery.jpg";
+import realTimeTrackingImage from "@/assets/real-time-tracking.jpg";
+import customerSupportImage from "@/assets/customer-support.jpg";
+import fastDeliveryImage from "@/assets/fast-delivery.jpg";
+import yearsExperienceImage from "@/assets/years-experience.jpg";
+import customsClearanceImage from "@/assets/customs-clearance.jpg";
+import expressShippingImage from "@/assets/express-shipping.jpg";
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -272,50 +279,57 @@ const Index = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
-                icon: <MapPin className="w-7 h-7" />, 
+                image: doorToDoorImage, 
                 title: isRTL ? "توصيل من الباب إلى الباب" : "Door-to-Door Delivery", 
                 desc: isRTL ? "خدمة استلام وتوصيل مباشرة" : "Direct pickup and delivery service" 
               },
               { 
-                icon: <Globe className="w-7 h-7" />, 
+                image: realTimeTrackingImage, 
                 title: isRTL ? "تتبع فوري" : "Real-Time Tracking", 
                 desc: isRTL ? "تتبع شحنتك في أي وقت" : "Track your shipment anytime" 
               },
               { 
-                icon: <Headphones className="w-7 h-7" />, 
+                image: customerSupportImage, 
                 title: isRTL ? "دعم على مدار الساعة" : "24/7 Support", 
                 desc: isRTL ? "فريق دعم متاح دائماً" : "Support team always available" 
               },
               { 
-                icon: <Clock className="w-7 h-7" />, 
+                image: fastDeliveryImage, 
                 title: isRTL ? "توصيل سريع" : "Fast Delivery", 
                 desc: isRTL ? "أوقات توصيل تنافسية" : "Competitive delivery times" 
               },
               { 
-                icon: <Award className="w-7 h-7" />, 
+                image: yearsExperienceImage, 
                 title: isRTL ? "خبرة 15+ سنة" : "15+ Years Experience", 
                 desc: isRTL ? "خبرة واسعة في الشحن الدولي" : "Extensive international shipping expertise" 
               },
               { 
-                icon: <FileText className="w-7 h-7" />, 
+                image: customsClearanceImage, 
                 title: isRTL ? "تخليص جمركي" : "Customs Clearance", 
                 desc: isRTL ? "مساعدة في إجراءات الجمارك" : "Assistance with customs procedures" 
               },
               { 
-                icon: <Zap className="w-7 h-7" />, 
+                image: expressShippingImage, 
                 title: isRTL ? "شحن سريع" : "Express Shipping", 
                 desc: isRTL ? "خيارات شحن سريعة وعاجلة" : "Fast and urgent shipping options" 
               },
             ].map((feature, index) => (
               <div 
                 key={index} 
-                className="bg-card rounded-xl p-6 border border-border hover:border-accent hover:shadow-lg transition-all group"
+                className="bg-card rounded-xl overflow-hidden border border-border hover:border-accent hover:shadow-lg transition-all group"
               >
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                  {feature.icon}
+                <div className="relative h-36 overflow-hidden">
+                  <img 
+                    src={feature.image} 
+                    alt={feature.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent" />
                 </div>
-                <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground text-sm">{feature.desc}</p>
+                <div className="p-5">
+                  <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground text-sm">{feature.desc}</p>
+                </div>
               </div>
             ))}
           </div>
