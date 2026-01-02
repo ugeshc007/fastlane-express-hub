@@ -230,7 +230,13 @@ const Services = () => {
             {services.map((service, index) => (
               <article key={service.id} className={`grid lg:grid-cols-2 gap-12 items-center`} itemScope itemType="https://schema.org/Service">
                 <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <div className="w-20 h-20 bg-accent/10 rounded-2xl flex items-center justify-center mb-6 text-accent">{service.icon}</div>
+                  <div className="w-24 h-24 rounded-2xl overflow-hidden mb-6 shadow-lg">
+                    <img 
+                      src={serviceImages[service.id]} 
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <h2 className="font-heading text-3xl font-bold text-foreground mb-4" itemProp="name">{service.title}</h2>
                   <p className="text-muted-foreground text-lg mb-6" itemProp="description">{service.description}</p>
                   <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
