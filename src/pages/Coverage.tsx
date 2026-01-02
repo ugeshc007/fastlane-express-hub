@@ -11,61 +11,70 @@ import SEOHead, {
 import { 
   Globe, MapPin, Plane, Ship, Truck, ArrowRight, CheckCircle
 } from "lucide-react";
+import regionUae from "@/assets/region-uae.jpg";
+import regionGcc from "@/assets/region-gcc.jpg";
+import regionIndia from "@/assets/region-india.jpg";
+import regionPakistan from "@/assets/region-pakistan.jpg";
+import regionAsia from "@/assets/region-asia.jpg";
+import regionEurope from "@/assets/region-europe.jpg";
+import regionAmericas from "@/assets/region-americas.jpg";
+import regionAfrica from "@/assets/region-africa.jpg";
+import regionOceania from "@/assets/region-oceania.jpg";
 
 const regions = [
   {
     name: "UAE",
     countries: ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Fujairah", "Ras Al Khaimah", "Umm Al Quwain"],
     delivery: "Same Day - 24 Hours",
-    icon: <Truck className="w-6 h-6" aria-hidden="true" />,
+    image: regionUae,
   },
   {
     name: "GCC Countries",
     countries: ["Saudi Arabia", "Qatar", "Kuwait", "Bahrain", "Oman"],
     delivery: "1-3 Days",
-    icon: <Truck className="w-6 h-6" aria-hidden="true" />,
+    image: regionGcc,
   },
   {
     name: "India",
     countries: ["Mumbai", "Delhi", "Chennai", "Bangalore", "Hyderabad", "Kolkata", "All Major Cities"],
     delivery: "3-7 Days",
-    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
+    image: regionIndia,
   },
   {
     name: "Pakistan",
     countries: ["Karachi", "Lahore", "Islamabad", "Peshawar", "Faisalabad", "Multan", "Rawalpindi", "Quetta", "Sialkot", "Gujranwala"],
     delivery: "3-7 Days",
-    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
+    image: regionPakistan,
   },
   {
     name: "Asia Pacific",
     countries: ["China", "Singapore", "Malaysia", "Thailand", "Indonesia", "Philippines", "Vietnam", "Japan", "South Korea"],
     delivery: "5-10 Days",
-    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
+    image: regionAsia,
   },
   {
     name: "Europe",
     countries: ["UK", "Germany", "France", "Italy", "Netherlands", "Spain", "Belgium", "All EU Countries"],
     delivery: "5-10 Days",
-    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
+    image: regionEurope,
   },
   {
     name: "Americas",
     countries: ["USA", "Canada", "Brazil", "Mexico", "Argentina", "Colombia", "Chile"],
     delivery: "7-14 Days",
-    icon: <Plane className="w-6 h-6" aria-hidden="true" />,
+    image: regionAmericas,
   },
   {
     name: "Africa",
     countries: ["South Africa", "Kenya", "Nigeria", "Egypt", "Morocco", "Tanzania", "Ethiopia"],
     delivery: "7-14 Days",
-    icon: <Ship className="w-6 h-6" aria-hidden="true" />,
+    image: regionAfrica,
   },
   {
     name: "Oceania",
     countries: ["Australia", "New Zealand", "Fiji", "Papua New Guinea"],
     delivery: "10-14 Days",
-    icon: <Ship className="w-6 h-6" aria-hidden="true" />,
+    image: regionOceania,
   },
 ];
 
@@ -172,31 +181,40 @@ const Coverage = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regions.map((region, index) => (
               <div 
                 key={index} 
-                className="bg-card rounded-2xl p-6 border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 group"
+                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 group"
               >
-                <div className="w-14 h-14 bg-accent/10 rounded-xl flex items-center justify-center mb-4 text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                  {region.icon}
-                </div>
-                <h3 className="font-heading font-bold text-xl text-foreground mb-2">{region.name}</h3>
-                <div className="inline-flex items-center gap-1 text-sm text-accent font-medium mb-4">
-                  <span>{region.delivery}</span>
-                </div>
-                <div className="space-y-2">
-                  {region.countries.slice(0, 5).map((country, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <MapPin className="w-3 h-3 text-accent shrink-0" />
-                      {country}
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={region.image} 
+                    alt={region.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="font-heading font-bold text-xl text-foreground">{region.name}</h3>
+                    <div className="inline-flex items-center gap-1 text-sm text-accent font-medium">
+                      <span>{region.delivery}</span>
                     </div>
-                  ))}
-                  {region.countries.length > 5 && (
-                    <p className="text-sm text-muted-foreground">
-                      +{region.countries.length - 5} more locations
-                    </p>
-                  )}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <div className="space-y-2">
+                    {region.countries.slice(0, 5).map((country, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <MapPin className="w-3 h-3 text-accent shrink-0" />
+                        {country}
+                      </div>
+                    ))}
+                    {region.countries.length > 5 && (
+                      <p className="text-sm text-accent font-medium">
+                        +{region.countries.length - 5} more locations
+                      </p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}
