@@ -60,7 +60,7 @@ const FlagImage = ({ code, name }: { code: string; name: string }) => {
       width="16"
       height="12"
       alt={`${name} flag`}
-      className="rounded-sm shrink-0"
+      className="rounded-sm shrink-0 transition-transform duration-200 hover:scale-125"
     />
   );
 };
