@@ -283,11 +283,6 @@ const Index = () => {
                 desc: isRTL ? "فريق دعم متاح دائماً" : "Support team always available" 
               },
               { 
-                icon: <Shield className="w-7 h-7" />, 
-                title: isRTL ? "تأمين كامل" : "Fully Insured", 
-                desc: isRTL ? "حماية شاملة لشحناتك" : "Complete protection for your cargo" 
-              },
-              { 
                 icon: <Clock className="w-7 h-7" />, 
                 title: isRTL ? "توصيل سريع" : "Fast Delivery", 
                 desc: isRTL ? "أوقات توصيل تنافسية" : "Competitive delivery times" 
