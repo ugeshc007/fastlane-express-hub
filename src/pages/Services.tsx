@@ -13,6 +13,18 @@ import {
   Plane, Ship, Truck, Zap, ArrowRight, CheckCircle, Package, Clock, Shield
 } from "lucide-react";
 import servicesHeroImage from "@/assets/services-hero.jpg";
+import airCargoImage from "@/assets/air-cargo-service.jpg";
+import seaCargoImage from "@/assets/sea-cargo-service.jpg";
+import landTransportImage from "@/assets/land-transport-service.jpg";
+import expressDeliveryImage from "@/assets/express-delivery-service.jpg";
+
+// Map service id to image
+const serviceImages: Record<string, string> = {
+  "air-cargo": airCargoImage,
+  "sea-cargo": seaCargoImage,
+  "land-transport": landTransportImage,
+  "express-delivery": expressDeliveryImage,
+};
 
 const services = [
   {
@@ -175,10 +187,14 @@ const Services = () => {
                   <Link 
                     key={service.id} 
                     to={service.link}
-                    className="flex items-center gap-3 p-4 bg-card rounded-xl border border-border hover:border-accent hover:shadow-md transition-all group"
+                    className="flex items-center gap-3 p-3 bg-card rounded-xl border border-border hover:border-accent hover:shadow-md transition-all group overflow-hidden"
                   >
-                    <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                      {service.icon}
+                    <div className="w-14 h-14 rounded-lg overflow-hidden shrink-0">
+                      <img 
+                        src={serviceImages[service.id]} 
+                        alt={service.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
                     </div>
                     <div>
                       <p className="font-semibold text-foreground">{service.title}</p>
