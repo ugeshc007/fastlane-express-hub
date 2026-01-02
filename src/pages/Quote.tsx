@@ -175,7 +175,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="email">{t("quote.email")} *</Label>
+                      <Label htmlFor="email">{t("quote.email")}</Label>
                       <Input
                         id="email"
                         name="email"
@@ -183,7 +183,6 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                         placeholder="john@example.com"
                         value={formData.email}
                         onChange={handleChange}
-                        required
                       />
                     </div>
                     <div className="space-y-2">
@@ -209,7 +208,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                   </h2>
                   <div className="grid sm:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <Label>{t("quote.serviceType")} *</Label>
+                      <Label>{t("quote.serviceType")}</Label>
                       <Select 
                         value={formData.serviceType} 
                         onValueChange={(value) => setFormData({...formData, serviceType: value})}
@@ -226,7 +225,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                       </Select>
                     </div>
                     <div className="space-y-2">
-                      <Label>{t("quote.cargoType")} *</Label>
+                      <Label>{t("quote.cargoType")}</Label>
                       <Select 
                         value={formData.cargoType} 
                         onValueChange={(value) => setFormData({...formData, cargoType: value})}
@@ -261,7 +260,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                       </div>
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label>{t("quote.country")} *</Label>
+                          <Label>{t("quote.country")}</Label>
                           <Select 
                             value={formData.originCountry} 
                             onValueChange={(value) => setFormData({...formData, originCountry: value})}
@@ -277,14 +276,13 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                           </Select>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="originCity">{t("quote.city")} *</Label>
+                          <Label htmlFor="originCity">{t("quote.city")}</Label>
                           <Input
                             id="originCity"
                             name="originCity"
                             placeholder={isRTL ? "مثال: دبي" : "e.g., Dubai"}
                             value={formData.originCity}
                             onChange={handleChange}
-                            required
                           />
                         </div>
                       </div>
@@ -312,14 +310,13 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                           </Select>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="destinationCity">{t("quote.city")} *</Label>
+                          <Label htmlFor="destinationCity">{t("quote.city")}</Label>
                           <Input
                             id="destinationCity"
                             name="destinationCity"
                             placeholder={isRTL ? "مثال: مومباي" : "e.g., Mumbai"}
                             value={formData.destinationCity}
                             onChange={handleChange}
-                            required
                           />
                         </div>
                       </div>
@@ -337,7 +334,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                     <div className="space-y-2">
                       <Label htmlFor="weight" className="flex items-center gap-2">
                         <Weight className="w-4 h-4 text-muted-foreground" />
-                        {t("quote.weight")} *
+                        {t("quote.weight")}
                       </Label>
                       <Input
                         id="weight"
@@ -346,7 +343,6 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                         placeholder={isRTL ? "مثال: 50 كجم" : "e.g., 50 kg"}
                         value={formData.weight}
                         onChange={handleChange}
-                        required
                       />
                     </div>
                     <div className="space-y-2">
