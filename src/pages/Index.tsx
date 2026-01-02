@@ -428,10 +428,9 @@ const Index = () => {
                 <Globe className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.uaeGcc")}</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+              <p className="text-muted-foreground text-sm">
                 {t("coverage.uaeGccDesc")}
               </p>
-              <p className="text-accent font-semibold"><time>1-3</time> {t("coverage.daysDelivery")}</p>
             </article>
             
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
@@ -439,10 +438,9 @@ const Index = () => {
                 <Users className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.india")}</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+              <p className="text-muted-foreground text-sm">
                 {t("coverage.indiaDesc")}
               </p>
-              <p className="text-accent font-semibold"><time>3-7</time> {t("coverage.daysDelivery")}</p>
             </article>
             
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
@@ -450,10 +448,9 @@ const Index = () => {
                 <Truck className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.pakistan")}</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+              <p className="text-muted-foreground text-sm">
                 {t("coverage.pakistanDesc")}
               </p>
-              <p className="text-accent font-semibold"><time>3-7</time> {t("coverage.daysDelivery")}</p>
             </article>
             
             <article className="bg-card rounded-2xl p-8 border border-border text-center hover:shadow-lg transition-shadow" role="listitem">
@@ -461,10 +458,9 @@ const Index = () => {
                 <Plane className="w-8 h-8 text-accent" />
               </div>
               <h3 className="font-heading font-semibold text-xl mb-4">{t("coverage.worldwide")}</h3>
-              <p className="text-muted-foreground text-sm mb-4">
+              <p className="text-muted-foreground text-sm">
                 {t("coverage.worldwideDesc")}
               </p>
-              <p className="text-accent font-semibold"><time>5-14</time> {t("coverage.daysDelivery")}</p>
             </article>
           </div>
           
