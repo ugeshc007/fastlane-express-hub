@@ -19,6 +19,27 @@ import {
 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
+// Standard country list
+const COUNTRIES = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Argentina", "Armenia", "Australia",
+  "Austria", "Azerbaijan", "Bahrain", "Bangladesh", "Belarus", "Belgium", "Bhutan", "Bolivia",
+  "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Cambodia", "Cameroon",
+  "Canada", "Chad", "Chile", "China", "Colombia", "Costa Rica", "Croatia", "Cyprus", "Czech Republic",
+  "Denmark", "Djibouti", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Estonia", "Ethiopia",
+  "Fiji", "Finland", "France", "Georgia", "Germany", "Ghana", "Greece", "Guatemala", "Honduras",
+  "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy",
+  "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kuwait", "Kyrgyzstan", "Laos", "Latvia",
+  "Lebanon", "Libya", "Lithuania", "Luxembourg", "Macau", "Madagascar", "Malaysia", "Maldives", "Malta",
+  "Mauritius", "Mexico", "Moldova", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar",
+  "Namibia", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Nigeria", "North Macedonia", "Norway",
+  "Oman", "Pakistan", "Panama", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar",
+  "Romania", "Russia", "Rwanda", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Singapore",
+  "Slovakia", "Slovenia", "Somalia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sudan",
+  "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Tunisia", "Turkey",
+  "Turkmenistan", "UAE", "Uganda", "Ukraine", "United Kingdom", "United States", "Uruguay", "Uzbekistan",
+  "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+];
+
 const Quote = () => {
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
@@ -240,15 +261,20 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                       </div>
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label htmlFor="originCountry">{t("quote.country")} *</Label>
-                          <Input
-                            id="originCountry"
-                            name="originCountry"
-                            placeholder={isRTL ? "مثال: الإمارات" : "e.g., UAE"}
-                            value={formData.originCountry}
-                            onChange={handleChange}
-                            required
-                          />
+                          <Label>{t("quote.country")} *</Label>
+                          <Select 
+                            value={formData.originCountry} 
+                            onValueChange={(value) => setFormData({...formData, originCountry: value})}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder={isRTL ? "اختر الدولة" : "Select Country"} />
+                            </SelectTrigger>
+                            <SelectContent className="max-h-[300px]">
+                              {COUNTRIES.map((country) => (
+                                <SelectItem key={country} value={country}>{country}</SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="originCity">{t("quote.city")} *</Label>
@@ -270,15 +296,20 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
                       </div>
                       <div className="space-y-4">
                         <div className="space-y-2">
-                          <Label htmlFor="destinationCountry">{t("quote.country")} *</Label>
-                          <Input
-                            id="destinationCountry"
-                            name="destinationCountry"
-                            placeholder={isRTL ? "مثال: الهند" : "e.g., India"}
-                            value={formData.destinationCountry}
-                            onChange={handleChange}
-                            required
-                          />
+                          <Label>{t("quote.country")} *</Label>
+                          <Select 
+                            value={formData.destinationCountry} 
+                            onValueChange={(value) => setFormData({...formData, destinationCountry: value})}
+                          >
+                            <SelectTrigger>
+                              <SelectValue placeholder={isRTL ? "اختر الدولة" : "Select Country"} />
+                            </SelectTrigger>
+                            <SelectContent className="max-h-[300px]">
+                              {COUNTRIES.map((country) => (
+                                <SelectItem key={country} value={country}>{country}</SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="destinationCity">{t("quote.city")} *</Label>
