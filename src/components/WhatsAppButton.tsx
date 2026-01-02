@@ -13,13 +13,9 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50"
     >
-      <Button 
-        variant="whatsapp" 
-        size="icon"
-        className="w-14 h-14 rounded-full animate-pulse-glow p-2"
-      >
-        <img src={whatsappLogo} alt="WhatsApp" className="w-8 h-8" />
-      </Button>
+      <div className="w-14 h-14 rounded-xl overflow-hidden shadow-lg hover:scale-110 transition-transform animate-pulse-glow">
+        <img src={whatsappLogo} alt="WhatsApp" className="w-full h-full object-cover" />
+      </div>
     </a>
   );
 };
