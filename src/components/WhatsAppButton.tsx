@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import whatsappLogo from "@/assets/whatsapp-logo.png";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "+971XXXXXXX"; // Replace with actual number
+  const phoneNumber = "+971568962512";
   const message = "Hello! I'm interested in your cargo services.";
   const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
 
