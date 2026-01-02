@@ -21,6 +21,49 @@ import regionEurope from "@/assets/region-europe.jpg";
 import regionAmericas from "@/assets/region-americas.jpg";
 import regionAfrica from "@/assets/region-africa.jpg";
 import regionOceania from "@/assets/region-oceania.jpg";
+// Country to ISO code mapping for flags
+const countryToCode: Record<string, string> = {
+  // UAE Emirates (use UAE flag)
+  "Dubai": "AE", "Abu Dhabi": "AE", "Sharjah": "AE", "Ajman": "AE", 
+  "Fujairah": "AE", "Ras Al Khaimah": "AE", "Umm Al Quwain": "AE",
+  // GCC
+  "Saudi Arabia": "SA", "Qatar": "QA", "Kuwait": "KW", "Bahrain": "BH", "Oman": "OM",
+  // India cities (use India flag)
+  "Mumbai": "IN", "Delhi": "IN", "Chennai": "IN", "Bangalore": "IN", 
+  "Hyderabad": "IN", "Kolkata": "IN", "All Major Cities": "",
+  // Pakistan cities (use Pakistan flag)
+  "Karachi": "PK", "Lahore": "PK", "Islamabad": "PK", "Peshawar": "PK", 
+  "Faisalabad": "PK", "Multan": "PK", "Rawalpindi": "PK", "Quetta": "PK", 
+  "Sialkot": "PK", "Gujranwala": "PK",
+  // Asia Pacific
+  "China": "CN", "Singapore": "SG", "Malaysia": "MY", "Thailand": "TH", 
+  "Indonesia": "ID", "Philippines": "PH", "Vietnam": "VN", "Japan": "JP", "South Korea": "KR",
+  // Europe
+  "UK": "GB", "Germany": "DE", "France": "FR", "Italy": "IT", 
+  "Netherlands": "NL", "Spain": "ES", "Belgium": "BE", "All EU Countries": "EU",
+  // Americas
+  "USA": "US", "Canada": "CA", "Brazil": "BR", "Mexico": "MX", 
+  "Argentina": "AR", "Colombia": "CO", "Chile": "CL",
+  // Africa
+  "South Africa": "ZA", "Kenya": "KE", "Nigeria": "NG", "Egypt": "EG", 
+  "Morocco": "MA", "Tanzania": "TZ", "Ethiopia": "ET",
+  // Oceania
+  "Australia": "AU", "New Zealand": "NZ", "Fiji": "FJ", "Papua New Guinea": "PG",
+};
+
+const FlagImage = ({ code, name }: { code: string; name: string }) => {
+  if (!code) return null;
+  return (
+    <img
+      src={`https://flagcdn.com/w20/${code.toLowerCase()}.png`}
+      srcSet={`https://flagcdn.com/w40/${code.toLowerCase()}.png 2x`}
+      width="16"
+      height="12"
+      alt={`${name} flag`}
+      className="rounded-sm shrink-0"
+    />
+  );
+};
 
 const regions = [
   {
@@ -125,7 +168,11 @@ const RegionCard = ({ region }: { region: typeof regions[0] }) => {
         <div className="space-y-2">
           {visibleCountries.map((country, idx) => (
             <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-              <MapPin className="w-3 h-3 text-accent shrink-0" />
+              {countryToCode[country] ? (
+                <FlagImage code={countryToCode[country]} name={country} />
+              ) : (
+                <MapPin className="w-3 h-3 text-accent shrink-0" />
+              )}
               {country}
             </div>
           ))}
