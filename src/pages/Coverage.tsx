@@ -193,10 +193,10 @@ const Coverage = () => {
                     alt={region.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-heading font-bold text-xl text-foreground">{region.name}</h3>
-                    <div className="inline-flex items-center gap-1 text-sm text-accent font-medium">
+                    <h3 className="font-heading font-bold text-xl text-white drop-shadow-lg">{region.name}</h3>
+                    <div className="inline-flex items-center gap-1 text-sm text-accent font-semibold drop-shadow-md">
                       <span>{region.delivery}</span>
                     </div>
                   </div>
