@@ -32,6 +32,7 @@ import fastDeliveryImage from "@/assets/fast-delivery.jpg";
 import yearsExperienceImage from "@/assets/years-experience.jpg";
 import customsClearanceImage from "@/assets/customs-clearance.jpg";
 import expressShippingImage from "@/assets/express-shipping.jpg";
+import globalNetworkImage from "@/assets/global-network.jpg";
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -312,6 +313,11 @@ const Index = () => {
                 image: expressShippingImage, 
                 title: isRTL ? "شحن سريع" : "Express Shipping", 
                 desc: isRTL ? "خيارات شحن سريعة وعاجلة" : "Fast and urgent shipping options" 
+              },
+              { 
+                image: globalNetworkImage, 
+                title: isRTL ? "شبكة عالمية" : "Global Network", 
+                desc: isRTL ? "تغطية أكثر من 150 دولة" : "Coverage across 150+ countries" 
               },
             ].map((feature, index) => (
               <div 
