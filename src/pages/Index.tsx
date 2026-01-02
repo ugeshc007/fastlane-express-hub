@@ -36,6 +36,37 @@ import globalNetworkImage from "@/assets/global-network.jpg";
 import fastExpressDeliveryImage from "@/assets/fast-express-delivery.jpg";
 import secureHandlingImage from "@/assets/secure-handling.jpg";
 import qualityServiceImage from "@/assets/quality-service.jpg";
+import testimonial1 from "@/assets/testimonial-1.jpg";
+import testimonial2 from "@/assets/testimonial-2.jpg";
+import testimonial3 from "@/assets/testimonial-3.jpg";
+
+// Testimonials data
+const testimonials = [
+  {
+    name: "Ahmed Al-Rashid",
+    position: "Logistics Manager",
+    company: "Dubai Trading Co.",
+    image: testimonial1,
+    quote: "Ultra Fast Cargo has been our shipping partner for over 5 years. Their reliability and speed are unmatched in the industry.",
+    rating: 5
+  },
+  {
+    name: "Priya Sharma",
+    position: "Operations Director",
+    company: "Global Imports India",
+    image: testimonial2,
+    quote: "The customs clearance support saved us countless hours. Professional team that truly understands international shipping.",
+    rating: 5
+  },
+  {
+    name: "Mohammed Hassan",
+    position: "CEO",
+    company: "Gulf Electronics LLC",
+    image: testimonial3,
+    quote: "Fast, secure, and always on time. Ultra Fast Cargo handles all our shipments across GCC with exceptional care.",
+    rating: 5
+  }
+];
 
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
@@ -429,8 +460,71 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 lg:py-28 bg-background" aria-labelledby="testimonials-heading">
+        <div className="container mx-auto px-4">
+          <header className="text-center mb-16">
+            <h2 id="testimonials-heading" className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              {isRTL ? "ماذا يقول عملاؤنا" : "What Our Clients Say"}
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              {isRTL ? "آراء عملائنا الموثوقين من جميع أنحاء العالم" : "Trusted reviews from our valued customers worldwide"}
+            </p>
+          </header>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <article 
+                key={index}
+                className="bg-card rounded-2xl p-8 border border-border shadow-sm hover:shadow-lg transition-all"
+              >
+                {/* Stars */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-accent fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                
+                {/* Quote */}
+                <blockquote className="text-foreground mb-6 leading-relaxed">
+                  &quot;{testimonial.quote}&quot;
+                </blockquote>
+                
+                {/* Author */}
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-14 h-14 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-heading font-semibold text-foreground">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.position}</p>
+                    <p className="text-sm text-accent font-medium">{testimonial.company}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          
+          {/* Trust Badges */}
+          <div className="mt-16 text-center">
+            <p className="text-muted-foreground mb-6">{isRTL ? "موثوق من قبل أكثر من 500 شركة" : "Trusted by 500+ businesses worldwide"}</p>
+            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+              <div className="bg-muted/50 rounded-lg px-6 py-3 font-heading font-bold text-muted-foreground">Dubai Trading Co.</div>
+              <div className="bg-muted/50 rounded-lg px-6 py-3 font-heading font-bold text-muted-foreground">Global Imports</div>
+              <div className="bg-muted/50 rounded-lg px-6 py-3 font-heading font-bold text-muted-foreground">Gulf Electronics</div>
+              <div className="bg-muted/50 rounded-lg px-6 py-3 font-heading font-bold text-muted-foreground">Saudi Retail Group</div>
+              <div className="bg-muted/50 rounded-lg px-6 py-3 font-heading font-bold text-muted-foreground">India Exports Ltd</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Coverage Section - Geographic targeting for local SEO */}
-      <section className="py-20 lg:py-28 bg-background" aria-labelledby="coverage-heading">
+      <section className="py-20 lg:py-28 bg-secondary" aria-labelledby="coverage-heading">
         <div className="container mx-auto px-4">
           <header className="text-center mb-16">
             <h2 id="coverage-heading" className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
