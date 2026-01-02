@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50"
     >
-      <div className="w-14 h-14 rounded-xl overflow-hidden shadow-lg hover:scale-110 transition-transform animate-pulse-glow">
+      <div className="w-16 h-16 rounded-xl overflow-hidden shadow-lg hover:scale-110 transition-transform animate-pulse-glow">
         <img src={whatsappLogo} alt="WhatsApp" className="w-full h-full object-cover" />
       </div>
     </a>
