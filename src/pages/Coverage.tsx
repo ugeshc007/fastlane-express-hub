@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
@@ -9,7 +10,7 @@ import SEOHead, {
   generateFAQSchema,
 } from "@/components/SEOHead";
 import { 
-  Globe, MapPin, Plane, Ship, Truck, ArrowRight, CheckCircle
+  Globe, MapPin, Plane, Ship, Truck, ArrowRight, CheckCircle, ChevronDown, ChevronUp
 } from "lucide-react";
 import regionUae from "@/assets/region-uae.jpg";
 import regionGcc from "@/assets/region-gcc.jpg";
@@ -98,6 +99,60 @@ const coverageFAQs = [
   }
 ];
 
+// Region Card Component with expandable locations
+const RegionCard = ({ region }: { region: typeof regions[0] }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const visibleCountries = isExpanded ? region.countries : region.countries.slice(0, 2);
+  const hasMore = region.countries.length > 2;
+
+  return (
+    <div className="bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 group">
+      <div className="relative h-48 overflow-hidden">
+        <img 
+          src={region.image} 
+          alt={region.name}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
+        <div className="absolute bottom-4 left-4 right-4">
+          <h3 className="font-heading font-bold text-xl text-white drop-shadow-lg">{region.name}</h3>
+          <div className="inline-flex items-center gap-1 text-sm text-accent font-semibold drop-shadow-md">
+            <span>{region.delivery}</span>
+          </div>
+        </div>
+      </div>
+      <div className="p-6">
+        <div className="space-y-2">
+          {visibleCountries.map((country, idx) => (
+            <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="w-3 h-3 text-accent shrink-0" />
+              {country}
+            </div>
+          ))}
+          {hasMore && (
+            <button 
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="flex items-center gap-1 text-sm text-accent font-medium hover:text-accent/80 transition-colors mt-2"
+            >
+              {isExpanded ? (
+                <>
+                  <ChevronUp className="w-4 h-4" />
+                  Show less
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="w-4 h-4" />
+                  +{region.countries.length - 2} more locations
+                </>
+              )}
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const Coverage = () => {
   const structuredData = [
     generateWebPageSchema({
@@ -183,40 +238,7 @@ const Coverage = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {regions.map((region, index) => (
-              <div 
-                key={index} 
-                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300 group"
-              >
-                <div className="relative h-48 overflow-hidden">
-                  <img 
-                    src={region.image} 
-                    alt={region.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/10" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-heading font-bold text-xl text-white drop-shadow-lg">{region.name}</h3>
-                    <div className="inline-flex items-center gap-1 text-sm text-accent font-semibold drop-shadow-md">
-                      <span>{region.delivery}</span>
-                    </div>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="space-y-2">
-                    {region.countries.slice(0, 5).map((country, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <MapPin className="w-3 h-3 text-accent shrink-0" />
-                        {country}
-                      </div>
-                    ))}
-                    {region.countries.length > 5 && (
-                      <p className="text-sm text-accent font-medium">
-                        +{region.countries.length - 5} more locations
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <RegionCard key={index} region={region} />
             ))}
           </div>
         </div>
