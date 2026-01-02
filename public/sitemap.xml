@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://ultrafastcargo.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/?lang=ar"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Services -->
+  <url>
+    <loc>https://ultrafastcargo.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/services"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/services?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Coverage/Destinations -->
+  <url>
+    <loc>https://ultrafastcargo.com/coverage</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/coverage"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/coverage?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- About Us -->
+  <url>
+    <loc>https://ultrafastcargo.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/about"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/about?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Contact -->
+  <url>
+    <loc>https://ultrafastcargo.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/contact?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Get Quote -->
+  <url>
+    <loc>https://ultrafastcargo.com/quote</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/quote"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/quote?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Track Shipment -->
+  <url>
+    <loc>https://ultrafastcargo.com/track</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/track"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/track?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://ultrafastcargo.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/privacy?lang=ar"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://ultrafastcargo.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/terms?lang=ar"/>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+</urlset>
