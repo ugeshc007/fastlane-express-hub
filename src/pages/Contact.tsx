@@ -26,11 +26,32 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Build WhatsApp message with contact form data
+    const message = `
+📩 *New Contact Message*
+
+👤 *Contact Information*
+• Name: ${formData.name}
+• Email: ${formData.email}
+${formData.phone ? `• Phone: ${formData.phone}` : ''}
+
+📋 *Subject*
+${formData.subject}
+
+💬 *Message*
+${formData.message}
+    `.trim();
+    
+    const phoneNumber = "971568962512";
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    
+    window.open(whatsappUrl, '_blank');
+    
     toast({
       title: t("contact.successTitle"),
-      description: t("contact.successDesc"),
+      description: isRTL ? "سيتم فتح واتساب مع رسالتك" : "WhatsApp will open with your message",
     });
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -91,8 +112,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">{t("contact.phone")}</h3>
-                    <a href="tel:+971XXXXXXX" className="text-muted-foreground text-sm hover:text-accent transition-colors">
-                      +971 XX XXX XXXX
+                    <a href="tel:+971568962512" className="text-muted-foreground text-sm hover:text-accent transition-colors">
+                      +971 56 896 2512
                     </a>
                   </div>
                 </div>
@@ -133,7 +154,7 @@ const Contact = () => {
                   {t("contact.whatsappDesc")}
                 </p>
                 <Button variant="whatsapp" className="w-full" asChild>
-                  <a href="https://wa.me/+971XXXXXXX" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/971568962512" target="_blank" rel="noopener noreferrer">
                     {t("contact.startChat")}
                   </a>
                 </Button>
