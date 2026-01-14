@@ -163,7 +163,7 @@ export const generateLocalBusinessSchema = () => ({
   "@id": "https://ultrafastcargo.com/#localbusiness",
   name: "Ultra Fast Cargo Dubai",
   image: "https://ultrafastcargo.com/office.jpg",
-  telephone: "+971-XXX-XXXX",
+  telephone: "+971-55-141-7563",
   email: "info@ultrafastcargo.com",
   url: "https://ultrafastcargo.com",
   priceRange: "$$",
