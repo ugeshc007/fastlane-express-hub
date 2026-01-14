@@ -180,7 +180,7 @@ const translations = {
     "common.loading": "Loading...",
     "common.success": "Success!",
     "common.error": "Error",
-    "common.address": "Business Bay, Dubai, UAE",
+    "common.address": "Office No M08, Mezzanine Floor, Burj-Nahar Views Building, Dubai, UAE",
   },
   ar: {
     // Navbar
@@ -352,7 +352,7 @@ const translations = {
     "common.loading": "جاري التحميل...",
     "common.success": "تم بنجاح!",
     "common.error": "خطأ",
-    "common.address": "بزنس باي، دبي، الإمارات",
+    "common.address": "مكتب رقم M08، الطابق الميزانين، مبنى برج نهر فيوز، دبي، الإمارات",
   },
 };
 

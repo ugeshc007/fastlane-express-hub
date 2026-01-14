@@ -100,8 +100,12 @@ ${formData.message}
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">{t("contact.office")}</h3>
                     <p className="text-muted-foreground text-sm">
-                      {isRTL ? "بزنس باي، دبي" : "Business Bay, Dubai"}<br />
-                      {isRTL ? "الإمارات العربية المتحدة" : "United Arab Emirates"}
+                      {isRTL 
+                        ? "مكتب رقم M08، الطابق الميزانين" 
+                        : "Office No M08, Mezzanine Floor"}<br />
+                      {isRTL 
+                        ? "مبنى برج نهر فيوز، دبي، الإمارات"
+                        : "Burj-Nahar Views Building, Dubai, UAE"}
                     </p>
                   </div>
                 </div>
