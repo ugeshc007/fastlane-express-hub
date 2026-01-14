@@ -147,10 +147,10 @@ export const generateOrganizationSchema = () => ({
   ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Al Quoz Industrial Area",
+    streetAddress: "Office No M08, Mezzanine Floor, Burj-Nahar Views Building",
     addressLocality: "Dubai",
     addressRegion: "Dubai",
-    postalCode: "XXXXX",
+    postalCode: "00000",
     addressCountry: "AE",
   },
 });
@@ -167,10 +167,10 @@ export const generateLocalBusinessSchema = () => ({
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Al Quoz Industrial Area",
+    streetAddress: "Office No M08, Mezzanine Floor, Burj-Nahar Views Building",
     addressLocality: "Dubai",
     addressRegion: "Dubai",
-    postalCode: "XXXXX",
+    postalCode: "00000",
     addressCountry: "AE",
   },
   geo: {

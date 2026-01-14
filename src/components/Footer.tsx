@@ -91,7 +91,9 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <MapPin className={`w-4 h-4 text-accent shrink-0 mt-0.5 ${isRTL ? 'order-last' : ''}`} />
                 <span className="text-primary-foreground/70 text-xs">
-                  {isRTL ? "بزنس باي، دبي، الإمارات" : "Business Bay, Dubai, UAE"}
+                  {isRTL 
+                    ? "مكتب رقم M08، الطابق الميزانين، مبنى برج نهر فيوز، دبي، الإمارات"
+                    : "Office No M08, Mezzanine Floor, Burj-Nahar Views Building, Dubai, UAE"}
                 </span>
               </li>
               <li className="flex items-center gap-2">
