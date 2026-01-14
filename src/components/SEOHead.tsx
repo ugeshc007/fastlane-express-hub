@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { LanguageContext } from "@/contexts/LanguageContext";
 
 interface SEOHeadProps {
   title: string;
@@ -24,7 +24,9 @@ const SEOHead = ({
   noIndex = false,
 }: SEOHeadProps) => {
   const location = useLocation();
-  const { language } = useLanguage();
+  // Use context directly with fallback to avoid throwing
+  const languageContext = useContext(LanguageContext);
+  const language = languageContext?.language || "en";
   const baseUrl = "https://ultrafastcargo.com";
   const fullUrl = `${baseUrl}${canonicalPath || location.pathname}`;
 
