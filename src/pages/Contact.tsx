@@ -43,7 +43,7 @@ ${formData.subject}
 ${formData.message}
     `.trim();
     
-    const phoneNumber = "971568962512";
+    const phoneNumber = "971551417563";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappUrl, '_blank');
@@ -116,8 +116,8 @@ ${formData.message}
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">{t("contact.phone")}</h3>
-                    <a href="tel:+971568962512" className="text-muted-foreground text-sm hover:text-accent transition-colors">
-                      +971 56 896 2512
+                    <a href="tel:+971551417563" className="text-muted-foreground text-sm hover:text-accent transition-colors">
+                      +971 55 141 7563
                     </a>
                   </div>
                 </div>
@@ -158,7 +158,7 @@ ${formData.message}
                   {t("contact.whatsappDesc")}
                 </p>
                 <Button variant="whatsapp" className="w-full" asChild>
-                  <a href="https://wa.me/971568962512" target="_blank" rel="noopener noreferrer">
+                  <a href="https://wa.me/971551417563" target="_blank" rel="noopener noreferrer">
                     {t("contact.startChat")}
                   </a>
                 </Button>
