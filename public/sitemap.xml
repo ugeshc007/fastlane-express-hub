@@ -5,6 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://ultrafastcargo.com/</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/?lang=ar"/>
     <changefreq>weekly</changefreq>
@@ -14,6 +15,7 @@
   <!-- Services -->
   <url>
     <loc>https://ultrafastcargo.com/services</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/services"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/services?lang=ar"/>
     <changefreq>monthly</changefreq>
@@ -23,6 +25,7 @@
   <!-- Coverage/Destinations -->
   <url>
     <loc>https://ultrafastcargo.com/coverage</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/coverage"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/coverage?lang=ar"/>
     <changefreq>monthly</changefreq>
@@ -32,6 +35,7 @@
   <!-- About Us -->
   <url>
     <loc>https://ultrafastcargo.com/about</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/about"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/about?lang=ar"/>
     <changefreq>monthly</changefreq>
@@ -41,6 +45,7 @@
   <!-- Contact -->
   <url>
     <loc>https://ultrafastcargo.com/contact</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/contact"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/contact?lang=ar"/>
     <changefreq>monthly</changefreq>
@@ -50,6 +55,7 @@
   <!-- Get Quote -->
   <url>
     <loc>https://ultrafastcargo.com/quote</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/quote"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/quote?lang=ar"/>
     <changefreq>monthly</changefreq>
@@ -59,6 +65,7 @@
   <!-- Track Shipment -->
   <url>
     <loc>https://ultrafastcargo.com/track</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/track"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/track?lang=ar"/>
     <changefreq>monthly</changefreq>
@@ -68,6 +75,7 @@
   <!-- Privacy Policy -->
   <url>
     <loc>https://ultrafastcargo.com/privacy</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/privacy"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/privacy?lang=ar"/>
     <changefreq>yearly</changefreq>
@@ -77,6 +85,7 @@
   <!-- Terms of Service -->
   <url>
     <loc>https://ultrafastcargo.com/terms</loc>
+    <lastmod>2026-01-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/terms"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/terms?lang=ar"/>
     <changefreq>yearly</changefreq>
