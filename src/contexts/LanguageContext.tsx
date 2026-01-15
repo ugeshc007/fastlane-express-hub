@@ -122,6 +122,7 @@ const translations = {
     "contact.send": "Send Message",
     "contact.successTitle": "Message Sent!",
     "contact.successDesc": "We'll get back to you within 24 hours.",
+    "contact.getDirections": "Get Directions",
     
     // Why Choose Us
     "why.title": "Why Choose",
@@ -296,6 +297,7 @@ const translations = {
     "contact.send": "إرسال الرسالة",
     "contact.successTitle": "تم إرسال الرسالة!",
     "contact.successDesc": "سنتواصل معك خلال 24 ساعة.",
+    "contact.getDirections": "احصل على الاتجاهات",
     
     // Why Choose Us
     "why.title": "لماذا تختار",
