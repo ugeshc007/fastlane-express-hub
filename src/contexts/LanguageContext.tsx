@@ -181,6 +181,8 @@ const translations = {
     "common.success": "Success!",
     "common.error": "Error",
     "common.address": "Office No M08, Mezzanine Floor, Burj-Nahar Views Building, Dubai, UAE",
+    "common.email": "info@ultrafastcargo.com",
+    "common.phone": "+971 55 141 7563",
   },
   ar: {
     // Navbar
@@ -353,6 +355,8 @@ const translations = {
     "common.success": "تم بنجاح!",
     "common.error": "خطأ",
     "common.address": "مكتب رقم M08، الطابق الميزانين، مبنى برج نهر فيوز، دبي، الإمارات",
+    "common.email": "info@ultrafastcargo.com",
+    "common.phone": "+971 55 141 7563",
   },
 };
 
