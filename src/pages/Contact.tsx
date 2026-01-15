@@ -247,14 +247,14 @@ ${formData.message}
       {/* Map Section */}
       <section className="h-96 bg-muted">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.178509416652!2d55.26080391500894!3d25.185305583895665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f69d10000000f%3A0xf73e7f16c9a2a7e0!2sBusiness%20Bay%2C%20Dubai!5e0!3m2!1sen!2sae!4v1620000000000!5m2!1sen!2sae"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5847123456789!2d55.3088!3d25.2697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ccfa6c82b27%3A0x2b55bb8a9b4f0b5c!2sBurj%20Nahar!5e0!3m2!1sen!2sae!4v1705000000000!5m2!1sen!2sae"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Ultra Fast Cargo Location"
+          title="Ultra Fast Cargo - Burj Nahar Views Building, Dubai"
         />
       </section>
 
