@@ -245,17 +245,30 @@ ${formData.message}
       </section>
 
       {/* Map Section */}
-      <section className="h-96 bg-muted">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5847123456789!2d55.3088!3d25.2697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ccfa6c82b27%3A0x2b55bb8a9b4f0b5c!2sBurj%20Nahar!5e0!3m2!1sen!2sae!4v1705000000000!5m2!1sen!2sae"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          allowFullScreen
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          title="Ultra Fast Cargo - Burj Nahar Views Building, Dubai"
-        />
+      <section className="bg-muted">
+        <div className="h-96">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5847123456789!2d55.3088!3d25.2697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ccfa6c82b27%3A0x2b55bb8a9b4f0b5c!2sBurj%20Nahar!5e0!3m2!1sen!2sae!4v1705000000000!5m2!1sen!2sae"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Ultra Fast Cargo - Burj Nahar Views Building, Dubai"
+          />
+        </div>
+        <div className="flex justify-center py-6">
+          <a
+            href="https://maps.app.goo.gl/vyqFx9J7wcn4Xkpb9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg"
+          >
+            <MapPin className="w-5 h-5" />
+            {t("contact.getDirections")}
+          </a>
+        </div>
       </section>
 
       <Footer />
