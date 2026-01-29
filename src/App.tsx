@@ -8,6 +8,9 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
+import UaeToSaudi from "./pages/services/UaeToSaudi";
+import UaeToQatar from "./pages/services/UaeToQatar";
+import UaeToOman from "./pages/services/UaeToOman";
 import Contact from "./pages/Contact";
 import Track from "./pages/Track";
 import Quote from "./pages/Quote";
@@ -30,7 +33,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/:serviceId" element={<Services />} />
+            <Route path="/services/uae-to-saudi" element={<UaeToSaudi />} />
+            <Route path="/services/uae-to-qatar" element={<UaeToQatar />} />
+            <Route path="/services/uae-to-oman" element={<UaeToOman />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/track" element={<Track />} />
             <Route path="/quote" element={<Quote />} />
