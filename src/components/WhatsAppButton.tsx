@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
 import whatsappLogo from "@/assets/whatsapp-logo.png";
+import { trackWhatsApp } from "@/lib/tracking";
 
 const WhatsAppButton = () => {
   const phoneNumber = "+971551417563";
@@ -11,6 +11,7 @@ const WhatsAppButton = () => {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsApp("Floating Button")}
       className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50"
     >
       <div className="w-16 h-16 md:w-24 md:h-24 rounded-2xl overflow-hidden shadow-xl hover:scale-110 transition-transform animate-pulse-glow">
@@ -21,3 +22,4 @@ const WhatsAppButton = () => {
 };
 
 export default WhatsAppButton;
+
