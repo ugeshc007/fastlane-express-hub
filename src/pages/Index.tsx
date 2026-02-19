@@ -249,6 +249,73 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Popular GCC Routes — Internal links for SEO crawlability */}
+      <section className="py-16 bg-secondary" aria-labelledby="gcc-routes-heading">
+        <div className="container mx-auto px-4">
+          <header className="text-center mb-10">
+            <h2 id="gcc-routes-heading" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Popular <span className="text-accent">GCC Cargo Routes</span> from Dubai
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">
+              Direct cargo services from Dubai to Saudi Arabia, Qatar, Oman and beyond — with pricing, customs clearance & door-to-door delivery.
+            </p>
+          </header>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              {
+                flag: "sa",
+                country: "Saudi Arabia",
+                route: "Dubai → Riyadh / Jeddah",
+                time: "Road 3–4 days | Air 24 hrs",
+                price: "From AED 2/kg",
+                href: "/dubai-to-saudi-cargo",
+                label: "Dubai to Saudi Arabia Cargo",
+              },
+              {
+                flag: "qa",
+                country: "Qatar",
+                route: "Dubai → Doha",
+                time: "Road 3–5 days | Air 24–48 hrs",
+                price: "From AED 2/kg",
+                href: "/dubai-to-qatar-cargo",
+                label: "Dubai to Qatar Cargo",
+              },
+              {
+                flag: "om",
+                country: "Oman",
+                route: "Dubai → Muscat",
+                time: "Road 1–2 days | Air same day",
+                price: "From AED 2/kg",
+                href: "/services/uae-to-oman",
+                label: "Dubai to Oman Cargo",
+              },
+            ].map((r) => (
+              <Link
+                key={r.href}
+                to={r.href}
+                aria-label={r.label}
+                className="group flex items-start gap-4 bg-card rounded-2xl border border-border p-6 hover:border-accent hover:shadow-lg transition-all"
+              >
+                <img
+                  src={`https://flagcdn.com/w40/${r.flag}.png`}
+                  srcSet={`https://flagcdn.com/w80/${r.flag}.png 2x`}
+                  width="40"
+                  height="30"
+                  alt={`${r.country} flag`}
+                  className="rounded-sm mt-1 shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="font-heading font-bold text-foreground group-hover:text-accent transition-colors">{r.route}</p>
+                  <p className="text-muted-foreground text-sm mt-1">{r.time}</p>
+                  <p className="text-accent font-semibold text-sm mt-1">{r.price}</p>
+                </div>
+                <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-accent transition-colors shrink-0 mt-1" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How It Works - Process Section */}
       <section className="py-20 lg:py-28 bg-primary relative overflow-hidden" aria-labelledby="process-heading">
         <div className="absolute inset-0 bg-hero-pattern opacity-30" aria-hidden="true" />
