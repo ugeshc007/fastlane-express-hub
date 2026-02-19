@@ -133,10 +133,10 @@ const UaeToSaudi = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>
-                <Link to="/quote">{t("hero.getQuote")}</Link>
+                <Link to="/quote">Get Free Quote</Link>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <Link to="/contact">{t("nav.contact")}</Link>
+                <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -311,10 +311,10 @@ const UaeToSaudi = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="hero" size="xl" asChild>
-              <Link to="/quote">{t("hero.getQuote")}</Link>
+              <Link to="/quote">Get Free Quote</Link>
             </Button>
             <Button variant="heroOutline" size="xl" asChild>
-              <Link to="/contact">{t("nav.contact")}</Link>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>
