@@ -12,6 +12,7 @@ import UaeToSaudi from "./pages/services/UaeToSaudi";
 import UaeToQatar from "./pages/services/UaeToQatar";
 import UaeToOman from "./pages/services/UaeToOman";
 import DubaiToQatarCargo from "./pages/DubaiToQatarCargo";
+import DubaiToSaudiCargo from "./pages/DubaiToSaudiCargo";
 import Contact from "./pages/Contact";
 import Track from "./pages/Track";
 import Quote from "./pages/Quote";
@@ -38,6 +39,7 @@ const App = () => (
             <Route path="/services/uae-to-qatar" element={<UaeToQatar />} />
             <Route path="/services/uae-to-oman" element={<UaeToOman />} />
             <Route path="/dubai-to-qatar-cargo" element={<DubaiToQatarCargo />} />
+            <Route path="/dubai-to-saudi-cargo" element={<DubaiToSaudiCargo />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/track" element={<Track />} />
             <Route path="/quote" element={<Quote />} />
