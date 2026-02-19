@@ -15,32 +15,27 @@ const WHATSAPP_MSG = encodeURIComponent("Hello! I need a quote for Dubai to Qata
 const WHATSAPP_URL = `https://wa.me/971551417563?text=${WHATSAPP_MSG}`;
 const PHONE_URL = `tel:${PHONE}`;
 
-// Fire Google Ads / GA4 WhatsApp click conversion
+// Fire GA4 qualify_lead event — imported by Google Ads as UFC(web) qualify_lead conversion
 const trackWhatsAppClick = () => {
   if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "conversion", {
-      send_to: "AW-CONVERSION_ID/CONVERSION_LABEL", // Replace with real Google Ads conversion ID
+    (window as any).gtag("event", "qualify_lead", {
       event_category: "WhatsApp",
       event_label: "Dubai to Qatar Cargo",
       value: 1,
-    });
-    (window as any).gtag("event", "whatsapp_click", {
-      event_category: "Lead",
-      event_label: "Dubai to Qatar Cargo Page",
+      currency: "AED",
+      method: "whatsapp",
     });
   }
 };
 
 const trackPhoneClick = () => {
   if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "conversion", {
-      send_to: "AW-CONVERSION_ID/PHONE_CONVERSION_LABEL",
+    (window as any).gtag("event", "qualify_lead", {
       event_category: "Phone",
       event_label: "Dubai to Qatar Cargo",
-    });
-    (window as any).gtag("event", "phone_click", {
-      event_category: "Lead",
-      event_label: "Dubai to Qatar Cargo Page",
+      value: 1,
+      currency: "AED",
+      method: "phone",
     });
   }
 };
