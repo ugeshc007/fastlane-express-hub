@@ -52,6 +52,16 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Dubai to Qatar Cargo — Dedicated Landing Page -->
+  <url>
+    <loc>https://ultrafastcargo.com/dubai-to-qatar-cargo</loc>
+    <lastmod>2026-02-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ultrafastcargo.com/dubai-to-qatar-cargo"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ultrafastcargo.com/dubai-to-qatar-cargo?lang=ar"/>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
   <!-- Coverage/Destinations -->
   <url>
     <loc>https://ultrafastcargo.com/coverage</loc>

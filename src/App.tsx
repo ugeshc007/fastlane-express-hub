@@ -11,6 +11,7 @@ import Services from "./pages/Services";
 import UaeToSaudi from "./pages/services/UaeToSaudi";
 import UaeToQatar from "./pages/services/UaeToQatar";
 import UaeToOman from "./pages/services/UaeToOman";
+import DubaiToQatarCargo from "./pages/DubaiToQatarCargo";
 import Contact from "./pages/Contact";
 import Track from "./pages/Track";
 import Quote from "./pages/Quote";
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/services/uae-to-saudi" element={<UaeToSaudi />} />
             <Route path="/services/uae-to-qatar" element={<UaeToQatar />} />
             <Route path="/services/uae-to-oman" element={<UaeToOman />} />
+            <Route path="/dubai-to-qatar-cargo" element={<DubaiToQatarCargo />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/track" element={<Track />} />
             <Route path="/quote" element={<Quote />} />

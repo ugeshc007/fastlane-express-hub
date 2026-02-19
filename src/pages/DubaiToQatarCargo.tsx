@@ -1,0 +1,554 @@
+import { Link } from "react-router-dom";
+import { Phone, MessageCircle, Clock, CheckCircle, MapPin, Truck, Plane, Package, Star, ArrowRight, Zap, Shield } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SEOHead, { generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from "@/components/SEOHead";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import heroCargo from "@/assets/hero-cargo.jpg";
+import airCargoImage from "@/assets/air-cargo-service.jpg";
+import landTransportImage from "@/assets/land-transport-service.jpg";
+import expressDeliveryImage from "@/assets/express-delivery-service.jpg";
+import customsClearanceImage from "@/assets/customs-clearance.jpg";
+
+const PHONE = "+971551417563";
+const WHATSAPP_MSG = encodeURIComponent("Hello! I need a quote for Dubai to Qatar cargo. Please send me your rates.");
+const WHATSAPP_URL = `https://wa.me/971551417563?text=${WHATSAPP_MSG}`;
+const PHONE_URL = `tel:${PHONE}`;
+
+// Fire Google Ads / GA4 WhatsApp click conversion
+const trackWhatsAppClick = () => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", "conversion", {
+      send_to: "AW-CONVERSION_ID/CONVERSION_LABEL", // Replace with real Google Ads conversion ID
+      event_category: "WhatsApp",
+      event_label: "Dubai to Qatar Cargo",
+      value: 1,
+    });
+    (window as any).gtag("event", "whatsapp_click", {
+      event_category: "Lead",
+      event_label: "Dubai to Qatar Cargo Page",
+    });
+  }
+};
+
+const trackPhoneClick = () => {
+  if (typeof window !== "undefined" && (window as any).gtag) {
+    (window as any).gtag("event", "conversion", {
+      send_to: "AW-CONVERSION_ID/PHONE_CONVERSION_LABEL",
+      event_category: "Phone",
+      event_label: "Dubai to Qatar Cargo",
+    });
+    (window as any).gtag("event", "phone_click", {
+      event_category: "Lead",
+      event_label: "Dubai to Qatar Cargo Page",
+    });
+  }
+};
+
+const faqs = [
+  {
+    question: "How long does cargo shipping from Dubai to Qatar take?",
+    answer: "Air cargo from Dubai to Doha takes 24–48 hours. Road freight takes 3–5 days. Express delivery is available in 1–2 days for urgent shipments.",
+  },
+  {
+    question: "What is the price for shipping cargo from Dubai to Qatar?",
+    answer: "Road freight starts from AED 2–4 per kg (minimum charges apply). Air cargo starts from AED 8–15 per kg. Full container loads (FCL) and part loads (LCL) are available at competitive rates. Contact us for your exact quote.",
+  },
+  {
+    question: "Do you handle customs clearance Dubai to Qatar?",
+    answer: "Yes. We handle 100% of customs documentation and clearance at both UAE exit and Qatar entry points — no hidden fees, no delays.",
+  },
+  {
+    question: "Do you offer door-to-door delivery from Dubai to Doha?",
+    answer: "Yes. We pick up from your location in Dubai (or anywhere in UAE) and deliver to any address in Qatar including Doha, Lusail, Al Wakrah, Al Khor, and all cities.",
+  },
+  {
+    question: "What types of cargo can I ship from Dubai to Qatar?",
+    answer: "We ship commercial goods, personal effects, electronics, furniture, spare parts, industrial equipment, and more. Dangerous goods require special handling — contact us to discuss.",
+  },
+];
+
+const pricingOptions = [
+  {
+    icon: <Truck className="w-7 h-7" />,
+    label: "Road Freight",
+    time: "3–5 Days",
+    price: "From AED 2/kg",
+    desc: "Best for bulk & heavy shipments",
+    image: landTransportImage,
+    badge: "Most Popular",
+  },
+  {
+    icon: <Plane className="w-7 h-7" />,
+    label: "Air Cargo",
+    time: "24–48 Hours",
+    price: "From AED 8/kg",
+    desc: "Urgent & time-critical cargo",
+    image: airCargoImage,
+    badge: "Fastest",
+  },
+  {
+    icon: <Zap className="w-7 h-7" />,
+    label: "Express Delivery",
+    time: "1–2 Days",
+    price: "From AED 12/kg",
+    desc: "Priority door-to-door service",
+    image: expressDeliveryImage,
+    badge: "Premium",
+  },
+];
+
+const qatarCities = ["Doha", "Lusail", "Al Wakrah", "Al Khor", "Dukhan", "Mesaieed", "Al Rayyan", "Umm Salal", "Madinat Ash Shamal"];
+
+const structuredData = [
+  generateWebPageSchema({
+    name: "Dubai to Qatar Cargo Service – Fast & Affordable",
+    description: "Cargo shipping from Dubai to Qatar in 1–5 days. Air, land & door-to-door delivery to Doha. Full customs clearance included.",
+    url: "/dubai-to-qatar-cargo",
+  }),
+  generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "Dubai to Qatar Cargo", url: "/dubai-to-qatar-cargo" },
+  ]),
+  generateFAQSchema(faqs),
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Dubai to Qatar Cargo Shipping",
+    description: "Professional cargo shipping from Dubai to Qatar including air freight, road transport, and express door-to-door delivery to Doha and all Qatar cities.",
+    provider: {
+      "@type": "Organization",
+      name: "Ultra Fast Cargo",
+      telephone: "+971551417563",
+      url: "https://ultrafastcargo.com",
+    },
+    areaServed: [
+      { "@type": "City", name: "Dubai" },
+      { "@type": "City", name: "Doha" },
+      { "@type": "Country", name: "Qatar" },
+    ],
+    offers: {
+      "@type": "Offer",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "AED",
+        price: "2",
+        description: "Road freight from AED 2/kg",
+      },
+    },
+    serviceType: "Cargo Shipping",
+  },
+];
+
+const DubaiToQatarCargo = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Dubai to Qatar Cargo Service – Fast & Affordable | Ultra Fast Cargo"
+        description="Dubai to Qatar cargo in 1–5 days. Air cargo to Doha in 24hrs. Road freight from AED 2/kg. Door-to-door + full customs clearance. Call or WhatsApp now!"
+        keywords="Dubai to Qatar cargo, Dubai to Doha shipping, cargo Qatar from Dubai, freight Dubai Qatar, UAE Qatar cargo, Doha cargo service, Dubai Qatar delivery, cargo Dubai Doha price, Dubai Qatar shipping cost"
+        structuredData={structuredData}
+        canonicalPath="/dubai-to-qatar-cargo"
+      />
+      <Navbar />
+
+      {/* ═══════════════════════════════════════════
+          HERO — Above the fold. Conversion focus.
+      ═══════════════════════════════════════════ */}
+      <header
+        className="relative min-h-screen flex items-center overflow-hidden"
+        style={{
+          background: "linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(220 60% 15%) 100%)",
+        }}
+      >
+        {/* Background photo */}
+        <div className="absolute inset-0">
+          <img
+            src={heroCargo}
+            alt="Dubai to Qatar cargo shipping"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/40" />
+        </div>
+
+        {/* Urgency banner */}
+        <div className="absolute top-0 left-0 right-0 z-20 bg-accent text-accent-foreground text-center py-2 text-sm font-bold tracking-wide">
+          🚚 Next departure to Qatar: <span className="underline">TOMORROW</span> — Book now to secure your slot!
+        </div>
+
+        <div className="relative z-10 container mx-auto px-4 pt-24 pb-16">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+            {/* Left: Headline + CTAs */}
+            <div>
+              <div className="inline-flex items-center gap-2 bg-accent/20 border border-accent/30 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <MapPin className="w-4 h-4" />
+                Dubai → Qatar • Direct Route
+              </div>
+
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4">
+                Dubai to Qatar<br />
+                <span className="text-accent">Cargo Services</span><br />
+                <span className="text-3xl md:text-4xl font-medium text-primary-foreground/90">Fast & Affordable</span>
+              </h1>
+
+              <p className="text-primary-foreground/80 text-lg md:text-xl mb-3">
+                Air, Land & Door-to-Door Cargo to Doha
+              </p>
+              <p className="text-primary-foreground/70 text-base mb-8">
+                ✅ Road freight from <strong className="text-accent">AED 2/kg</strong> &nbsp;|&nbsp;
+                ✅ Air cargo <strong className="text-accent">24–48 hrs</strong> &nbsp;|&nbsp;
+                ✅ Full customs included
+              </p>
+
+              {/* ⭐ PRIMARY CTA — WhatsApp */}
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={trackWhatsAppClick}
+                  className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg px-8 py-5 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-200 w-full sm:w-auto"
+                >
+                  <MessageCircle className="w-6 h-6 flex-shrink-0" />
+                  <div className="text-left">
+                    <div>WhatsApp Us Now</div>
+                    <div className="text-sm font-normal opacity-90">Get Quote in 5 Minutes</div>
+                  </div>
+                </a>
+
+                <a
+                  href={PHONE_URL}
+                  onClick={trackPhoneClick}
+                  className="flex items-center justify-center gap-3 bg-primary-foreground/10 hover:bg-primary-foreground/20 border-2 border-primary-foreground/30 text-primary-foreground font-bold text-lg px-8 py-5 rounded-2xl transition-all duration-200 w-full sm:w-auto"
+                >
+                  <Phone className="w-6 h-6 flex-shrink-0" />
+                  <div className="text-left">
+                    <div>Call Us Now</div>
+                    <div className="text-sm font-normal opacity-90">+971 55 141 7563</div>
+                  </div>
+                </a>
+              </div>
+
+              {/* Trust signals */}
+              <div className="flex flex-wrap gap-4 text-primary-foreground/70 text-sm">
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-accent" /> Free Quote</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-accent" /> No Hidden Fees</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-accent" /> Customs Handled</span>
+                <span className="flex items-center gap-1"><CheckCircle className="w-4 h-4 text-accent" /> Real-time Tracking</span>
+              </div>
+            </div>
+
+            {/* Right: Quick stats card */}
+            <div className="bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 rounded-3xl p-8">
+              <h2 className="text-primary-foreground font-heading text-xl font-bold mb-6 text-center">
+                Delivery Options at a Glance
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { mode: "🚛 Road Freight", time: "3–5 Days", price: "From AED 2/kg", color: "text-green-400" },
+                  { mode: "✈️ Air Cargo", time: "24–48 Hours", price: "From AED 8/kg", color: "text-accent" },
+                  { mode: "⚡ Express", time: "1–2 Days", price: "From AED 12/kg", color: "text-yellow-400" },
+                ].map((opt) => (
+                  <div key={opt.mode} className="flex items-center justify-between bg-primary-foreground/10 rounded-xl px-4 py-3">
+                    <div>
+                      <div className="text-primary-foreground font-semibold">{opt.mode}</div>
+                      <div className="text-primary-foreground/60 text-sm">{opt.time}</div>
+                    </div>
+                    <div className={`font-bold text-lg ${opt.color}`}>{opt.price}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-primary-foreground/20 text-center">
+                <p className="text-primary-foreground/60 text-sm mb-3">Average response time: <strong className="text-accent">under 5 minutes</strong></p>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={trackWhatsAppClick}
+                  className="block w-full bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl transition-colors text-center"
+                >
+                  💬 Get My Free Quote Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* ═══════════════════════════════════════════
+          SOCIAL PROOF STRIP
+      ═══════════════════════════════════════════ */}
+      <section className="bg-accent py-4 overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-2 text-accent-foreground font-semibold text-sm">
+            <span className="flex items-center gap-2"><Star className="w-4 h-4 fill-current" /> 500+ Shipments to Qatar</span>
+            <span className="flex items-center gap-2"><CheckCircle className="w-4 h-4" /> 100% Customs Cleared</span>
+            <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> Weekly Departures</span>
+            <span className="flex items-center gap-2"><Shield className="w-4 h-4" /> Fully Insured Cargo</span>
+            <span className="flex items-center gap-2"><Star className="w-4 h-4 fill-current" /> 4.9★ Customer Rating</span>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          PRICING SECTION
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Shipping Options & <span className="text-accent">Pricing</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Transparent rates from Dubai to Qatar — no surprises, no hidden charges
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {pricingOptions.map((opt) => (
+              <div
+                key={opt.label}
+                className="relative bg-card rounded-2xl border border-border overflow-hidden hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className="absolute top-4 right-4 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full z-10">
+                  {opt.badge}
+                </div>
+                <div className="h-44 overflow-hidden">
+                  <img src={opt.image} alt={opt.label} className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 h-44 bg-gradient-to-t from-card/60 to-transparent" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center text-accent">
+                      {opt.icon}
+                    </div>
+                    <div>
+                      <h3 className="font-heading font-bold text-foreground text-lg">{opt.label}</h3>
+                      <div className="flex items-center gap-1 text-muted-foreground text-sm">
+                        <Clock className="w-3 h-3" /> {opt.time}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-muted-foreground text-sm mb-4">{opt.desc}</p>
+                  <div className="flex items-center justify-between border-t border-border pt-4">
+                    <span className="text-2xl font-bold text-accent">{opt.price}</span>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={trackWhatsAppClick}
+                      className="flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4" /> Quote Me
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Sticky CTA bar */}
+          <div className="bg-primary rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-primary-foreground text-center md:text-left">
+              <p className="font-bold text-xl mb-1">Not sure which option fits your cargo?</p>
+              <p className="text-primary-foreground/70">Tell us what you're shipping — we'll find you the best rate in minutes.</p>
+            </div>
+            <div className="flex gap-4 flex-shrink-0">
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackWhatsAppClick}
+                className="flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-6 py-3 rounded-xl transition-colors"
+              >
+                <MessageCircle className="w-5 h-5" /> WhatsApp
+              </a>
+              <a
+                href={PHONE_URL}
+                onClick={trackPhoneClick}
+                className="flex items-center gap-2 bg-primary-foreground/10 hover:bg-primary-foreground/20 border border-primary-foreground/30 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-colors"
+              >
+                <Phone className="w-5 h-5" /> Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CITIES COVERED
+      ═══════════════════════════════════════════ */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-heading text-3xl font-bold text-foreground mb-4">
+            We Deliver to <span className="text-accent">All Qatar Cities</span>
+          </h2>
+          <p className="text-muted-foreground mb-8">Door-to-door from any UAE location to any Qatar address</p>
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {qatarCities.map((city) => (
+              <span
+                key={city}
+                className="bg-card px-5 py-2.5 rounded-full border border-border text-foreground font-medium hover:border-accent hover:text-accent transition-colors"
+              >
+                📍 {city}
+              </span>
+            ))}
+          </div>
+          {/* Mid-page WhatsApp CTA */}
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackWhatsAppClick}
+            className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-xl hover:scale-105 transition-all duration-200"
+          >
+            <MessageCircle className="w-6 h-6" />
+            WhatsApp for Instant Quote — +971 55 141 7563
+          </a>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          WHY US
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Why Dubai Businesses Choose <span className="text-accent">Ultra Fast Cargo</span> for Qatar
+              </h2>
+              <div className="space-y-4">
+                {[
+                  { title: "No Customs Headaches", desc: "We handle all paperwork — UAE exit + Qatar customs entry, duties & clearance." },
+                  { title: "Weekly Scheduled Departures", desc: "Regular road freight convoys to Doha every week. Book in advance to guarantee your slot." },
+                  { title: "Real-Time Tracking", desc: "Track your cargo from Dubai to Doha with live status updates via WhatsApp." },
+                  { title: "Competitive Transparent Rates", desc: "Prices quoted upfront — no hidden fees, no surprises at the border." },
+                  { title: "Dedicated Qatar Expert", desc: "Your shipment is handled by our Qatar route specialists, not a call centre." },
+                  { title: "Fully Insured", desc: "All cargo covered from pickup in Dubai to delivery at your Qatar address." },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-4 p-4 bg-card rounded-xl border border-border">
+                    <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="font-semibold text-foreground">{item.title}</p>
+                      <p className="text-muted-foreground text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="space-y-6">
+              <img
+                src={customsClearanceImage}
+                alt="Customs clearance Dubai to Qatar"
+                className="w-full rounded-2xl object-cover h-64"
+              />
+              <div className="bg-accent/10 border border-accent/20 rounded-2xl p-6 text-center">
+                <p className="text-foreground font-bold text-xl mb-2">Ready to ship to Qatar?</p>
+                <p className="text-muted-foreground mb-4">Message us — we respond in under 5 minutes during business hours.</p>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={trackWhatsAppClick}
+                    className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold py-4 rounded-xl transition-colors"
+                  >
+                    <MessageCircle className="w-5 h-5" /> WhatsApp Now
+                  </a>
+                  <a
+                    href={PHONE_URL}
+                    onClick={trackPhoneClick}
+                    className="flex-1 flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-4 rounded-xl hover:bg-primary/90 transition-colors"
+                  >
+                    <Phone className="w-5 h-5" /> +971 55 141 7563
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          FAQ — AEO & Answer Engine Optimization
+      ═══════════════════════════════════════════ */}
+      <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2 text-center">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground text-center mb-10">Dubai to Qatar Cargo Shipping</p>
+          <div className="max-w-3xl mx-auto space-y-5">
+            {faqs.map((faq, i) => (
+              <article key={i} className="bg-card rounded-xl p-6 border border-border">
+                <h3 className="font-heading font-semibold text-foreground mb-2">{faq.question}</h3>
+                <p className="text-muted-foreground">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          BOTTOM CTA — Last chance to convert
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-primary">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            Ship from Dubai to Qatar Today
+          </h2>
+          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-3">
+            Air cargo in 24hrs • Road freight in 3–5 days • From AED 2/kg
+          </p>
+          <p className="text-primary-foreground/60 mb-10">
+            Full customs clearance • Door-to-door • No hidden charges
+          </p>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
+              className="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-xl px-10 py-6 rounded-2xl shadow-2xl hover:scale-105 transition-all duration-200"
+            >
+              <MessageCircle className="w-7 h-7" />
+              <div className="text-left">
+                <div>WhatsApp for Instant Quote</div>
+                <div className="text-sm font-normal opacity-90">+971 55 141 7563</div>
+              </div>
+            </a>
+            <Button variant="heroOutline" size="xl" asChild>
+              <Link to="/quote" className="flex items-center gap-2">
+                Online Quote Form <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+
+      {/* Sticky bottom WhatsApp bar (mobile) */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#25D366] py-4 px-6 flex items-center justify-between shadow-2xl">
+        <div className="text-white">
+          <p className="font-bold text-sm">Dubai → Qatar Cargo</p>
+          <p className="text-white/80 text-xs">Get quote in 5 min</p>
+        </div>
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={trackWhatsAppClick}
+          className="flex items-center gap-2 bg-white text-[#25D366] font-bold px-5 py-3 rounded-xl text-sm"
+        >
+          <MessageCircle className="w-5 h-5" /> WhatsApp Now
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default DubaiToQatarCargo;
