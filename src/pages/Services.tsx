@@ -126,9 +126,9 @@ const Services = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Cargo Shipping Services - Air, Sea, Land & Express Delivery"
-        description="Ultra Fast Cargo offers air freight, sea cargo, land transport & express delivery from UAE to GCC, India, Pakistan & worldwide. FCL, LCL, same-day options."
-        keywords="air cargo UAE, sea freight Dubai, land transport GCC, express delivery, FCL LCL shipping"
+        title="Cargo Services from Dubai - Air, Sea, Land & Express to Qatar, Saudi, Oman"
+        description="Ultra Fast Cargo Dubai: Air freight, road transport & express delivery from Dubai to Qatar, Saudi Arabia, Oman & worldwide. FCL, LCL, same-day options. Get free quote!"
+        keywords="cargo services Dubai, Dubai to Qatar shipping, Dubai to Saudi Arabia freight, Dubai to Oman cargo, air cargo Dubai, road freight GCC, express delivery UAE"
         structuredData={structuredData}
       />
       <Navbar />
