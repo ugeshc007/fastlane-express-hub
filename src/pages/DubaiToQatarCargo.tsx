@@ -1,3 +1,4 @@
+import { trackWhatsApp, trackPhone } from "@/lib/tracking";
 import { Link } from "react-router-dom";
 import { Phone, MessageCircle, Clock, CheckCircle, MapPin, Truck, Plane, Package, Star, ArrowRight, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,30 +16,8 @@ const WHATSAPP_MSG = encodeURIComponent("Hello! I need a quote for Dubai to Qata
 const WHATSAPP_URL = `https://wa.me/971551417563?text=${WHATSAPP_MSG}`;
 const PHONE_URL = `tel:${PHONE}`;
 
-// Fire GA4 qualify_lead event — imported by Google Ads as UFC(web) qualify_lead conversion
-const trackWhatsAppClick = () => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "qualify_lead", {
-      event_category: "WhatsApp",
-      event_label: "Dubai to Qatar Cargo",
-      value: 1,
-      currency: "AED",
-      method: "whatsapp",
-    });
-  }
-};
-
-const trackPhoneClick = () => {
-  if (typeof window !== "undefined" && (window as any).gtag) {
-    (window as any).gtag("event", "qualify_lead", {
-      event_category: "Phone",
-      event_label: "Dubai to Qatar Cargo",
-      value: 1,
-      currency: "AED",
-      method: "phone",
-    });
-  }
-};
+const trackWhatsAppClick = () => trackWhatsApp("Dubai to Qatar Cargo");
+const trackPhoneClick = () => trackPhone("Dubai to Qatar Cargo");
 
 const faqs = [
   {

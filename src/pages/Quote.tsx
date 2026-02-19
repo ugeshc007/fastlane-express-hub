@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { trackFormSubmit } from "@/lib/tracking";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -143,6 +144,7 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
     const phoneNumber = "971568962512";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
+    trackFormSubmit("Quote Form");
     // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
     

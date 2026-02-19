@@ -8,10 +8,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { 
-  MapPin, Phone, Mail, Clock, Send, MessageCircle
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { trackWhatsApp, trackPhone, trackFormSubmit } from "@/lib/tracking";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -46,6 +45,7 @@ ${formData.message}
     const phoneNumber = "971551417563";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
+    trackFormSubmit("Contact Form");
     window.open(whatsappUrl, '_blank');
     
     toast({
@@ -116,7 +116,7 @@ ${formData.message}
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">{t("contact.phone")}</h3>
-                    <a href="tel:+971551417563" className="text-muted-foreground text-sm hover:text-accent transition-colors">
+                    <a href="tel:+971551417563" onClick={() => trackPhone("Contact Page")} className="text-muted-foreground text-sm hover:text-accent transition-colors">
                       +971 55 141 7563
                     </a>
                   </div>
@@ -157,8 +157,8 @@ ${formData.message}
                 <p className="text-muted-foreground text-sm mb-4">
                   {t("contact.whatsappDesc")}
                 </p>
-                <Button variant="whatsapp" className="w-full" asChild>
-                  <a href="https://wa.me/971551417563" target="_blank" rel="noopener noreferrer">
+                 <Button variant="whatsapp" className="w-full" asChild>
+                   <a href="https://wa.me/971551417563" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp("Contact Page")}>
                     {t("contact.startChat")}
                   </a>
                 </Button>
