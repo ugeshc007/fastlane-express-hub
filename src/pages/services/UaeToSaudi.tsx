@@ -47,24 +47,28 @@ const services = [
 
 const faqs = [
   {
-    question: "How long does shipping from UAE to Saudi Arabia take?",
-    answer: "Standard road freight takes 2-4 days, express delivery takes 1-2 days, and air cargo arrives within 24-48 hours depending on the destination city in Saudi Arabia."
+    question: "How long does cargo shipping from Dubai to Saudi Arabia take?",
+    answer: "Road freight from Dubai to Riyadh or Jeddah takes 2-4 days. Air cargo arrives within 24-48 hours. Express delivery is available in 1-2 days for urgent shipments."
+  },
+  {
+    question: "What is the cost of shipping cargo from Dubai to Saudi Arabia?",
+    answer: "Shipping rates from Dubai to Saudi Arabia depend on weight, volume, and service type. Road freight (LTL) starts competitively for consolidated loads. Contact us for a free quote tailored to your cargo."
+  },
+  {
+    question: "Can you ship from Dubai to Riyadh, Jeddah, and Dammam?",
+    answer: "Yes, we have daily departures from Dubai to all major Saudi cities including Riyadh, Jeddah, Dammam, Khobar, Mecca, Medina, and more remote areas across the Kingdom."
+  },
+  {
+    question: "Do you provide door-to-door cargo delivery to Saudi Arabia?",
+    answer: "Yes, we offer complete door-to-door service from your UAE address to any location in Saudi Arabia, including pickup, customs clearance, transit, and final-mile delivery."
   },
   {
     question: "What documents are needed for UAE to Saudi cargo?",
     answer: "You need a commercial invoice, packing list, certificate of origin, and depending on goods type, additional permits. We handle all customs documentation for you."
   },
   {
-    question: "Can you ship to all cities in Saudi Arabia?",
-    answer: "Yes, we deliver to all major cities including Riyadh, Jeddah, Mecca, Medina, Dammam, Khobar, and more remote areas across the Kingdom."
-  },
-  {
-    question: "What is the cheapest way to ship from Dubai to Saudi?",
-    answer: "Road freight (FTL/LTL) is the most cost-effective option for non-urgent shipments. For small packages, our consolidated LTL service offers excellent value."
-  },
-  {
     question: "Do you handle customs clearance for Saudi Arabia?",
-    answer: "Yes, our team manages complete customs clearance including documentation, duties calculation, and coordination with Saudi customs authorities."
+    answer: "Yes, our team manages complete customs clearance including documentation, duties calculation, and coordination with Saudi customs authorities to ensure smooth, delay-free delivery."
   },
 ];
 
@@ -104,9 +108,9 @@ const UaeToSaudi = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="UAE to Saudi Arabia Cargo Shipping - Fast Delivery to Riyadh, Jeddah"
-        description="Ship cargo from UAE to Saudi Arabia in 1-4 days. Road freight, air cargo & express delivery to Riyadh, Jeddah, Dammam, Mecca. Customs clearance included. Get free quote!"
-        keywords="UAE to Saudi cargo, Dubai to Riyadh shipping, cargo to Jeddah, UAE Saudi freight, Dubai Dammam delivery, cargo shipping KSA"
+        title="Dubai to Saudi Arabia Cargo Service - Road Freight & Air Cargo to Riyadh, Jeddah"
+        description="Fast cargo from Dubai to Saudi Arabia in 1-4 days. Daily road freight & air cargo to Riyadh, Jeddah, Dammam, Mecca. Full customs clearance. Get free quote now!"
+        keywords="Dubai to Saudi Arabia cargo, Dubai to Riyadh shipping, cargo to Jeddah, Dubai Saudi freight, Dubai to Dammam delivery, cargo KSA, shipping from UAE to Saudi, UAE Saudi cargo company"
         structuredData={structuredData}
         canonicalPath="/services/uae-to-saudi"
       />
@@ -119,13 +123,13 @@ const UaeToSaudi = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MapPin className="w-4 h-4" />
-              UAE → Saudi Arabia Route
+              Dubai → Saudi Arabia Cargo Route
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Cargo Shipping from <span className="text-accent">UAE to Saudi Arabia</span>
+              Dubai to <span className="text-accent">Saudi Arabia Cargo Service</span>
             </h1>
             <p className="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-              Fast, reliable cargo delivery from Dubai, Abu Dhabi & Sharjah to Riyadh, Jeddah, Dammam and all cities across the Kingdom of Saudi Arabia.
+              Trusted cargo shipping from Dubai to Riyadh, Jeddah, Dammam & all KSA cities. Daily road freight, air cargo, and door-to-door express delivery with full customs clearance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>

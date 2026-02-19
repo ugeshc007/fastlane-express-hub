@@ -142,7 +142,7 @@ export const generateOrganizationSchema = () => ({
     },
   ],
   sameAs: [
-    "https://www.facebook.com/ultrafastcargo",
+    "https://www.facebook.com/profile.php?id=61586733896234",
     "https://www.instagram.com/ultrafastcargo",
     "https://www.linkedin.com/company/ultrafastcargo",
     "https://twitter.com/ultrafastcargo",

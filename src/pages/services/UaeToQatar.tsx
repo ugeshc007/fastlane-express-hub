@@ -47,24 +47,28 @@ const services = [
 
 const faqs = [
   {
-    question: "How long does shipping from UAE to Qatar take?",
-    answer: "Air cargo reaches Doha within 24-48 hours. Road freight via Saudi Arabia takes 3-5 days depending on customs clearance times at both borders."
+    question: "How long does cargo shipping from Dubai to Qatar take?",
+    answer: "Air cargo from Dubai to Doha takes 24-48 hours. Road freight to Qatar via Saudi Arabia takes 3-5 days depending on customs clearance times at both borders."
   },
   {
-    question: "What is the best way to ship from Dubai to Doha?",
-    answer: "For urgent shipments, air cargo is fastest. For cost-effective regular shipments, road freight offers excellent value with reliable transit times."
+    question: "What is the cost of shipping cargo from Dubai to Qatar?",
+    answer: "Shipping rates from Dubai to Doha depend on cargo weight, volume, and service type. Road freight is most economical for larger loads. Contact us for a free, tailored quote."
+  },
+  {
+    question: "Do you offer door-to-door cargo delivery from Dubai to Doha?",
+    answer: "Yes, we offer complete door-to-door service from any location in UAE to any address in Qatar including Doha, Al Wakrah, Lusail, and all other cities — pickup, customs, transit and delivery all included."
   },
   {
     question: "Do you handle customs clearance for Qatar?",
-    answer: "Yes, we provide complete customs clearance services at both UAE exit and Qatar entry points, including all documentation and duties handling."
+    answer: "Yes, we provide complete customs clearance services at both UAE exit and Qatar entry points, including all documentation and duties handling to ensure smooth, hassle-free delivery."
   },
   {
-    question: "Can you deliver to Qatar Free Zones?",
-    answer: "Yes, we deliver to all Qatar Free Zones including Qatar Free Zones Authority areas, with specialized documentation handling."
+    question: "Can you deliver to Qatar Free Zones from Dubai?",
+    answer: "Yes, we deliver to all Qatar Free Zones including Qatar Free Zones Authority areas, with specialized documentation handling for business imports."
   },
   {
-    question: "What goods can I ship from UAE to Qatar?",
-    answer: "We ship commercial goods, personal effects, industrial equipment, spare parts, electronics, textiles, and more. Some restricted items require special permits."
+    question: "What goods can I ship from Dubai to Qatar?",
+    answer: "We ship commercial goods, personal effects, industrial equipment, spare parts, electronics, textiles, and more from Dubai to Qatar. Restricted items require special permits which we help arrange."
   },
 ];
 
@@ -104,9 +108,9 @@ const UaeToQatar = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="UAE to Qatar Cargo Shipping - Fast Delivery to Doha"
-        description="Ship cargo from UAE to Qatar in 1-5 days. Road freight & air cargo to Doha, Al Wakrah, Lusail. Customs clearance included. Get free quote today!"
-        keywords="UAE to Qatar cargo, Dubai to Doha shipping, cargo to Qatar, UAE Qatar freight, Dubai Doha delivery, shipping Qatar"
+        title="Dubai to Qatar Cargo Service - Fast Delivery to Doha | Ultra Fast Cargo"
+        description="Cargo from Dubai to Qatar in 1-5 days. Road freight & air cargo to Doha, Al Wakrah, Lusail. Full customs clearance included. Get free quote today!"
+        keywords="Dubai to Qatar cargo, Dubai to Doha shipping, cargo to Qatar, Dubai Qatar freight, Dubai Doha delivery, shipping from UAE to Qatar, UAE Qatar cargo company, Doha cargo service"
         structuredData={structuredData}
         canonicalPath="/services/uae-to-qatar"
       />
@@ -119,13 +123,13 @@ const UaeToQatar = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MapPin className="w-4 h-4" />
-              UAE → Qatar Route
+              Dubai → Qatar Cargo Route
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Cargo Shipping from <span className="text-accent">UAE to Qatar</span>
+              Dubai to <span className="text-accent">Qatar Cargo Service</span>
             </h1>
             <p className="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-              Reliable cargo delivery from Dubai, Abu Dhabi & Sharjah to Doha and all cities across Qatar. Air freight and road transport options available.
+              Reliable cargo shipping from Dubai to Doha and all Qatar cities. Air freight and road transport with full customs clearance — fast, affordable, and door-to-door.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>

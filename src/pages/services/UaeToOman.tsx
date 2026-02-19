@@ -47,24 +47,28 @@ const services = [
 
 const faqs = [
   {
-    question: "How long does shipping from UAE to Oman take?",
-    answer: "Road freight from Dubai to Muscat typically takes 1-2 days. Air cargo arrives same day or within 24 hours. Salalah and southern regions may take 2-3 days by road."
+    question: "How long does cargo shipping from Dubai to Oman take?",
+    answer: "Road freight from Dubai to Muscat typically takes 1-2 days via direct border crossing. Air cargo arrives same day or within 24 hours. Salalah and southern Oman may take 2-3 days by road."
+  },
+  {
+    question: "What is the cost of shipping cargo from Dubai to Muscat?",
+    answer: "Cargo shipping rates from Dubai to Muscat depend on weight, volume, and service type. Road freight is most economical. Contact us for a free quote for your specific shipment."
+  },
+  {
+    question: "Do you offer door-to-door cargo delivery from Dubai to Oman?",
+    answer: "Yes, we provide full door-to-door service from any UAE address to any Oman location including Muscat, Sohar, Salalah, Nizwa, and Sur — including pickup, customs clearance, and final delivery."
   },
   {
     question: "What is the fastest way to ship from Dubai to Muscat?",
-    answer: "Air cargo is the fastest option, with same-day delivery possible for shipments booked before noon. Express road freight takes about 8-12 hours."
+    answer: "Air cargo is the fastest option, with same-day delivery possible for shipments booked before noon. Express road freight takes approximately 8-12 hours to Muscat area."
   },
   {
-    question: "Do you deliver to Salalah from UAE?",
+    question: "Do you deliver to Salalah from Dubai?",
     answer: "Yes, we provide regular scheduled services to Salalah and all southern Oman cities. Road freight takes 2-3 days, while air cargo arrives within 24-48 hours."
   },
   {
-    question: "What documents are needed for UAE to Oman shipping?",
-    answer: "Commercial shipments require a commercial invoice, packing list, and certificate of origin. Personal effects need an ID copy. We handle all customs documentation."
-  },
-  {
-    question: "Can you ship cars and vehicles to Oman?",
-    answer: "Yes, we provide vehicle transport services from UAE to Oman including cars, motorcycles, and heavy equipment with proper transit documentation."
+    question: "Can you ship cars and vehicles from UAE to Oman?",
+    answer: "Yes, we provide vehicle transport services from UAE to Oman including cars, motorcycles, and heavy equipment with complete transit documentation and clearance handling."
   },
 ];
 
@@ -104,9 +108,9 @@ const UaeToOman = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="UAE to Oman Cargo Shipping - Same Day Delivery to Muscat"
-        description="Ship cargo from UAE to Oman in 1-3 days. Same-day delivery to Muscat, road freight to Sohar, Salalah. Customs clearance included. Get free quote!"
-        keywords="UAE to Oman cargo, Dubai to Muscat shipping, cargo to Oman, UAE Oman freight, Dubai Salalah delivery, shipping Oman"
+        title="Dubai to Oman Cargo Service - Same Day Delivery to Muscat | Ultra Fast Cargo"
+        description="Fast cargo from Dubai to Oman in 1-3 days. Same-day delivery to Muscat, road freight to Sohar & Salalah. Full customs clearance. Get free quote today!"
+        keywords="Dubai to Oman cargo, Dubai to Muscat shipping, cargo to Oman, Dubai Oman freight, Dubai Salalah delivery, shipping from UAE to Oman, UAE Oman cargo company, Muscat cargo service"
         structuredData={structuredData}
         canonicalPath="/services/uae-to-oman"
       />
@@ -119,13 +123,13 @@ const UaeToOman = () => {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-medium mb-6">
               <MapPin className="w-4 h-4" />
-              UAE → Oman Route
+              Dubai → Oman Cargo Route
             </div>
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mb-6">
-              Cargo Shipping from <span className="text-accent">UAE to Oman</span>
+              Dubai to <span className="text-accent">Oman Cargo Service</span>
             </h1>
             <p className="text-primary-foreground/90 text-lg md:text-xl mb-8 max-w-3xl mx-auto">
-              Fast and reliable cargo delivery from Dubai, Abu Dhabi & Sharjah to Muscat, Sohar, Salalah and all cities across the Sultanate of Oman.
+              Fast and reliable cargo delivery from Dubai to Muscat, Sohar, Salalah and all Oman cities. Same-day delivery available with full customs clearance and door-to-door service.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="hero" size="xl" asChild>

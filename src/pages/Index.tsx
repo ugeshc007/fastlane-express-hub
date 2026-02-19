@@ -77,24 +77,28 @@ import processDeliver from "@/assets/process-deliver.jpg";
 // FAQ data for AEO - answers common questions AI search engines look for
 const homeFAQs = [
   {
-    question: "What shipping services does Ultra Fast Cargo offer?",
-    answer: "Ultra Fast Cargo offers comprehensive air cargo, sea freight, land transport, and express delivery services from UAE to GCC countries, India, Pakistan, and 150+ countries worldwide."
+    question: "How long does cargo shipping from Dubai to Qatar take?",
+    answer: "Air cargo from Dubai to Doha takes 24-48 hours. Road freight to Qatar via Saudi transit typically takes 3-5 days. We offer both express and standard shipping options."
   },
   {
-    question: "How long does shipping from Dubai to India take?",
-    answer: "Air cargo from Dubai to India typically takes 3-7 business days. Express delivery options are available for urgent shipments with faster transit times."
+    question: "How long does cargo shipping from Dubai to Saudi Arabia take?",
+    answer: "Road freight from Dubai to Riyadh or Jeddah takes 2-4 days. Air cargo to Saudi Arabia arrives within 24-48 hours. Express delivery takes 1-2 days."
   },
   {
-    question: "Does Ultra Fast Cargo offer package tracking?",
-    answer: "Yes, Ultra Fast Cargo provides real-time tracking for all shipments. You can track your package using your tracking number on our website or mobile app."
+    question: "How long does cargo shipping from Dubai to Oman take?",
+    answer: "Road freight from Dubai to Muscat takes just 1-2 days via direct border crossing. Air cargo can arrive same day or within 24 hours for urgent shipments."
   },
   {
-    question: "What are the delivery times to GCC countries?",
-    answer: "Delivery to GCC countries (Saudi Arabia, Qatar, Kuwait, Bahrain, Oman) typically takes 1-3 business days via our express and standard shipping options."
+    question: "Does Ultra Fast Cargo provide customs clearance for GCC countries?",
+    answer: "Yes, we provide complete customs clearance for Saudi Arabia, Qatar, Oman and all GCC destinations. Our team handles all documentation, duties, and coordination with customs authorities."
   },
   {
-    question: "Does Ultra Fast Cargo handle customs clearance?",
-    answer: "Yes, we provide complete customs clearance assistance for international shipments, ensuring smooth delivery without delays."
+    question: "What types of cargo can I ship from Dubai to GCC?",
+    answer: "We ship all types of cargo from Dubai to GCC including commercial goods, personal effects, electronics, spare parts, industrial equipment, and more. Restricted items require special permits which we help arrange."
+  },
+  {
+    question: "What is the cheapest way to send cargo from Dubai to Qatar or Saudi Arabia?",
+    answer: "Road freight (LTL/FTL) is the most cost-effective option for bulk shipments to Qatar and Saudi Arabia. For smaller parcels, our consolidated service offers great value with regular weekly departures."
   }
 ];
 
@@ -122,9 +126,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={language === "ar" ? "شحن دولي من الإمارات" : "International Cargo Shipping from UAE to World"}
-        description="Ultra Fast Cargo: Leading cargo company in Dubai offering air, sea & land freight to India, Pakistan, GCC & 150+ countries. Track shipments, get quotes. 15+ years experience."
-        keywords="cargo Dubai, shipping UAE, freight forwarding, air cargo India, sea freight GCC, express delivery Pakistan, international shipping Dubai, cargo tracking, logistics UAE"
+        title={language === "ar" ? "شركة شحن من دبي إلى قطر والسعودية وعمان" : "Dubai Cargo Service to Qatar, Saudi Arabia & Oman - Ultra Fast Cargo"}
+        description="Ultra Fast Cargo: #1 cargo company in Dubai. Fast shipping to Qatar, Saudi Arabia & Oman. Road freight, air cargo & express delivery. Customs clearance included. Get free quote!"
+        keywords="cargo Dubai to Qatar, Dubai to Saudi Arabia cargo, Dubai to Oman shipping, cargo service Dubai, UAE to Qatar freight, Dubai to Riyadh, Dubai to Doha cargo, Dubai to Muscat, GCC cargo company"
         structuredData={structuredData}
       />
       <Navbar />
