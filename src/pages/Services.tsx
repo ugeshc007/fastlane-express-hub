@@ -263,6 +263,45 @@ const Services = () => {
         </div>
       </main>
 
+      {/* Popular Route Landing Pages — Internal links for SEO */}
+      <section className="py-16 bg-secondary" aria-labelledby="routes-heading">
+        <div className="container mx-auto px-4">
+          <h2 id="routes-heading" className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-3 text-center">
+            Dedicated <span className="text-accent">Route Pages</span>
+          </h2>
+          <p className="text-muted-foreground text-center mb-8 max-w-xl mx-auto">
+            Need pricing, transit times and customs info for a specific route? Visit our dedicated pages below.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+            {[
+              { flag: "sa", label: "Dubai to Saudi Arabia Cargo", sub: "Road 3–4 days | Air 24 hrs | From AED 2/kg", href: "/dubai-to-saudi-cargo" },
+              { flag: "qa", label: "Dubai to Qatar Cargo", sub: "Road 3–5 days | Air 24–48 hrs | From AED 2/kg", href: "/dubai-to-qatar-cargo" },
+              { flag: "om", label: "Dubai to Oman Cargo", sub: "Road 1–2 days | Air same day | From AED 2/kg", href: "/services/uae-to-oman" },
+            ].map((r) => (
+              <Link
+                key={r.href}
+                to={r.href}
+                className="group flex items-center gap-4 bg-card rounded-2xl border border-border p-5 hover:border-accent hover:shadow-lg transition-all"
+              >
+                <img
+                  src={`https://flagcdn.com/w40/${r.flag}.png`}
+                  srcSet={`https://flagcdn.com/w80/${r.flag}.png 2x`}
+                  width="36"
+                  height="27"
+                  alt={`${r.label} flag`}
+                  className="rounded-sm shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="font-semibold text-foreground group-hover:text-accent transition-colors text-sm">{r.label}</p>
+                  <p className="text-muted-foreground text-xs mt-0.5">{r.sub}</p>
+                </div>
+                <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-accent transition-colors shrink-0" aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-2xl font-bold text-foreground mb-8 text-center">FAQ</h2>
