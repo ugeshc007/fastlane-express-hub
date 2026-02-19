@@ -76,7 +76,7 @@ const pricingOptions = [
     icon: <Truck className="w-7 h-7" />,
     label: "Road Freight",
     time: "3–4 Days",
-    price: "From AED 2/kg",
+    price: "Starting from AED 2/kg*",
     desc: "Best for bulk & heavy shipments to Saudi",
     image: landTransportImage,
     badge: "Most Popular",
@@ -85,7 +85,7 @@ const pricingOptions = [
     icon: <Plane className="w-7 h-7" />,
     label: "Air Cargo",
     time: "24 Hours",
-    price: "From AED 8/kg",
+    price: "Starting from AED 8/kg*",
     desc: "Urgent & time-critical cargo to Riyadh/Jeddah",
     image: airCargoImage,
     badge: "Fastest",
@@ -94,7 +94,7 @@ const pricingOptions = [
     icon: <Zap className="w-7 h-7" />,
     label: "Express Delivery",
     time: "2 Days",
-    price: "From AED 12/kg",
+    price: "Starting from AED 12/kg*",
     desc: "Priority door-to-door across Saudi Arabia",
     image: expressDeliveryImage,
     badge: "Premium",
@@ -203,7 +203,7 @@ const DubaiToSaudiCargo = () => {
                 Air, Land & Door-to-Door Cargo to Riyadh, Jeddah & All KSA
               </p>
               <p className="text-primary-foreground/70 text-base mb-8">
-                ✅ Road freight from <strong className="text-accent">AED 2/kg</strong> &nbsp;|&nbsp;
+                ✅ Road freight <strong className="text-accent">starting from AED 2/kg*</strong> &nbsp;|&nbsp;
                 ✅ Air cargo <strong className="text-accent">24 hrs</strong> &nbsp;|&nbsp;
                 ✅ Saudi customs handled
               </p>
@@ -253,9 +253,9 @@ const DubaiToSaudiCargo = () => {
               </h2>
               <div className="space-y-4">
                 {[
-                  { mode: "🚛 Road Freight", time: "3–4 Days", price: "From AED 2/kg", color: "text-green-400" },
-                  { mode: "✈️ Air Cargo", time: "24 Hours", price: "From AED 8/kg", color: "text-accent" },
-                  { mode: "⚡ Express", time: "2 Days", price: "From AED 12/kg", color: "text-yellow-400" },
+                  { mode: "🚛 Road Freight", time: "3–4 Days", price: "Starts from AED 2/kg*", color: "text-green-400" },
+                  { mode: "✈️ Air Cargo", time: "24 Hours", price: "Starts from AED 8/kg*", color: "text-accent" },
+                  { mode: "⚡ Express", time: "2 Days", price: "Starts from AED 12/kg*", color: "text-yellow-400" },
                 ].map((opt) => (
                   <div key={opt.mode} className="flex items-center justify-between bg-primary-foreground/10 rounded-xl px-4 py-3">
                     <div>
@@ -313,6 +313,7 @@ const DubaiToSaudiCargo = () => {
             </p>
           </div>
 
+          <p className="text-muted-foreground text-xs text-center mb-4">* Prices are indicative and vary based on weight, volume, cargo type and collection point. WhatsApp us for your exact quote.</p>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {pricingOptions.map((opt) => (
               <div
@@ -508,7 +509,7 @@ const DubaiToSaudiCargo = () => {
             Ship from Dubai to Saudi Arabia Today
           </h2>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-3">
-            Air cargo in 24hrs • Road freight in 3–4 days • From AED 2/kg
+            Air cargo in 24hrs • Road freight in 3–4 days • Starting from AED 2/kg*
           </p>
           <p className="text-primary-foreground/60 mb-10">
             Full Saudi customs clearance • Door-to-door • No hidden charges
