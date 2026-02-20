@@ -1,6 +1,7 @@
 /**
  * GA4 Conversion Tracking — Ultra Fast Cargo
- * Fires `qualify_lead` events imported by Google Ads as UFC(web) qualify_lead
+ * Fires `conversion_event_engagement` events for Google Ads conversion tracking
+ * Also fires `qualify_lead` as secondary event for GA4 reporting
  * GA4 Property: G-KFVDHW2FSB (QRCODE)
  */
 
@@ -8,6 +9,15 @@ type TrackingLabel = string;
 
 const fireEvent = (label: TrackingLabel, method: string) => {
   if (typeof window !== "undefined" && (window as any).gtag) {
+    // Primary: Google Ads conversion event
+    (window as any).gtag("event", "conversion_event_engagement", {
+      event_category: method,
+      event_label: label,
+      value: 1,
+      currency: "AED",
+      method,
+    });
+    // Secondary: qualify_lead for GA4 reporting
     (window as any).gtag("event", "qualify_lead", {
       event_category: method,
       event_label: label,
