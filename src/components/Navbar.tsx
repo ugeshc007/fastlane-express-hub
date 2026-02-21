@@ -100,7 +100,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-3">
             <LanguageSwitcher />
             <Button variant="outline" size="sm" asChild>
-              <a href="tel:+971XXXXXXX" className="flex items-center gap-2">
+              <a href="tel:+971551417563" className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
                 {isRTL ? "اتصل بنا" : "Call Us"}
               </a>
@@ -155,7 +155,7 @@ const Navbar = () => {
               <div className="flex flex-col gap-2 mt-4 px-4">
                 <LanguageSwitcher />
                 <Button variant="outline" asChild>
-                  <a href="tel:+971XXXXXXX" className="flex items-center justify-center gap-2">
+                  <a href="tel:+971551417563" className="flex items-center justify-center gap-2">
                     <Phone className="w-4 h-4" />
                     {isRTL ? "اتصل بنا" : "Call Us"}
                   </a>
