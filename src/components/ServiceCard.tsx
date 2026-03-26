@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 interface ServiceCardProps {
@@ -6,13 +7,17 @@ interface ServiceCardProps {
   image?: string;
   title: string;
   description: string;
+  link?: string;
   className?: string;
 }
 
-const ServiceCard = ({ icon, image, title, description, className }: ServiceCardProps) => {
+const ServiceCard = ({ icon, image, title, description, link, className }: ServiceCardProps) => {
+  const Wrapper = link ? Link : "div";
+  const wrapperProps = link ? { to: link } : {};
+
   return (
-    <div className={cn(
-      "group bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/30 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1",
+    <Wrapper {...wrapperProps as any} className={cn(
+      "group bg-card rounded-2xl overflow-hidden border border-border hover:border-accent/30 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 block",
       className
     )}>
       {image ? (
@@ -37,7 +42,7 @@ const ServiceCard = ({ icon, image, title, description, className }: ServiceCard
         <h3 className="font-heading font-semibold text-lg text-foreground mb-2">{title}</h3>
         <p className="text-muted-foreground text-sm leading-relaxed">{description}</p>
       </div>
-    </div>
+    </Wrapper>
   );
 };
 

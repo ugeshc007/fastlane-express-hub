@@ -220,21 +220,25 @@ const Index = () => {
               image={airCargoImage}
               title={t("services.air")}
               description={t("services.airDesc")}
+              link="/services/air-cargo"
             />
             <ServiceCard
               image={seaCargoImage}
               title={t("services.sea")}
               description={t("services.seaDesc")}
+              link="/services/sea-cargo"
             />
             <ServiceCard
               image={landTransportImage}
               title={t("services.land")}
               description={t("services.landDesc")}
+              link="/services/land-transport"
             />
             <ServiceCard
               image={expressDeliveryImage}
               title={t("services.express")}
               description={t("services.expressDesc")}
+              link="/services/express-delivery"
             />
           </div>
           
