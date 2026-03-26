@@ -1,15 +1,19 @@
 /**
- * GA4 Conversion Tracking — Ultra Fast Cargo
- * Fires `conversion_event_engagement` events for Google Ads conversion tracking
- * Also fires `qualify_lead` as secondary event for GA4 reporting
- * GA4 Property: G-KFVDHW2FSB (QRCODE)
+ * GA4 + Meta Pixel Conversion Tracking — Ultra Fast Cargo
+ * Fires GA4 events for Google Ads + Meta Pixel Lead events for Facebook Ads
+ * GA4 Property: G-KFVDHW2FSB | Meta Pixel: 2022932401962768
  */
 
 type TrackingLabel = string;
 
+const fireFbq = (eventName: string, data: Record<string, string>) => {
+  if (typeof window !== "undefined" && (window as any).fbq) {
+    (window as any).fbq("track", eventName, data);
+  }
+};
+
 const fireEvent = (label: TrackingLabel, method: string) => {
   if (typeof window !== "undefined" && (window as any).gtag) {
-    // Primary: Google Ads conversion event
     (window as any).gtag("event", "conversion_event_engagement", {
       event_category: method,
       event_label: label,
@@ -17,7 +21,6 @@ const fireEvent = (label: TrackingLabel, method: string) => {
       currency: "AED",
       method,
     });
-    // Secondary: qualify_lead for GA4 reporting
     (window as any).gtag("event", "qualify_lead", {
       event_category: method,
       event_label: label,
@@ -26,6 +29,14 @@ const fireEvent = (label: TrackingLabel, method: string) => {
       method,
     });
   }
+
+  // Meta Pixel: fire Lead event
+  fireFbq("Lead", {
+    content_name: label,
+    content_category: method,
+    currency: "AED",
+    value: "1",
+  });
 };
 
 export const trackWhatsApp = (label: TrackingLabel = "General") =>
