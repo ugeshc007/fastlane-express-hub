@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { trackWhatsApp, trackPhone, trackFormSubmit } from "@/lib/tracking";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
@@ -47,11 +48,7 @@ ${formData.message}
     
     trackFormSubmit("Contact Form");
     window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: t("contact.successTitle"),
-      description: isRTL ? "سيتم فتح واتساب مع رسالتك" : "WhatsApp will open with your message",
-    });
+    navigate("/thank-you");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

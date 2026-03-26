@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { trackFormSubmit } from "@/lib/tracking";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -30,6 +31,7 @@ interface FormErrors {
 }
 
 const Quote = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
@@ -145,13 +147,8 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     trackFormSubmit("Quote Form");
-    // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: t("quote.successTitle"),
-      description: isRTL ? "سيتم فتح واتساب مع تفاصيل طلبك" : "WhatsApp will open with your quote details",
-    });
+    navigate("/thank-you");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

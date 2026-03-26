@@ -7,7 +7,7 @@ import LanguageSwitcher from "@/components/LanguageSwitcher";
 import logo from "@/assets/UltrafastCargoY Logo.png";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const location = useLocation();
   const { t, isRTL } = useLanguage();
 
@@ -23,7 +23,17 @@ const Navbar = () => {
         { name: t("services.express"), href: "/services/express-delivery" },
       ]
     },
-    { name: t("nav.coverage"), href: "/coverage" },
+    {
+      name: isRTL ? "المسارات" : "Routes",
+      href: "/coverage",
+      subLinks: [
+        { name: isRTL ? "دبي إلى قطر" : "Dubai to Qatar", href: "/dubai-to-qatar-cargo" },
+        { name: isRTL ? "دبي إلى السعودية" : "Dubai to Saudi", href: "/dubai-to-saudi-cargo" },
+        { name: isRTL ? "الإمارات إلى السعودية" : "UAE to Saudi", href: "/services/uae-to-saudi" },
+        { name: isRTL ? "الإمارات إلى قطر" : "UAE to Qatar", href: "/services/uae-to-qatar" },
+        { name: isRTL ? "الإمارات إلى عمان" : "UAE to Oman", href: "/services/uae-to-oman" },
+      ]
+    },
     { name: t("nav.track"), href: "/track" },
     { name: t("nav.contact"), href: "/contact" },
     { name: t("nav.about"), href: "/about" },
@@ -51,8 +61,8 @@ const Navbar = () => {
                 {link.subLinks ? (
                   <div 
                     className="relative"
-                    onMouseEnter={() => setServicesOpen(true)}
-                    onMouseLeave={() => setServicesOpen(false)}
+                    onMouseEnter={() => setOpenDropdown(link.href)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <Link
                       to={link.href}
@@ -64,7 +74,7 @@ const Navbar = () => {
                     >
                       {link.name}
                     </Link>
-                    {servicesOpen && (
+                    {openDropdown === link.href && (
                       <div className={`absolute top-full ${isRTL ? 'right-0' : 'left-0'} pt-2 animate-fade-in`}>
                         <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
                           {link.subLinks.map((subLink) => (
