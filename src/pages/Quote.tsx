@@ -147,13 +147,8 @@ ${formData.description ? `\n📝 *Additional Details*\n${formData.description}` 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     trackFormSubmit("Quote Form");
-    // Open WhatsApp in new tab
     window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: t("quote.successTitle"),
-      description: isRTL ? "سيتم فتح واتساب مع تفاصيل طلبك" : "WhatsApp will open with your quote details",
-    });
+    navigate("/thank-you");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

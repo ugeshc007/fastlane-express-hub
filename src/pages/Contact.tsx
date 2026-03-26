@@ -48,11 +48,7 @@ ${formData.message}
     
     trackFormSubmit("Contact Form");
     window.open(whatsappUrl, '_blank');
-    
-    toast({
-      title: t("contact.successTitle"),
-      description: isRTL ? "سيتم فتح واتساب مع رسالتك" : "WhatsApp will open with your message",
-    });
+    navigate("/thank-you");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
