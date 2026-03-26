@@ -31,6 +31,7 @@ interface FormErrors {
 }
 
 const Quote = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({

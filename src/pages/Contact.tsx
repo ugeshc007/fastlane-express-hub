@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { trackWhatsApp, trackPhone, trackFormSubmit } from "@/lib/tracking";
 
 const Contact = () => {
+  const navigate = useNavigate();
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
