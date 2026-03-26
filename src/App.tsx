@@ -19,6 +19,7 @@ import Quote from "./pages/Quote";
 import Coverage from "./pages/Coverage";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
