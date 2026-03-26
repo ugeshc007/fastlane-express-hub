@@ -30,6 +30,7 @@ interface FormErrors {
 }
 
 const Quote = () => {
+  const navigate = (window as any).__reactRouterNavigate || null;
   const { toast } = useToast();
   const { t, isRTL } = useLanguage();
   const [formData, setFormData] = useState({
