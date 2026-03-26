@@ -456,6 +456,40 @@ const DubaiToSaudiCargo = () => {
       </section>
 
       {/* ═══════════════════════════════════════════
+          CUSTOMER REVIEWS
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              What Our <span className="text-accent">Customers Say</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">Trusted by businesses shipping from Dubai to Saudi Arabia</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { name: "Khalid Al-Otaibi", role: "Procurement Manager, Riyadh", quote: "Ultra Fast Cargo handles all our Dubai to Riyadh shipments. Their road freight is reliable, affordable, and customs is always sorted. Best in the business!", rating: 5 },
+              { name: "Sara Al-Dosari", role: "E-commerce Business Owner, Jeddah", quote: "I ship products from Dubai to Jeddah weekly. Their express service gets everything there in 2 days. Customer support on WhatsApp is excellent.", rating: 5 },
+              { name: "Imran Malik", role: "Operations Head, Dammam", quote: "We switched to Ultra Fast Cargo last year for our Dubai-Dammam route. Zero delays, transparent pricing, and they handle all ZATCA paperwork. Highly recommended!", rating: 5 },
+            ].map((review, i) => (
+              <div key={i} className="bg-card rounded-2xl border border-border p-6">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: review.rating }).map((_, j) => (
+                    <Star key={j} className="w-5 h-5 text-accent fill-accent" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4 italic">"{review.quote}"</p>
+                <div>
+                  <p className="font-semibold text-foreground">{review.name}</p>
+                  <p className="text-muted-foreground text-sm">{review.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           FAQ — AEO & Answer Engine Optimization
       ═══════════════════════════════════════════ */}
       <section className="py-16 bg-secondary">

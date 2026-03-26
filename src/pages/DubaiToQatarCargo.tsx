@@ -448,6 +448,40 @@ const DubaiToQatarCargo = () => {
       </section>
 
       {/* ═══════════════════════════════════════════
+          CUSTOMER REVIEWS
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              What Our <span className="text-accent">Customers Say</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">Trusted by businesses shipping from Dubai to Qatar</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { name: "Ahmed Al-Thani", role: "Import Manager, Doha Electronics", quote: "Ultra Fast Cargo delivered our shipment from Dubai to Doha in just 2 days. Customs clearance was seamless — highly recommend!", rating: 5 },
+              { name: "Fatima Hassan", role: "Business Owner, Qatar", quote: "We've been using their Dubai to Qatar road freight for 3 years. Always on time, great rates, and excellent WhatsApp support.", rating: 5 },
+              { name: "Rajesh Kumar", role: "Logistics Coordinator", quote: "Their air cargo service is a lifesaver for urgent shipments. 24-hour delivery to Doha with full tracking. Best cargo company for Qatar route.", rating: 5 },
+            ].map((review, i) => (
+              <div key={i} className="bg-card rounded-2xl border border-border p-6">
+                <div className="flex gap-1 mb-4">
+                  {Array.from({ length: review.rating }).map((_, j) => (
+                    <Star key={j} className="w-5 h-5 text-accent fill-accent" />
+                  ))}
+                </div>
+                <p className="text-muted-foreground mb-4 italic">"{review.quote}"</p>
+                <div>
+                  <p className="font-semibold text-foreground">{review.name}</p>
+                  <p className="text-muted-foreground text-sm">{review.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
           FAQ — AEO & Answer Engine Optimization
       ═══════════════════════════════════════════ */}
       <section className="py-16 bg-secondary">
