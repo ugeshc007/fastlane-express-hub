@@ -23,7 +23,17 @@ const Navbar = () => {
         { name: t("services.express"), href: "/services/express-delivery" },
       ]
     },
-    { name: t("nav.coverage"), href: "/coverage" },
+    {
+      name: isRTL ? "المسارات" : "Routes",
+      href: "/coverage",
+      subLinks: [
+        { name: isRTL ? "دبي إلى قطر" : "Dubai to Qatar", href: "/dubai-to-qatar-cargo" },
+        { name: isRTL ? "دبي إلى السعودية" : "Dubai to Saudi", href: "/dubai-to-saudi-cargo" },
+        { name: isRTL ? "الإمارات إلى السعودية" : "UAE to Saudi", href: "/services/uae-to-saudi" },
+        { name: isRTL ? "الإمارات إلى قطر" : "UAE to Qatar", href: "/services/uae-to-qatar" },
+        { name: isRTL ? "الإمارات إلى عمان" : "UAE to Oman", href: "/services/uae-to-oman" },
+      ]
+    },
     { name: t("nav.track"), href: "/track" },
     { name: t("nav.contact"), href: "/contact" },
     { name: t("nav.about"), href: "/about" },
