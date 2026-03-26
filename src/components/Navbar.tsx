@@ -61,8 +61,8 @@ const Navbar = () => {
                 {link.subLinks ? (
                   <div 
                     className="relative"
-                    onMouseEnter={() => setServicesOpen(true)}
-                    onMouseLeave={() => setServicesOpen(false)}
+                    onMouseEnter={() => setOpenDropdown(link.href)}
+                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <Link
                       to={link.href}
@@ -74,7 +74,7 @@ const Navbar = () => {
                     >
                       {link.name}
                     </Link>
-                    {servicesOpen && (
+                    {openDropdown === link.href && (
                       <div className={`absolute top-full ${isRTL ? 'right-0' : 'left-0'} pt-2 animate-fade-in`}>
                         <div className="bg-card border border-border rounded-lg shadow-lg py-2 min-w-[200px]">
                           {link.subLinks.map((subLink) => (
