@@ -111,7 +111,7 @@ const DubaiToQatarCargo = () => {
       <SEOHead
         title="Dubai to Qatar Cargo Service – Fast & Affordable | Ultra Fast Cargo"
         description="Dubai to Qatar cargo. Road freight & air cargo to Doha & all Qatar cities. Door-to-door + full customs clearance. Call or WhatsApp now!"
-        keywords="Dubai to Qatar cargo, Dubai to Doha shipping, cargo Qatar from Dubai, freight Dubai Qatar, UAE Qatar cargo, Doha cargo service, Dubai Qatar delivery, cargo Dubai Doha price, Dubai Qatar shipping cost"
+        keywords="Dubai to Qatar cargo, cargo dubai to qatar, transport dubai to qatar, freight to qatar, transport dubai to doha, shipping dubai to qatar, cargo to doha, sea freight to qatar, door to door cargo to qatar, door to door cargo dubai to qatar, freight dubai to qatar, logistics dubai qatar, shipping company to qatar, air cargo to qatar, freight forwarding to qatar, cargo to qatar, shipping to qatar, express cargo to qatar, شحن قطر"
         structuredData={structuredData}
         canonicalPath="/dubai-to-qatar-cargo"
       />

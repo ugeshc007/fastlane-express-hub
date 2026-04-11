@@ -119,7 +119,7 @@ const DubaiToSaudiCargo = () => {
       <SEOHead
         title="Dubai to Saudi Arabia Cargo Service – Fast & Affordable | Ultra Fast Cargo"
         description="Dubai to Saudi Arabia cargo. Road freight & air cargo to Riyadh, Jeddah & all KSA cities. Door-to-door + full Saudi customs clearance. WhatsApp now!"
-        keywords="Dubai to Saudi cargo, Dubai to Riyadh shipping, Dubai to Jeddah cargo, UAE to Saudi Arabia freight, cargo Saudi from Dubai, Dubai Saudi delivery, shipping Dubai to KSA, Dubai Saudi cargo price, UAE KSA cargo"
+        keywords="cargo to saudi arabia, Dubai to Saudi cargo, cargo dubai to saudi, door to door cargo dubai to saudi, road cargo dubai to saudi, cargo to saudi, door to door cargo saudi arabia, Dubai to Riyadh shipping, Dubai to Jeddah cargo, cargo dubai to jeddah, cargo dubai to riyadh, cargo dubai to dammam, transport dubai to saudi, truck cargo dubai to saudi, shipping dubai to saudi, freight dubai to saudi, UAE to Saudi Arabia freight, logistics dubai to saudi, cargo company dubai to saudi, بضائع من دبي"
         structuredData={structuredData}
         canonicalPath="/dubai-to-saudi-cargo"
       />
