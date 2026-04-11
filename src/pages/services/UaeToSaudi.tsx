@@ -33,7 +33,7 @@ const services = [
     icon: <Plane className="w-8 h-8" />,
     title: "Air Cargo to KSA",
     description: "Express air freight for urgent shipments to Riyadh, Jeddah, and Dammam airports.",
-    delivery: "24-48 Hours",
+    delivery: "Fast Delivery",
     image: airCargoImage,
   },
   {
@@ -48,7 +48,7 @@ const services = [
 const faqs = [
   {
     question: "How long does cargo shipping from Dubai to Saudi Arabia take?",
-    answer: "Road freight from Dubai to Riyadh or Jeddah takes 2-4 days. Air cargo arrives within 24-48 hours. Express delivery is available in 1-2 days for urgent shipments."
+    answer: "Road freight from Dubai to Riyadh or Jeddah takes 2-4 days. Express delivery is available in 1-2 days for urgent shipments. Contact us for air cargo timelines."
   },
   {
     question: "What is the cost of shipping cargo from Dubai to Saudi Arabia?",
@@ -271,7 +271,7 @@ const UaeToSaudi = () => {
               <div className="bg-card rounded-xl p-6 border border-border text-center">
                 <Clock className="w-10 h-10 text-accent mx-auto mb-3" />
                 <h3 className="font-semibold text-foreground mb-1">Fast Transit</h3>
-                <p className="text-sm text-muted-foreground">As quick as 24 hours</p>
+                <p className="text-sm text-muted-foreground">Air & road options</p>
               </div>
               <div className="bg-card rounded-xl p-6 border border-border text-center">
                 <MapPin className="w-10 h-10 text-accent mx-auto mb-3" />

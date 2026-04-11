@@ -22,11 +22,11 @@ const trackPhoneClick = () => trackPhone("Dubai to Qatar Cargo");
 const faqs = [
   {
     question: "How long does cargo shipping from Dubai to Qatar take?",
-    answer: "Air cargo from Dubai to Doha takes 24–48 hours. Road freight takes 3–5 days. Express delivery is available in 1–2 days for urgent shipments.",
+    answer: "Road freight from Dubai to Doha takes 3–5 days. Express delivery is available in 1–2 days for urgent shipments. Contact us for air cargo timelines.",
   },
   {
     question: "What is the price for shipping cargo from Dubai to Qatar?",
-    answer: "Road freight starts from AED 2–4 per kg (minimum charges apply). Air cargo starts from AED 8–15 per kg. Full container loads (FCL) and part loads (LCL) are available at competitive rates. Contact us for your exact quote.",
+    answer: "Shipping rates depend on cargo weight, volume, and service type. Full container loads (FCL) and part loads (LCL) are available at competitive rates. Contact us for your exact quote.",
   },
   {
     question: "Do you handle customs clearance Dubai to Qatar?",
@@ -47,7 +47,7 @@ const pricingOptions = [
     icon: <Truck className="w-7 h-7" />,
     label: "Road Freight",
     time: "3–5 Days",
-    price: "Starting from AED 2/kg*",
+    price: "Competitive Rates",
     desc: "Best for bulk & heavy shipments",
     image: landTransportImage,
     badge: "Most Popular",
@@ -55,8 +55,8 @@ const pricingOptions = [
   {
     icon: <Plane className="w-7 h-7" />,
     label: "Air Cargo",
-    time: "24–48 Hours",
-    price: "Starting from AED 8/kg*",
+    time: "Fast Delivery",
+    price: "Contact for Quote",
     desc: "Urgent & time-critical cargo",
     image: airCargoImage,
     badge: "Fastest",
@@ -65,7 +65,7 @@ const pricingOptions = [
     icon: <Zap className="w-7 h-7" />,
     label: "Express Delivery",
     time: "1–2 Days",
-    price: "Starting from AED 12/kg*",
+    price: "Premium Rates",
     desc: "Priority door-to-door service",
     image: expressDeliveryImage,
     badge: "Premium",
@@ -77,7 +77,7 @@ const qatarCities = ["Doha", "Lusail", "Al Wakrah", "Al Khor", "Dukhan", "Mesaie
 const structuredData = [
   generateWebPageSchema({
     name: "Dubai to Qatar Cargo Service – Fast & Affordable",
-    description: "Cargo shipping from Dubai to Qatar in 1–5 days. Air, land & door-to-door delivery to Doha. Full customs clearance included.",
+    description: "Cargo shipping from Dubai to Qatar. Road freight, air cargo & door-to-door delivery to Doha. Full customs clearance included.",
     url: "/dubai-to-qatar-cargo",
   }),
   generateBreadcrumbSchema([
@@ -101,15 +101,6 @@ const structuredData = [
       { "@type": "City", name: "Doha" },
       { "@type": "Country", name: "Qatar" },
     ],
-    offers: {
-      "@type": "Offer",
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        priceCurrency: "AED",
-        price: "2",
-        description: "Road freight from AED 2/kg",
-      },
-    },
     serviceType: "Cargo Shipping",
   },
 ];
@@ -119,7 +110,7 @@ const DubaiToQatarCargo = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Dubai to Qatar Cargo Service – Fast & Affordable | Ultra Fast Cargo"
-        description="Dubai to Qatar cargo in 1–5 days. Air cargo to Doha in 24hrs. Road freight from AED 2/kg. Door-to-door + full customs clearance. Call or WhatsApp now!"
+        description="Dubai to Qatar cargo. Road freight & air cargo to Doha & all Qatar cities. Door-to-door + full customs clearance. Call or WhatsApp now!"
         keywords="Dubai to Qatar cargo, Dubai to Doha shipping, cargo Qatar from Dubai, freight Dubai Qatar, UAE Qatar cargo, Doha cargo service, Dubai Qatar delivery, cargo Dubai Doha price, Dubai Qatar shipping cost"
         structuredData={structuredData}
         canonicalPath="/dubai-to-qatar-cargo"
@@ -170,8 +161,8 @@ const DubaiToQatarCargo = () => {
                 Air, Land & Door-to-Door Cargo to Doha
               </p>
               <p className="text-primary-foreground/70 text-base mb-8">
-                ✅ Road freight <strong className="text-accent">starting from AED 2/kg*</strong> &nbsp;|&nbsp;
-                ✅ Air cargo <strong className="text-accent">24–48 hrs</strong> &nbsp;|&nbsp;
+                ✅ Road freight &nbsp;|&nbsp;
+                ✅ Air cargo &nbsp;|&nbsp;
                 ✅ Full customs included
               </p>
 
@@ -220,9 +211,9 @@ const DubaiToQatarCargo = () => {
               </h2>
               <div className="space-y-4">
                 {[
-                  { mode: "🚛 Road Freight", time: "3–5 Days", price: "Starts from AED 2/kg*", color: "text-green-400" },
-                  { mode: "✈️ Air Cargo", time: "24–48 Hours", price: "Starts from AED 8/kg*", color: "text-accent" },
-                  { mode: "⚡ Express", time: "1–2 Days", price: "Starts from AED 12/kg*", color: "text-yellow-400" },
+                  { mode: "🚛 Road Freight", time: "3–5 Days", price: "Competitive Rates", color: "text-green-400" },
+                  { mode: "✈️ Air Cargo", time: "Fast Delivery", price: "Contact for Quote", color: "text-accent" },
+                  { mode: "⚡ Express", time: "1–2 Days", price: "Premium Rates", color: "text-yellow-400" },
                 ].map((opt) => (
                   <div key={opt.mode} className="flex items-center justify-between bg-primary-foreground/10 rounded-xl px-4 py-3">
                     <div>
@@ -280,7 +271,7 @@ const DubaiToQatarCargo = () => {
             </p>
           </div>
 
-          <p className="text-muted-foreground text-xs text-center mb-4">* Prices are indicative and vary based on weight, volume, cargo type and collection point. WhatsApp us for your exact quote.</p>
+          <p className="text-muted-foreground text-xs text-center mb-4">WhatsApp us for your exact quote based on weight, volume and cargo type.</p>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {pricingOptions.map((opt) => (
               <div
@@ -510,7 +501,7 @@ const DubaiToQatarCargo = () => {
             Ship from Dubai to Qatar Today
           </h2>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-3">
-            Air cargo in 24hrs • Road freight in 3–5 days • Starting from AED 2/kg*
+            Road freight in 3–5 days • Express in 1–2 days • Competitive rates
           </p>
           <p className="text-primary-foreground/60 mb-10">
             Full customs clearance • Door-to-door • No hidden charges

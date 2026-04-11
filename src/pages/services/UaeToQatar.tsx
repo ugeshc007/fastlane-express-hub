@@ -33,7 +33,7 @@ const services = [
     icon: <Plane className="w-8 h-8" />,
     title: "Air Cargo to Doha",
     description: "Express air freight to Hamad International Airport for urgent and time-critical shipments.",
-    delivery: "24-48 Hours",
+    delivery: "Fast Delivery",
     image: airCargoImage,
   },
   {
@@ -48,7 +48,7 @@ const services = [
 const faqs = [
   {
     question: "How long does cargo shipping from Dubai to Qatar take?",
-    answer: "Air cargo from Dubai to Doha takes 24-48 hours. Road freight to Qatar via Saudi Arabia takes 3-5 days depending on customs clearance times at both borders."
+    answer: "Road freight to Qatar via Saudi Arabia takes 3-5 days depending on customs clearance times at both borders. Contact us for air cargo timelines."
   },
   {
     question: "What is the cost of shipping cargo from Dubai to Qatar?",
