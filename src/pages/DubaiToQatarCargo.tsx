@@ -271,7 +271,7 @@ const DubaiToQatarCargo = () => {
             </p>
           </div>
 
-          <p className="text-muted-foreground text-xs text-center mb-4">* Prices are indicative and vary based on weight, volume, cargo type and collection point. WhatsApp us for your exact quote.</p>
+          <p className="text-muted-foreground text-xs text-center mb-4">WhatsApp us for your exact quote based on weight, volume and cargo type.</p>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {pricingOptions.map((opt) => (
               <div
