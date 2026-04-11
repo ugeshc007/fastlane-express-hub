@@ -78,15 +78,15 @@ import processDeliver from "@/assets/process-deliver.jpg";
 const homeFAQs = [
   {
     question: "How long does cargo shipping from Dubai to Qatar take?",
-    answer: "Air cargo from Dubai to Doha takes 24-48 hours. Road freight to Qatar via Saudi transit typically takes 3-5 days. We offer both express and standard shipping options."
+    answer: "Road freight from Dubai to Doha typically takes 3-5 days. Express delivery is available for urgent shipments. Contact us for air cargo timelines and the fastest option for your needs."
   },
   {
     question: "How long does cargo shipping from Dubai to Saudi Arabia take?",
-    answer: "Road freight from Dubai to Riyadh or Jeddah takes 2-4 days. Air cargo to Saudi Arabia arrives within 24-48 hours. Express delivery takes 1-2 days."
+    answer: "Road freight from Dubai to Riyadh or Jeddah takes 2-4 days. Express door-to-door delivery is available for urgent shipments. Contact us for air cargo timelines."
   },
   {
     question: "How long does cargo shipping from Dubai to Oman take?",
-    answer: "Road freight from Dubai to Muscat takes just 1-2 days via direct border crossing. Air cargo can arrive same day or within 24 hours for urgent shipments."
+    answer: "Road freight from Dubai to Muscat takes just 1-2 days via direct border crossing. Express delivery is available for urgent shipments — contact us for the fastest option."
   },
   {
     question: "Does Ultra Fast Cargo provide customs clearance for GCC countries?",
@@ -128,7 +128,7 @@ const Index = () => {
       <SEOHead
         title={language === "ar" ? "شركة شحن من دبي إلى قطر والسعودية وعمان" : "Dubai Cargo Service to Qatar, Saudi Arabia & Oman - Ultra Fast Cargo"}
         description="Ultra Fast Cargo: #1 cargo company in Dubai. Fast shipping to Qatar, Saudi Arabia & Oman. Road freight, air cargo & express delivery. Customs clearance included. Get free quote!"
-        keywords="cargo Dubai to Qatar, Dubai to Saudi Arabia cargo, Dubai to Oman shipping, cargo service Dubai, UAE to Qatar freight, Dubai to Riyadh, Dubai to Doha cargo, Dubai to Muscat, GCC cargo company"
+        keywords="cargo Dubai to Qatar, Dubai to Saudi Arabia cargo, cargo to saudi arabia, Dubai to Oman shipping, cargo service Dubai, UAE to Qatar freight, Dubai to Riyadh cargo, Dubai to Doha cargo, Dubai to Muscat, GCC cargo company, door to door cargo dubai to saudi, road cargo dubai to saudi, transport dubai to qatar, freight to qatar, shipping dubai to qatar, cargo to doha, logistics dubai qatar, shipping company to qatar, cargo dubai to jeddah, cargo dubai to dammam, شحن قطر, بضائع من دبي"
         structuredData={structuredData}
       />
       <Navbar />
@@ -269,9 +269,9 @@ const Index = () => {
               {
                 flag: "sa",
                 country: "Saudi Arabia",
-                route: "Dubai → Riyadh / Jeddah",
-                time: "Road 3–4 days | Air 24 hrs",
-                price: "From AED 2/kg",
+                route: "Dubai → Riyadh / Jeddah / Dammam",
+                time: "Road 3–4 days | Express 2 days",
+                price: "Competitive Rates",
                 href: "/dubai-to-saudi-cargo",
                 label: "Dubai to Saudi Arabia Cargo",
               },
@@ -279,8 +279,8 @@ const Index = () => {
                 flag: "qa",
                 country: "Qatar",
                 route: "Dubai → Doha",
-                time: "Road 3–5 days | Air 24–48 hrs",
-                price: "From AED 2/kg",
+                time: "Road 3–5 days | Express 1–2 days",
+                price: "Competitive Rates",
                 href: "/dubai-to-qatar-cargo",
                 label: "Dubai to Qatar Cargo",
               },
@@ -288,8 +288,8 @@ const Index = () => {
                 flag: "om",
                 country: "Oman",
                 route: "Dubai → Muscat",
-                time: "Road 1–2 days | Air same day",
-                price: "From AED 2/kg",
+                time: "Road 1–2 days | Express same day",
+                price: "Competitive Rates",
                 href: "/services/uae-to-oman",
                 label: "Dubai to Oman Cargo",
               },
