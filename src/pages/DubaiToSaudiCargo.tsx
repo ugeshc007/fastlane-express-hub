@@ -109,7 +109,6 @@ const structuredData = [
       { "@type": "City", name: "Jeddah" },
       { "@type": "Country", name: "Saudi Arabia" },
     ],
-      serviceType: "Cargo Shipping",
     serviceType: "Cargo Shipping",
   },
 ];
