@@ -1,63 +1,22 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { trackWhatsApp, trackPhone, trackFormSubmit } from "@/lib/tracking";
+import { MapPin, Phone, Mail, Clock, MessageCircle, CheckCircle } from "lucide-react";
+import { trackWhatsApp, trackPhone } from "@/lib/tracking";
+
+const WHATSAPP_NUMBER = "971568962512";
+const PHONE_NUMBER = "971551417563";
 
 const Contact = () => {
-  const navigate = useNavigate();
-  const { toast } = useToast();
   const { t, isRTL } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Build WhatsApp message with contact form data
-    const message = `
-📩 *New Contact Message*
+  const prefilled = isRTL
+    ? "مرحباً، أود التواصل معكم بخصوص خدمات الشحن.\n• الاسم:\n• رقم الهاتف:\n• الموضوع:\n• الرسالة:"
+    : "Hello, I would like to get in touch about your shipping services.\n• Name:\n• Phone:\n• Subject:\n• Message:";
 
-👤 *Contact Information*
-• Name: ${formData.name}
-• Email: ${formData.email}
-${formData.phone ? `• Phone: ${formData.phone}` : ''}
-
-📋 *Subject*
-${formData.subject}
-
-💬 *Message*
-${formData.message}
-    `.trim();
-    
-    const phoneNumber = "971551417563";
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    
-    trackFormSubmit("Contact Form");
-    window.open(whatsappUrl, '_blank');
-    toast({
-      title: isRTL ? "تم الإرسال" : "Message Sent",
-      description: isRTL ? "سنتواصل معك قريباً عبر واتساب." : "We'll get back to you shortly on WhatsApp.",
-    });
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(prefilled)}`;
 
   return (
     <div className="min-h-screen bg-background">
@@ -117,7 +76,7 @@ ${formData.message}
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">{t("contact.phone")}</h3>
-                    <a href="tel:+971551417563" onClick={() => trackPhone("Contact Page")} className="text-muted-foreground text-sm hover:text-accent transition-colors">
+                    <a href={`tel:+${PHONE_NUMBER}`} onClick={() => trackPhone("Contact Page")} className="text-muted-foreground text-sm hover:text-accent transition-colors">
                       +971 55 141 7563
                     </a>
                   </div>
@@ -159,86 +118,63 @@ ${formData.message}
                   {t("contact.whatsappDesc")}
                 </p>
                  <Button variant="whatsapp" className="w-full" asChild>
-                   <a href="https://wa.me/971551417563" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp("Contact Page")}>
+                   <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsApp("Contact Page")}>
                     {t("contact.startChat")}
                   </a>
                 </Button>
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Direct Contact CTA */}
             <div className="lg:col-span-2">
-              <div className="bg-card rounded-2xl p-8 border border-border shadow-sm">
-                <h2 className="font-heading text-2xl font-bold text-foreground mb-6">
-                  {t("contact.sendMessage")}
+              <div className="bg-card rounded-2xl p-8 md:p-12 border border-border shadow-sm text-center h-full flex flex-col justify-center">
+                <div className="w-20 h-20 bg-[#25D366]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <MessageCircle className="w-10 h-10 text-[#25D366]" />
+                </div>
+                <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  {isRTL ? "تواصل معنا مباشرة" : "Contact Us Directly"}
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">{t("quote.name")}</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        placeholder={isRTL ? "محمد أحمد" : "John Doe"}
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">{t("quote.email")}</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="john@example.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="grid sm:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="phone">{t("quote.phone")}</Label>
-                      <Input
-                        id="phone"
-                        name="phone"
-                        type="tel"
-                        placeholder="+971 XX XXX XXXX"
-                        value={formData.phone}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="subject">{t("contact.subject")}</Label>
-                      <Input
-                        id="subject"
-                        name="subject"
-                        placeholder={t("contact.subjectPlaceholder")}
-                        value={formData.subject}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t("contact.message")}</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      placeholder={t("contact.messagePlaceholder")}
-                      rows={6}
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" variant="accent" size="lg" className="w-full sm:w-auto">
-                    <Send className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                    {t("contact.send")}
+                <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+                  {isRTL
+                    ? "نحن متاحون على واتساب للرد الفوري على استفساراتك. اضغط الزر أدناه للبدء."
+                    : "We are available on WhatsApp for instant replies to your inquiries. Tap the button below to get started."}
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+                  <Button variant="whatsapp" size="xl" asChild>
+                    <a
+                      href={whatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackWhatsApp("Contact Page CTA")}
+                      className="flex items-center gap-2"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      {isRTL ? "ابدأ المحادثة على واتساب" : "Chat on WhatsApp"}
+                    </a>
                   </Button>
-                </form>
+                  <Button variant="outline" size="xl" asChild>
+                    <a
+                      href={`tel:+${PHONE_NUMBER}`}
+                      onClick={() => trackPhone("Contact Page CTA")}
+                      className="flex items-center gap-2"
+                    >
+                      <Phone className="w-5 h-5" />
+                      {isRTL ? "اتصل بنا" : "Call Us"}
+                    </a>
+                  </Button>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-accent" />
+                    {isRTL ? "رد سريع" : "Fast Response"}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-accent" />
+                    {isRTL ? "دعم على مدار الساعة" : "24/7 Support"}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
