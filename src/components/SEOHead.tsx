@@ -13,28 +13,31 @@ interface SEOHeadProps {
   noIndex?: boolean;
 }
 
+const BRAND = "Ultra Fast Cargo";
+const BASE_URL = "https://fastlane-express-hub.lovable.app";
+
+const withBrand = (title: string) =>
+  title.toLowerCase().includes(BRAND.toLowerCase()) ? title : `${title} | ${BRAND}`;
+
 const SEOHead = ({
   title,
   description,
   keywords,
   canonicalPath,
-  ogImage = "https://ultrafastcargo.com/og-image.jpg",
+  ogImage = `${BASE_URL}/og-image.jpg`,
   ogType = "website",
   structuredData,
   noIndex = false,
 }: SEOHeadProps) => {
   const location = useLocation();
-  // Use context directly with fallback to avoid throwing
   const languageContext = useContext(LanguageContext);
   const language = languageContext?.language || "en";
-  const baseUrl = "https://ultrafastcargo.com";
-  const fullUrl = `${baseUrl}${canonicalPath || location.pathname}`;
+  const fullUrl = `${BASE_URL}${canonicalPath || location.pathname}`;
+  const fullTitle = withBrand(title);
 
   useEffect(() => {
-    // Update document title
-    document.title = `${title} | Ultra Fast Cargo`;
+    document.title = fullTitle;
 
-    // Update meta tags
     const updateMeta = (name: string, content: string, property?: boolean) => {
       const attr = property ? "property" : "name";
       let element = document.querySelector(`meta[${attr}="${name}"]`);
@@ -50,22 +53,19 @@ const SEOHead = ({
     if (keywords) updateMeta("keywords", keywords);
     updateMeta("robots", noIndex ? "noindex,nofollow" : "index,follow");
 
-    // Open Graph
-    updateMeta("og:title", `${title} | Ultra Fast Cargo`, true);
+    updateMeta("og:title", fullTitle, true);
     updateMeta("og:description", description, true);
     updateMeta("og:url", fullUrl, true);
     updateMeta("og:type", ogType, true);
     updateMeta("og:image", ogImage, true);
     updateMeta("og:locale", language === "ar" ? "ar_AE" : "en_US", true);
-    updateMeta("og:site_name", "Ultra Fast Cargo", true);
+    updateMeta("og:site_name", BRAND, true);
 
-    // Twitter
     updateMeta("twitter:card", "summary_large_image");
-    updateMeta("twitter:title", `${title} | Ultra Fast Cargo`);
+    updateMeta("twitter:title", fullTitle);
     updateMeta("twitter:description", description);
     updateMeta("twitter:image", ogImage);
 
-    // Canonical
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement("link");
@@ -74,7 +74,6 @@ const SEOHead = ({
     }
     canonical.setAttribute("href", fullUrl);
 
-    // Alternate language links for AEO
     const updateAlternate = (hreflang: string, href: string) => {
       let link = document.querySelector(`link[hreflang="${hreflang}"]`);
       if (!link) {
@@ -85,11 +84,10 @@ const SEOHead = ({
       }
       link.setAttribute("href", href);
     };
-    updateAlternate("en", `${baseUrl}${location.pathname}`);
-    updateAlternate("ar", `${baseUrl}${location.pathname}?lang=ar`);
-    updateAlternate("x-default", `${baseUrl}${location.pathname}`);
+    updateAlternate("en", `${BASE_URL}${location.pathname}`);
+    updateAlternate("ar", `${BASE_URL}${location.pathname}?lang=ar`);
+    updateAlternate("x-default", `${BASE_URL}${location.pathname}`);
 
-    // Structured Data (JSON-LD)
     const existingScripts = document.querySelectorAll('script[data-seo="structured-data"]');
     existingScripts.forEach((script) => script.remove());
 
@@ -105,11 +103,10 @@ const SEOHead = ({
     }
 
     return () => {
-      // Cleanup on unmount
       const scripts = document.querySelectorAll('script[data-seo="structured-data"]');
       scripts.forEach((script) => script.remove());
     };
-  }, [title, description, keywords, fullUrl, ogImage, ogType, structuredData, noIndex, language, location.pathname]);
+  }, [fullTitle, description, keywords, fullUrl, ogImage, ogType, structuredData, noIndex, language, location.pathname]);
 
   return null;
 };
@@ -120,22 +117,22 @@ export const generateOrganizationSchema = () => ({
   "@type": "Organization",
   name: "Ultra Fast Cargo",
   alternateName: "UFC Cargo",
-  url: "https://ultrafastcargo.com",
-  logo: "https://ultrafastcargo.com/logo.png",
+  url: BASE_URL,
+  logo: `${BASE_URL}/logo.png`,
   description: "International cargo and logistics company based in UAE offering air, sea, and land freight services worldwide.",
   foundingDate: "2009",
   foundingLocation: "Dubai, UAE",
   areaServed: [
     { "@type": "Country", name: "United Arab Emirates" },
     { "@type": "Country", name: "Saudi Arabia" },
-    { "@type": "Country", name: "India" },
-    { "@type": "Country", name: "Pakistan" },
+    { "@type": "Country", name: "Qatar" },
+    { "@type": "Country", name: "Oman" },
     { "@type": "GeoShape", name: "Worldwide" },
   ],
   contactPoint: [
     {
       "@type": "ContactPoint",
-      telephone: "+971-XXX-XXXX",
+      telephone: "+971-55-141-7563",
       contactType: "customer service",
       availableLanguage: ["English", "Arabic", "Hindi", "Urdu"],
       areaServed: "AE",
@@ -145,14 +142,12 @@ export const generateOrganizationSchema = () => ({
     "https://www.facebook.com/profile.php?id=61586733896234",
     "https://www.instagram.com/ultrafastcargo",
     "https://www.linkedin.com/company/ultrafastcargo",
-    "https://twitter.com/ultrafastcargo",
   ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Office No M08, Mezzanine Floor, Burj-Nahar Views Building",
     addressLocality: "Dubai",
     addressRegion: "Dubai",
-    postalCode: "00000",
     addressCountry: "AE",
   },
 });
@@ -160,19 +155,18 @@ export const generateOrganizationSchema = () => ({
 export const generateLocalBusinessSchema = () => ({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://ultrafastcargo.com/#localbusiness",
+  "@id": `${BASE_URL}/#localbusiness`,
   name: "Ultra Fast Cargo Dubai",
-  image: "https://ultrafastcargo.com/office.jpg",
+  image: `${BASE_URL}/og-image.jpg`,
   telephone: "+971-55-141-7563",
   email: "info@ultrafastcargo.com",
-  url: "https://ultrafastcargo.com",
+  url: BASE_URL,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Office No M08, Mezzanine Floor, Burj-Nahar Views Building",
     addressLocality: "Dubai",
     addressRegion: "Dubai",
-    postalCode: "00000",
     addressCountry: "AE",
   },
   geo: {
@@ -208,7 +202,7 @@ export const generateServiceSchema = (services: Array<{name: string; description
   provider: {
     "@type": "Organization",
     name: "Ultra Fast Cargo",
-    url: "https://ultrafastcargo.com",
+    url: BASE_URL,
   },
   areaServed: {
     "@type": "GeoShape",
@@ -250,7 +244,7 @@ export const generateBreadcrumbSchema = (items: Array<{name: string; url: string
     "@type": "ListItem",
     position: index + 1,
     name: item.name,
-    item: `https://ultrafastcargo.com${item.url}`,
+    item: `${BASE_URL}${item.url}`,
   })),
 });
 
@@ -264,20 +258,20 @@ export const generateWebPageSchema = (page: {
   "@type": "WebPage",
   name: page.name,
   description: page.description,
-  url: `https://ultrafastcargo.com${page.url}`,
+  url: `${BASE_URL}${page.url}`,
   dateModified: page.dateModified || new Date().toISOString(),
   inLanguage: ["en-US", "ar-AE"],
   isPartOf: {
     "@type": "WebSite",
     name: "Ultra Fast Cargo",
-    url: "https://ultrafastcargo.com",
+    url: BASE_URL,
   },
   publisher: {
     "@type": "Organization",
     name: "Ultra Fast Cargo",
     logo: {
       "@type": "ImageObject",
-      url: "https://ultrafastcargo.com/logo.png",
+      url: `${BASE_URL}/logo.png`,
     },
   },
 });

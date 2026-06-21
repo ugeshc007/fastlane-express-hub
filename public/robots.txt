@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ultrafastcargo.com/sitemap.xml
+Sitemap: https://fastlane-express-hub.lovable.app/sitemap.xml

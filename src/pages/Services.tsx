@@ -243,7 +243,10 @@ const Services = () => {
                     Delivery: <time>{service.deliveryTime}</time>
                   </div>
                   <Button variant="accent" size="lg" asChild>
-                    <Link to={service.link} className="flex items-center gap-2">Learn More<ArrowRight className="w-5 h-5" /></Link>
+                    <Link to={service.link} aria-label={`Learn more about ${service.title}`} className="flex items-center gap-2">
+                      Learn more about {service.title}
+                      <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                    </Link>
                   </Button>
                 </div>
                 <aside className={`bg-card rounded-2xl p-8 border border-border ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
