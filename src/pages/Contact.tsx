@@ -48,7 +48,11 @@ ${formData.message}
     
     trackFormSubmit("Contact Form");
     window.open(whatsappUrl, '_blank');
-    navigate("/thank-you");
+    toast({
+      title: isRTL ? "تم الإرسال" : "Message Sent",
+      description: isRTL ? "سنتواصل معك قريباً عبر واتساب." : "We'll get back to you shortly on WhatsApp.",
+    });
+    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
