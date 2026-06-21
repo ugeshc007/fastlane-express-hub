@@ -126,9 +126,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title={language === "ar" ? "شركة شحن من دبي إلى قطر والسعودية وعمان" : "Dubai Cargo Service to Qatar, Saudi Arabia & Oman - Ultra Fast Cargo"}
-        description="Ultra Fast Cargo: #1 cargo company in Dubai. Fast shipping to Qatar, Saudi Arabia & Oman. Road freight, air cargo & express delivery. Customs clearance included. Get free quote!"
-        keywords="cargo Dubai to Qatar, Dubai to Saudi Arabia cargo, cargo to saudi arabia, Dubai to Oman shipping, cargo service Dubai, UAE to Qatar freight, Dubai to Riyadh cargo, Dubai to Doha cargo, Dubai to Muscat, GCC cargo company, door to door cargo dubai to saudi, road cargo dubai to saudi, transport dubai to qatar, freight to qatar, shipping dubai to qatar, cargo to doha, logistics dubai qatar, shipping company to qatar, cargo dubai to jeddah, cargo dubai to dammam, شحن قطر, بضائع من دبي"
+        title={language === "ar" ? "شحن من دبي إلى قطر والسعودية – بري، بحري، جوي" : "Dubai to Qatar & Saudi Cargo – Road, Sea & Air"}
+        description="Dubai to Qatar & Dubai to Saudi Arabia cargo by road, sea and air freight. Door-to-door to Doha, Riyadh, Jeddah & Dammam with full customs clearance."
+        keywords="Dubai to Qatar cargo, Dubai to Saudi Arabia cargo, Dubai to Qatar road cargo, Dubai to Qatar sea cargo, Dubai to Qatar air cargo, Dubai to Saudi road cargo, Dubai to Saudi sea cargo, Dubai to Saudi air cargo, road freight Dubai to Qatar, sea freight Dubai to Qatar, air freight Dubai to Qatar, road freight Dubai to Saudi, sea freight Dubai to Saudi, air freight Dubai to Saudi, cargo Dubai to Doha, cargo Dubai to Riyadh, cargo Dubai to Jeddah, cargo Dubai to Dammam, door to door cargo Dubai to Qatar, door to door cargo Dubai to Saudi, شحن من دبي إلى قطر, شحن من دبي إلى السعودية"
         structuredData={structuredData}
       />
       <Navbar />
