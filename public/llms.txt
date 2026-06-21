@@ -1,0 +1,29 @@
+# Ultra Fast Cargo
+
+> Dubai-based cargo and logistics company providing fast, reliable shipping from the UAE to Qatar, Saudi Arabia, Oman and 150+ countries via air, sea, land and express delivery.
+
+Ultra Fast Cargo specializes in door-to-door cargo from Dubai across the GCC and worldwide. Customers contact us primarily via WhatsApp (+971 55 141 7563) for instant quotes and bookings.
+
+## Pages
+
+- [Home](/): Overview of cargo services from Dubai to Qatar, Saudi Arabia, Oman and worldwide.
+- [Services](/services): Air cargo, sea cargo, land transport and express delivery options.
+- [Air Cargo](/services/air-cargo): Express air freight for time-sensitive and high-value shipments.
+- [Sea Cargo](/services/sea-cargo): FCL and LCL ocean freight for large-volume shipments.
+- [Land Transport](/services/land-transport): Road freight across UAE and GCC with FTL/LTL options.
+- [Express Delivery](/services/express-delivery): Same-day and next-day delivery within UAE and GCC.
+- [Dubai to Saudi Arabia Cargo](/dubai-to-saudi-cargo): Dedicated route page for shipping from Dubai to Riyadh, Jeddah, Dammam.
+- [Dubai to Qatar Cargo](/dubai-to-qatar-cargo): Dedicated route page for shipping from Dubai to Doha.
+- [UAE to Saudi](/services/uae-to-saudi): UAE to Saudi Arabia cargo with customs clearance.
+- [UAE to Qatar](/services/uae-to-qatar): UAE to Qatar cargo with customs clearance.
+- [UAE to Oman](/services/uae-to-oman): UAE to Oman cargo and road freight.
+- [Coverage](/coverage): Countries and destinations we ship to.
+- [Track Shipment](/track): Look up the status of an Ultra Fast Cargo shipment.
+- [Get a Quote](/quote): Request a custom shipping quote via WhatsApp.
+- [Contact](/contact): Office address, phone, WhatsApp and business hours.
+- [About](/about): Company background, founded in 2009 in Dubai.
+
+## Optional
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)
