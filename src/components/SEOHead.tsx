@@ -14,7 +14,7 @@ interface SEOHeadProps {
 }
 
 const BRAND = "Ultra Fast Cargo";
-const BASE_URL = "https://fastlane-express-hub.lovable.app";
+const BASE_URL = "https://ultrafastcargo.com";
 
 const withBrand = (title: string) =>
   title.toLowerCase().includes(BRAND.toLowerCase()) ? title : `${title} | ${BRAND}`;
