@@ -2,12 +2,31 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEOHead, { generateWebPageSchema, generateBreadcrumbSchema } from "@/components/SEOHead";
 
 const Privacy = () => {
   const { isRTL } = useLanguage();
 
+  const structuredData = [
+    generateWebPageSchema({
+      name: "Privacy Policy",
+      description: "How Ultra Fast Cargo collects, uses and safeguards your personal information.",
+      url: "/privacy",
+    }),
+    generateBreadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Privacy Policy", url: "/privacy" },
+    ]),
+  ];
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Privacy Policy"
+        description="How Ultra Fast Cargo collects, uses and safeguards your personal information when you use our cargo and logistics services."
+        canonicalPath="/privacy"
+        structuredData={structuredData}
+      />
       <Navbar />
       
       <main className="pt-32 pb-20">
