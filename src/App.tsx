@@ -23,7 +23,7 @@ import Quote from "./pages/Quote";
 import Coverage from "./pages/Coverage";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-import ThankYou from "./pages/ThankYou";
+
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -55,7 +55,7 @@ const App = () => (
             <Route path="/coverage" element={<Coverage />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
-            <Route path="/thank-you" element={<ThankYou />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
