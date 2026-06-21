@@ -117,9 +117,9 @@ const DubaiToSaudiCargo = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Dubai to Saudi Arabia Cargo Service – Fast & Affordable | Ultra Fast Cargo"
-        description="Dubai to Saudi Arabia cargo. Road freight & air cargo to Riyadh, Jeddah & all KSA cities. Door-to-door + full Saudi customs clearance. WhatsApp now!"
-        keywords="cargo to saudi arabia, Dubai to Saudi cargo, cargo dubai to saudi, door to door cargo dubai to saudi, road cargo dubai to saudi, cargo to saudi, door to door cargo saudi arabia, Dubai to Riyadh shipping, Dubai to Jeddah cargo, cargo dubai to jeddah, cargo dubai to riyadh, cargo dubai to dammam, transport dubai to saudi, truck cargo dubai to saudi, shipping dubai to saudi, freight dubai to saudi, UAE to Saudi Arabia freight, logistics dubai to saudi, cargo company dubai to saudi, بضائع من دبي"
+        title="Dubai to Saudi Arabia Cargo by Road, Sea & Air"
+        description="Dubai to Saudi Arabia cargo by road, sea & air freight. Door-to-door to Riyadh, Jeddah, Dammam & all KSA with Saudi customs clearance. WhatsApp now."
+        keywords="Dubai to Saudi Arabia cargo, Dubai to Saudi road cargo, Dubai to Saudi sea cargo, Dubai to Saudi air cargo, road freight Dubai to Saudi Arabia, sea freight Dubai to Saudi Arabia, air freight Dubai to Saudi Arabia, cargo Dubai to Riyadh, cargo Dubai to Jeddah, cargo Dubai to Dammam, truck cargo Dubai to Saudi, door to door cargo Dubai to Saudi, shipping Dubai to Saudi Arabia, freight forwarder Dubai to Saudi, شحن من دبي إلى السعودية, شحن بري دبي السعودية, شحن بحري دبي السعودية, شحن جوي دبي السعودية"
         structuredData={structuredData}
         canonicalPath="/dubai-to-saudi-cargo"
       />
