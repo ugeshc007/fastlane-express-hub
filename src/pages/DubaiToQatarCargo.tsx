@@ -40,6 +40,14 @@ const faqs = [
     question: "What types of cargo can I ship from Dubai to Qatar?",
     answer: "We ship commercial goods, personal effects, electronics, furniture, spare parts, industrial equipment, and more. Dangerous goods require special handling — contact us to discuss.",
   },
+  {
+    question: "Do you offer sea freight from Dubai to Qatar?",
+    answer: "Yes. We provide FCL (20ft/40ft container) and LCL (groupage) sea cargo from Jebel Ali Port, Dubai to Hamad Port, Doha. Typical port-to-port transit is 3–6 days, making it the most economical option for bulk and heavy shipments.",
+  },
+  {
+    question: "What's the difference between road, sea and air cargo Dubai to Qatar?",
+    answer: "Road freight (3–5 days) via Saudi Arabia is reliable and cost-effective for most shipments. Sea freight (3–6 days) from Jebel Ali to Hamad Port is the cheapest option for large volumes. Air cargo (24 hours) from DXB/DWC to Hamad International Airport (DOH) is fastest for urgent, high-value or time-sensitive goods.",
+  },
 ];
 
 const pricingOptions = [

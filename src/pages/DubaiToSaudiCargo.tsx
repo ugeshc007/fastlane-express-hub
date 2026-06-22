@@ -44,6 +44,14 @@ const faqs = [
     question: "Do I need an import permit to ship to Saudi Arabia?",
     answer: "Some goods require special import permits for Saudi Arabia. Our team will advise you on documentation requirements based on your cargo type and handle all regulatory compliance on your behalf.",
   },
+  {
+    question: "Do you offer sea freight from Dubai to Saudi Arabia?",
+    answer: "Yes. We offer FCL (20ft/40ft container) and LCL (groupage) sea freight from Jebel Ali Port, Dubai to Jeddah Islamic Port, King Abdulaziz Port (Dammam) and King Abdullah Port. Typical transit is 5–10 days port-to-port depending on the destination.",
+  },
+  {
+    question: "What's the difference between road, sea and air cargo Dubai to Saudi Arabia?",
+    answer: "Road freight (3–4 days) is the best balance of speed and price for most shipments via the Al Batha and Al Ghuwaifat borders. Sea freight (5–10 days) is the cheapest option for heavy and bulk cargo via Jebel Ali to Jeddah/Dammam. Air freight (24–48 hours) is fastest and best for urgent, high-value or perishable goods via DXB/DWC to Riyadh, Jeddah and Dammam airports.",
+  },
 ];
 
 const pricingOptions = [
