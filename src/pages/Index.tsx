@@ -19,6 +19,17 @@ import {
   Award, Users, ArrowRight, CheckCircle, FileText, Package, MapPin, Headphones
 } from "lucide-react";
 import heroImage from "@/assets/hero-cargo.jpg";
+
+// Preload the LCP hero image as early as possible (module evaluation)
+if (typeof document !== "undefined" && !document.querySelector('link[data-hero-preload]')) {
+  const link = document.createElement("link");
+  link.rel = "preload";
+  link.as = "image";
+  link.href = heroImage;
+  (link as HTMLLinkElement & { fetchPriority?: string }).fetchPriority = "high";
+  link.setAttribute("data-hero-preload", "true");
+  document.head.appendChild(link);
+}
 import logo from "@/assets/UltrafastCargoY Logo.png";
 import cargoTruckShip from "@/assets/cargo-truck-ship.jpg";
 import airCargoImage from "@/assets/air-cargo-service.jpg";
