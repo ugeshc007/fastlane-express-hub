@@ -44,6 +44,14 @@ const faqs = [
     question: "Do I need an import permit to ship to Saudi Arabia?",
     answer: "Some goods require special import permits for Saudi Arabia. Our team will advise you on documentation requirements based on your cargo type and handle all regulatory compliance on your behalf.",
   },
+  {
+    question: "Do you offer sea freight from Dubai to Saudi Arabia?",
+    answer: "Yes. We offer FCL (20ft/40ft container) and LCL (groupage) sea freight from Jebel Ali Port, Dubai to Jeddah Islamic Port, King Abdulaziz Port (Dammam) and King Abdullah Port. Typical transit is 5–10 days port-to-port depending on the destination.",
+  },
+  {
+    question: "What's the difference between road, sea and air cargo Dubai to Saudi Arabia?",
+    answer: "Road freight (3–4 days) is the best balance of speed and price for most shipments via the Al Batha and Al Ghuwaifat borders. Sea freight (5–10 days) is the cheapest option for heavy and bulk cargo via Jebel Ali to Jeddah/Dammam. Air freight (24–48 hours) is fastest and best for urgent, high-value or perishable goods via DXB/DWC to Riyadh, Jeddah and Dammam airports.",
+  },
 ];
 
 const pricingOptions = [
@@ -476,6 +484,69 @@ const DubaiToSaudiCargo = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          FAQ — AEO & Answer Engine Optimization
+      ═══════════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════════
+          SEO CONTENT — Road / Sea / Air breakdown
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <header className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Dubai to Saudi Arabia Cargo by <span className="text-accent">Road, Sea & Air</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Three trusted freight modes from the UAE to every city in the Kingdom — Riyadh, Jeddah, Dammam, Mecca, Medina, Khobar, Tabuk and beyond.
+            </p>
+          </header>
+
+          <article className="prose prose-lg max-w-none mb-12">
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3">🚛 Road Cargo Dubai to Saudi Arabia</h3>
+            <p className="text-muted-foreground mb-4">
+              Our <strong>road freight from Dubai to Saudi Arabia</strong> is the most popular service for businesses and individuals shipping commercial goods, furniture, electronics and personal effects. Trucks depart daily from Dubai and cross into KSA through the <strong>Al Ghuwaifat–Al Batha border</strong>, delivering door-to-door to <strong>Riyadh in 3 days, Dammam in 2 days, and Jeddah in 4 days</strong>. We offer Full Truck Load (FTL), Less than Truck Load (LTL / part load) and refrigerated trucks for temperature-controlled cargo. Pricing is per CBM, per kg or per truck — whichever is cheaper for your shipment.
+            </p>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3 mt-8">🚢 Sea Cargo Dubai to Saudi Arabia</h3>
+            <p className="text-muted-foreground mb-4">
+              For heavy, bulky or large-volume shipments, <strong>sea freight from Dubai to Saudi Arabia</strong> is the most cost-effective option. We dispatch <strong>FCL (20ft and 40ft containers)</strong> and <strong>LCL (groupage)</strong> sailings from <strong>Jebel Ali Port, Dubai</strong> to:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground mb-4">
+              <li><strong>Jeddah Islamic Port</strong> — transit 5–7 days, ideal for western Saudi Arabia (Jeddah, Mecca, Medina, Taif, Yanbu).</li>
+              <li><strong>King Abdulaziz Port, Dammam</strong> — transit 3–5 days, best for eastern Saudi Arabia (Dammam, Khobar, Jubail, Riyadh).</li>
+              <li><strong>King Abdullah Port (KAEC)</strong> — transit 5–7 days, modern alternative for western KSA imports.</li>
+            </ul>
+            <p className="text-muted-foreground mb-4">
+              Sea freight Dubai to Saudi includes full ZATCA customs clearance, port handling, last-mile trucking and delivery to your warehouse or address anywhere in the Kingdom.
+            </p>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3 mt-8">✈️ Air Cargo Dubai to Saudi Arabia</h3>
+            <p className="text-muted-foreground mb-4">
+              When speed matters, <strong>air freight from Dubai to Saudi Arabia</strong> delivers in <strong>24–48 hours</strong>. We fly cargo daily from <strong>Dubai International Airport (DXB)</strong> and <strong>Al Maktoum International (DWC)</strong> to <strong>King Khalid Airport (Riyadh / RUH)</strong>, <strong>King Abdulaziz Airport (Jeddah / JED)</strong> and <strong>King Fahd Airport (Dammam / DMM)</strong>. Air cargo is ideal for high-value electronics, spare parts, medical supplies, perishables and time-critical shipments. We handle airway bills (AWB), Saudi Customs (ZATCA) clearance, COO and last-mile delivery to your final address.
+            </p>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3 mt-8">🛂 Saudi Customs Clearance — We Handle It All</h3>
+            <p className="text-muted-foreground mb-4">
+              Every Dubai to KSA shipment includes complete <strong>Saudi Customs (ZATCA) clearance</strong>: commercial invoice attestation, packing list, Certificate of Origin (COO), SASO / SABER conformity certificates where applicable, and all Saudi import permits. Our in-house clearing agents at Al Batha, Jeddah Port, Dammam Port and the airports mean zero border delays for our customers.
+            </p>
+          </article>
+
+          <div className="bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
+            <p className="text-foreground font-bold text-2xl mb-3">Get a quote for road, sea or air cargo Dubai to Saudi Arabia</p>
+            <p className="text-muted-foreground mb-6">Tell us your weight, volume and destination city — we'll send the best rate in 5 minutes.</p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
+              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-xl hover:scale-105 transition-all duration-200"
+            >
+              <MessageCircle className="w-6 h-6" /> WhatsApp +971 55 141 7563
+            </a>
           </div>
         </div>
       </section>
