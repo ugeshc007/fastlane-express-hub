@@ -555,6 +555,11 @@ const DubaiToSaudiCargo = () => {
           FAQ — AEO & Answer Engine Optimization
       ═══════════════════════════════════════════ */}
       <section className="py-16 bg-secondary">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2 text-center">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-muted-foreground text-center mb-10">Dubai to Saudi Arabia Cargo Shipping</p>
           <div className="max-w-3xl mx-auto space-y-5">
             {faqs.map((faq, i) => (
               <article key={i} className="bg-card rounded-xl p-6 border border-border">
