@@ -483,6 +483,58 @@ const DubaiToQatarCargo = () => {
       {/* ═══════════════════════════════════════════
           FAQ — AEO & Answer Engine Optimization
       ═══════════════════════════════════════════ */}
+      {/* ═══════════════════════════════════════════
+          SEO CONTENT — Road / Sea / Air breakdown
+      ═══════════════════════════════════════════ */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <header className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Dubai to Qatar Cargo by <span className="text-accent">Road, Sea & Air</span>
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Three trusted freight modes from the UAE to every city in Qatar — Doha, Lusail, Al Wakrah, Al Khor, Al Rayyan and beyond.
+            </p>
+          </header>
+
+          <article className="prose prose-lg max-w-none mb-12">
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3">🚛 Road Cargo Dubai to Qatar (Doha)</h3>
+            <p className="text-muted-foreground mb-4">
+              Our <strong>road freight from Dubai to Qatar</strong> is the go-to service for commercial cargo, furniture, electronics and personal effects. Trucks depart weekly from Dubai, transit through Saudi Arabia and cross into Qatar via the <strong>Abu Samra border</strong>, delivering door-to-door to <strong>Doha in 3–5 days</strong>. We offer FTL (Full Truck Load), LTL (part load / groupage) and reefer trucks for temperature-controlled cargo. All UAE-exit and Qatar-entry customs are handled by our in-house clearing team.
+            </p>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3 mt-8">🚢 Sea Cargo Dubai to Qatar</h3>
+            <p className="text-muted-foreground mb-4">
+              For bulk and heavy shipments, <strong>sea freight from Dubai to Qatar</strong> is the most economical option. We dispatch regular <strong>FCL (20ft / 40ft container)</strong> and <strong>LCL (groupage)</strong> sailings from <strong>Jebel Ali Port, Dubai</strong> to <strong>Hamad Port, Doha</strong> — transit time is typically <strong>3–6 days port-to-port</strong>. Service includes Qatar customs clearance at Hamad Port, container offloading and last-mile delivery anywhere in Qatar. Sea cargo is ideal for machinery, vehicles, building materials, furniture in bulk and commercial inventory.
+            </p>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3 mt-8">✈️ Air Cargo Dubai to Qatar</h3>
+            <p className="text-muted-foreground mb-4">
+              For urgent shipments, <strong>air freight from Dubai to Qatar</strong> delivers in <strong>24 hours</strong>. We fly cargo daily from <strong>Dubai International (DXB)</strong> and <strong>Al Maktoum International (DWC)</strong> to <strong>Hamad International Airport, Doha (DOH)</strong>. Air cargo is best for high-value electronics, spare parts, medical supplies, perishables, documents and time-critical shipments. We handle airway bills, Qatar Customs clearance and last-mile delivery to your final Doha address.
+            </p>
+
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-3 mt-8">🛂 Qatar Customs Clearance — We Handle It All</h3>
+            <p className="text-muted-foreground mb-4">
+              Every Dubai to Qatar shipment includes complete <strong>Qatar Customs clearance</strong>: commercial invoice, packing list, Certificate of Origin (COO), Qatar import permits where applicable, and all border formalities at Abu Samra (road), Hamad Port (sea) or Hamad International Airport (air). Zero hidden fees — your quote includes door-to-door delivery and full clearance.
+            </p>
+          </article>
+
+          <div className="bg-accent/10 border border-accent/20 rounded-2xl p-8 text-center">
+            <p className="text-foreground font-bold text-2xl mb-3">Get a quote for road, sea or air cargo Dubai to Qatar</p>
+            <p className="text-muted-foreground mb-6">Tell us your weight, volume and destination — we'll send the best rate in 5 minutes.</p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackWhatsAppClick}
+              className="inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-xl hover:scale-105 transition-all duration-200"
+            >
+              <MessageCircle className="w-6 h-6" /> WhatsApp +971 55 141 7563
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4">
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-2 text-center">
