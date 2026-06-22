@@ -190,15 +190,15 @@ const Index = () => {
               <aside className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-primary-foreground/10" aria-label="Company statistics">
                 <div>
                   <p className="text-3xl font-heading font-bold text-accent" aria-label="15 plus years of experience">15+</p>
-                  <p className="text-primary-foreground/60 text-sm">{t("hero.yearsExp")}</p>
+                  <p className="text-primary-foreground/85 text-sm">{t("hero.yearsExp")}</p>
                 </div>
                 <div>
                   <p className="text-3xl font-heading font-bold text-accent" aria-label="50 thousand plus shipments annually">50K+</p>
-                  <p className="text-primary-foreground/60 text-sm">{t("hero.shipments")}</p>
+                  <p className="text-primary-foreground/85 text-sm">{t("hero.shipments")}</p>
                 </div>
                 <div>
                   <p className="text-3xl font-heading font-bold text-accent" aria-label="150 plus countries served">150+</p>
-                  <p className="text-primary-foreground/60 text-sm">{t("hero.countries")}</p>
+                  <p className="text-primary-foreground/85 text-sm">{t("hero.countries")}</p>
                 </div>
               </aside>
             </article>

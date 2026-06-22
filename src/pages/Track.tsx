@@ -80,7 +80,7 @@ const Track = () => {
                 placeholder={t("tracking.placeholder")}
                 value={trackingNumber}
                 onChange={(e) => setTrackingNumber(e.target.value)}
-                className="flex-1 h-14 text-base bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/50"
+                className="flex-1 h-14 text-base bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/80"
               />
               <Button type="submit" variant="hero" size="lg" disabled={loading} className="h-14">
                 <Search className={`w-5 h-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />

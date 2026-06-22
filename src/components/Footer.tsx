@@ -114,14 +114,14 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/10 mt-6 pt-4 flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-primary-foreground/50 text-xs">
+          <p className="text-primary-foreground/80 text-xs">
             © {new Date().getFullYear()} Ultra Fast Cargo. {t("footer.rights")}.
           </p>
           <div className="flex gap-4 text-xs">
-            <Link to="/privacy" className="text-primary-foreground/50 hover:text-accent transition-colors">
+            <Link to="/privacy" className="text-primary-foreground/80 hover:text-accent transition-colors">
               {t("footer.privacy")}
             </Link>
-            <Link to="/terms" className="text-primary-foreground/50 hover:text-accent transition-colors">
+            <Link to="/terms" className="text-primary-foreground/80 hover:text-accent transition-colors">
               {t("footer.terms")}
             </Link>
           </div>

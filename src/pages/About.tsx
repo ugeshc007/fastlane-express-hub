@@ -55,7 +55,7 @@ const About = () => {
         </div>
         <div className="absolute inset-0 bg-hero-pattern opacity-50" aria-hidden="true" />
         <div className="relative container mx-auto px-4">
-          <nav className="text-sm text-primary-foreground/60 mb-4" aria-label="Breadcrumb">
+          <nav className="text-sm text-primary-foreground/85 mb-4" aria-label="Breadcrumb">
             <ol className="flex items-center gap-2 justify-center" itemScope itemType="https://schema.org/BreadcrumbList">
               <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                 <Link to="/" itemProp="item" className="hover:text-accent"><span itemProp="name">Home</span></Link>
