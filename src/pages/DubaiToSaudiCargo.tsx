@@ -234,7 +234,7 @@ const DubaiToSaudiCargo = () => {
                   <div key={opt.mode} className="flex items-center justify-between bg-primary-foreground/10 rounded-xl px-4 py-3">
                     <div>
                       <div className="text-primary-foreground font-semibold">{opt.mode}</div>
-                      <div className="text-primary-foreground/60 text-sm">{opt.time}</div>
+                      <div className="text-primary-foreground/85 text-sm">{opt.time}</div>
                     </div>
                     <div className={`font-bold text-lg ${opt.color}`}>{opt.price}</div>
                   </div>
@@ -242,7 +242,7 @@ const DubaiToSaudiCargo = () => {
               </div>
 
               <div className="mt-6 pt-6 border-t border-primary-foreground/20 text-center">
-                <p className="text-primary-foreground/60 text-sm mb-3">Average response time: <strong className="text-accent">under 5 minutes</strong></p>
+                <p className="text-primary-foreground/85 text-sm mb-3">Average response time: <strong className="text-accent">under 5 minutes</strong></p>
                 <a
                   href={WHATSAPP_URL}
                   target="_blank"
@@ -582,7 +582,7 @@ const DubaiToSaudiCargo = () => {
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto mb-3">
             Road freight in 3–4 days • Express in 2 days • Competitive rates
           </p>
-          <p className="text-primary-foreground/60 mb-10">
+          <p className="text-primary-foreground/85 mb-10">
             Full Saudi customs clearance • Door-to-door • No hidden charges
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
