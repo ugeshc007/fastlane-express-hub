@@ -6,7 +6,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { MessageCircle, Phone, CheckCircle, Clock, ShieldCheck, Zap } from "lucide-react";
 import { trackWhatsApp, trackPhone } from "@/lib/tracking";
 
-const WHATSAPP_NUMBER = "971568962512";
+const WHATSAPP_NUMBER = "971551417563";
 const PHONE_NUMBER = "971551417563";
 
 const Quote = () => {
